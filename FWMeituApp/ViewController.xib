@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="BP9-6E-gP6">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg_topview_topback_a.png" translatesAutoresizingMaskIntoConstraints="NO" id="8fl-cl-msp">
+                    <rect key="frame" x="30" y="20" width="181" height="41"/>
+                </imageView>
+                <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="6Ax-GQ-8VU">
+                    <rect key="frame" x="193" y="471" width="39" height="37"/>
+                </pageControl>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRf-2H-efH">
+                    <rect key="frame" x="523" y="561" width="94" height="39"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="39" id="uFb-Nz-Qcd"/>
+                        <constraint firstAttribute="height" constant="39" id="zQ0-7a-fPb"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="btn_home_setting_a.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkn-9I-Mxj">
+                    <rect key="frame" x="0.0" y="165" width="600" height="128"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="8fl-cl-msp" secondAttribute="trailing" id="3AR-de-Pl3"/>
+                <constraint firstAttribute="bottom" secondItem="iRf-2H-efH" secondAttribute="bottom" constant="10" id="4vg-qu-WKc"/>
+                <constraint firstAttribute="trailing" secondItem="iRf-2H-efH" secondAttribute="trailing" constant="35" id="Hn9-ui-8iM"/>
+                <constraint firstAttribute="bottom" secondItem="6Ax-GQ-8VU" secondAttribute="bottom" constant="60" id="Rba-W9-REd"/>
+                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="iRf-2H-efH" secondAttribute="bottom" id="ShS-Xt-M9y"/>
+                <constraint firstItem="8fl-cl-msp" firstAttribute="top" secondItem="BP9-6E-gP6" secondAttribute="top" constant="20" id="Zk3-4e-aNA"/>
+                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="iRf-2H-efH" secondAttribute="bottom" constant="10" id="e3P-xX-pPZ"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6Ax-GQ-8VU" secondAttribute="bottom" constant="60" id="hRB-Uk-4Dg"/>
+                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="iRf-2H-efH" secondAttribute="bottom" constant="10" id="pXj-5x-asP"/>
+                <constraint firstItem="8fl-cl-msp" firstAttribute="leading" secondItem="BP9-6E-gP6" secondAttribute="leading" constant="25" id="shl-nc-h85"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iRf-2H-efH" secondAttribute="bottom" constant="10" id="tjk-hJ-OYP"/>
+            </constraints>
+            <point key="canvasLocation" x="437" y="380"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_topview_topback_a.png" width="453" height="103"/>
+        <image name="btn_home_setting_a.png" width="39" height="39"/>
+    </resources>
+</document>
