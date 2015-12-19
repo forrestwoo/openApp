@@ -688,6 +688,7 @@
 		D7F893111BB325540067726B /* icon_autobeauty7_b@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7F8921A1BB325540067726B /* icon_autobeauty7_b@3x.png */; };
 		D7F893171BB32AE40067726B /* UIImage+ImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F893161BB32AE40067726B /* UIImage+ImageScale.m */; };
 		D7FC52E61BAB26F700275BD4 /* item_bg_purple_a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7FC52E51BAB26F700275BD4 /* item_bg_purple_a@2x.png */; };
+		DAD118171C0F5BA500B1D4B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD118161C0F5BA500B1D4B5 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1577,6 +1578,7 @@
 		D7F893151BB32AE40067726B /* UIImage+ImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageScale.h"; path = "Utilies/UIImage+ImageScale.h"; sourceTree = "<group>"; };
 		D7F893161BB32AE40067726B /* UIImage+ImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageScale.m"; path = "Utilies/UIImage+ImageScale.m"; sourceTree = "<group>"; };
 		D7FC52E51BAB26F700275BD4 /* item_bg_purple_a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item_bg_purple_a@2x.png"; path = "Images/item_bg_purple_a@2x.png"; sourceTree = "<group>"; };
+		DAD118161C0F5BA500B1D4B5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1584,6 +1586,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAD118171C0F5BA500B1D4B5 /* UIKit.framework in Frameworks */,
 				D714A4741BB455D700AA950D /* CoreGraphics.framework in Frameworks */,
 				D714A4721BB455CC00AA950D /* QuartzCore.framework in Frameworks */,
 				D714A4701BB455BD00AA950D /* OpenGLES.framework in Frameworks */,
@@ -1922,6 +1925,7 @@
 		D71E6EFC1BA88A2000BCC79C = {
 			isa = PBXGroup;
 			children = (
+				DAD118161C0F5BA500B1D4B5 /* UIKit.framework */,
 				D71E6F071BA88A2000BCC79C /* FWMeituApp */,
 				D71E6F241BA88A2000BCC79C /* FWMeituAppTests */,
 				D71E6F061BA88A2000BCC79C /* Products */,
