@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "FWBeautyViewController.h"
+#import "Masonry.h"
 
 @interface ViewController : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {

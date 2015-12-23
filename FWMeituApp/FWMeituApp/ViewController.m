@@ -6,6 +6,13 @@
 //  Copyright (c) 2015年 ForrestWoo co,.ltd. All rights reserved.
 //375*667
 
+#define kLeftOffset  42
+#define kRightOffset 42
+#define kPadding     10
+#define kWidth       103
+#define kHeight      105
+
+
 #import "ViewController.h"
 #import "FWTopView.h"
 #import "FWButton.h"
@@ -13,54 +20,80 @@
 
 @interface ViewController ()
 @property (nonatomic, strong) FWTopView *topView;
+@property (nonatomic, assign)   CGRect     leftArrowFrame;
+@property (nonatomic, assign)   CGRect     rightArrowFrame;
 @end
 
 @implementation ViewController
 
-- (void)loadView
+- (void)viewDidLoad
 {
-    [super loadView];
+    [super viewDidLoad];
+    
+    
     self.navigationController.delegate = self;
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_home@2x.jpg"]];
-    self.scrolleView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 137, 375, 393)];
+    
+    UIImageView *backImage = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    backImage.image = [UIImage imageNamed:@"bg_home@2x.jpg"];
+    [self.view addSubview:backImage];
+    
+    self.scrolleView = [[UIScrollView alloc] init];
+    self.scrolleView.translatesAutoresizingMaskIntoConstraints = NO;
     self.scrolleView.pagingEnabled = YES;
-    self.scrolleView.contentSize = CGSizeMake(375 * 2, 393);
     self.scrolleView.showsHorizontalScrollIndicator = NO;
     self.scrolleView.showsVerticalScrollIndicator = NO;
     self.scrolleView.delegate = self;
     
-    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(162, 620, 50, 20)];
-    self.pageControl.numberOfPages = 2;
-    
     [self.view addSubview:self.scrolleView];
-    [self.view addSubview:self.pageControl];
-    
-    [self setupScrollView];
-    
-    
-    //    NSLog(@"%f,%f",size.width,size.height);
     
     UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_topview_topback_a.png"]];
-    image.frame = CGRectMake(20, 40, 453/2, 103/2);
+    image.frame = CGRectMake(15, 15, 226.5, 51.5);
     [self.view addSubview:image];
     
-    UIButton *btnSetting = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnSetting.frame = CGRectMake(330, 620, 39, 39);
-    [btnSetting setImage:[UIImage imageNamed:@"btn_home_setting_a@2x.png"] forState:UIControlStateNormal];
-    [self.view addSubview:btnSetting];
+    self.rightArrowFrame = CGRectMake(WIDTH - 30, HEIGHT / 2 - 50 / 2, 30, 50);
+    self.leftArrowFrame = CGRectMake(5, HEIGHT / 2 - 50 / 2, 30, 50);
     
     btnArrow = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnArrow.frame = CGRectMake(335, 320, 30, 50);
+    
+    btnArrow.frame = self.rightArrowFrame;
     [btnArrow setImage:[UIImage imageNamed:@"right_arrow@2x.png"] forState:UIControlStateNormal];
     [btnArrow setImage:[UIImage imageNamed:@"right_arrow_highlight@2x.png"] forState:UIControlStateHighlighted];
     [btnArrow addTarget:self action:@selector(btnArrowClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnArrow];
     
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(hanlderAction:) userInfo:nil repeats:YES];
-    
-    self.topView = [[FWTopView alloc] initWithFrame:CGRectMake(317,  0, TOPVIEW_WIDTH, TOPVIEW_HEIGHT)];
+    //width = 51,height = 61.
+    self.topView = [[FWTopView alloc] init];
     [self.view addSubview:self.topView];
+    self.topView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    //width,height = 39
+    UIButton *btnSetting = [UIButton buttonWithType:UIButtonTypeCustom];
+    //    btnSetting.frame = CGRectMake(330, 620, 39, 39);
+    [btnSetting setImage:[UIImage imageNamed:@"btn_home_setting_a@2x.png"] forState:UIControlStateNormal];
+    [self.view addSubview:btnSetting];
+    btnSetting.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.view addConstraints:@[
+                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0],
+                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-6],
+                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:51],
+                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:61],
+                                
+                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-8],
+                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-6],
+                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:39],
+                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:btnSetting attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
+                                
+                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:image attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0],
+                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
+                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:WIDTH],
+                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:HEIGHT - 47 - 61]
+                                ]];
     [self.topView initView:@"20"];
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake((WIDTH - 50) / 2, HEIGHT - 39 , 50, 10)];
+    self.pageControl.numberOfPages = 2;
+    [self.view addSubview:self.pageControl];
+    [self setupScrollView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -94,13 +127,13 @@
 
 - (void)toRightArrow
 {
-    btnArrow.frame = CGRectMake(10, 320, 30, 50);
+    btnArrow.frame = self.leftArrowFrame;
     [btnArrow setImage:[UIImage imageNamed:@"left_arrow@2x.png"] forState:UIControlStateNormal];
 }
 
 - (void)toLeftArrow
 {
-    btnArrow.frame = CGRectMake(335, 320, 30, 50);
+    btnArrow.frame = self.rightArrowFrame;
     [btnArrow setImage:[UIImage imageNamed:@"right_arrow@2x.png"] forState:UIControlStateNormal];
 }
 
@@ -144,23 +177,34 @@
                                       nil];
 
     NSArray *textArr = [NSArray arrayWithObjects:@"美化图片", @"人像美容", @"拼图", @"万能相机", @"素材中心", @"美颜相机", @"美拍", @"更多功能", nil];
-    NSArray *xArr = [NSArray arrayWithObjects:[NSNumber numberWithInt:65],[NSNumber numberWithInt:207], [NSNumber numberWithInt:65],[NSNumber numberWithInt:207],[NSNumber numberWithInt:65],[NSNumber numberWithInt:207],[NSNumber numberWithInt:440],[NSNumber numberWithInt:582],nil];
-    NSArray *yArr = [NSArray arrayWithObjects:[NSNumber numberWithInt:0],[NSNumber numberWithInt:0], [NSNumber numberWithInt:144],[NSNumber numberWithInt:144],[NSNumber numberWithInt:281],[NSNumber numberWithInt:281],[NSNumber numberWithInt:0],[NSNumber numberWithInt:0],nil];
-    
-    //144.144+206+50,,,x+144,x+144+206+50...210*3+2*50=...300+210+52+210+52
-//    FWFucView *fv = nil;
+
     FWButton *btnHome = nil;
+    CGFloat startX = WIDTH /  2 - kPadding / 2 - kWidth;
+    CGFloat startY = HEIGHT / 2 - kPadding - kHeight / 2 - kHeight -  61;
     for (int i = 0; i < 8; i++) {
+        NSInteger row  = i % 2;
+        NSInteger col  = i / 2;
+        NSInteger page = i / 6;
+
+        if (col == 3) {
+            col = 0;
+        }
+    
         btnHome = [FWButton buttonWithType:UIButtonTypeCustom];
         [btnHome setTitle:[textArr objectAtIndex:i] forState:UIControlStateNormal];
         [btnHome setImage:[UIImage imageNamed:[imageViewImageArr objectAtIndex:i]] forState:UIControlStateNormal];
         [btnHome setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:[imageViewBackImageArr objectAtIndex:i]]]];
         [btnHome setBackgroundColorHighlighted:[UIColor colorWithPatternImage:[UIImage imageNamed:[highLightedBackImageArr objectAtIndex:i]]]];
-        btnHome.frame =CGRectMake([(NSString *)[xArr objectAtIndex:i] floatValue], [(NSString *)[yArr objectAtIndex:i] floatValue], 103, 105);
-[btnHome.titleLabel setFont:[UIFont systemFontOfSize:14]];
+//        btnHome.frame =CGRectMake([(NSString *)[xArr objectAtIndex:i] floatValue], [(NSString *)[yArr objectAtIndex:i] floatValue], kWidth, kheight);
+        btnHome.frame = CGRectMake(row * (kWidth + kPadding) + page * WIDTH + startX, col * (kHeight + kPadding) + startY, kWidth, kHeight);
+        [btnHome.titleLabel setFont:[UIFont systemFontOfSize:14]];
+
         [btnHome addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
         btnHome.topPading = 0.5;
+        
         [self.scrolleView addSubview:btnHome];
+        self.scrolleView.contentSize = CGSizeMake(WIDTH * 2, kHeight * 3 + kPadding * 2);
+
     }
 }
 
