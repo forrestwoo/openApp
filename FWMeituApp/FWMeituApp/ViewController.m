@@ -9,6 +9,7 @@
 #define kLeftOffset  42
 #define kRightOffset 42
 #define kPadding     10
+#define kBigPadding  30
 #define kWidth       103
 #define kHeight      105
 
@@ -43,7 +44,7 @@
     self.scrolleView.showsHorizontalScrollIndicator = NO;
     self.scrolleView.showsVerticalScrollIndicator = NO;
     self.scrolleView.delegate = self;
-    
+    NSLog(@"width= %f,height = %f",WIDTH,HEIGHT);
     [self.view addSubview:self.scrolleView];
     
     UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_topview_topback_a.png"]];
@@ -117,7 +118,7 @@
     }else{
         self.pageControl.currentPage = 1;
         [self toRightArrow];
-
+        
     }
     
     CGRect frame = self.scrolleView.frame;
@@ -175,34 +176,40 @@
                                       @"home_block_orange_a@2x.png", @"home_block_blue_a@2x.png", @"item_bg_purple_a@2x.png",
                                       @"home_block_pink_a@2x.png", @"home_block_red_a@2x.png",
                                       nil];
-
+    
     NSArray *textArr = [NSArray arrayWithObjects:@"美化图片", @"人像美容", @"拼图", @"万能相机", @"素材中心", @"美颜相机", @"美拍", @"更多功能", nil];
-
+    
     FWButton *btnHome = nil;
-    CGFloat startX = WIDTH /  2 - kPadding / 2 - kWidth;
-    CGFloat startY = HEIGHT / 2 - kPadding - kHeight / 2 - kHeight -  61;
+    CGFloat padding = 0;
+    if (WIDTH == 320)
+        padding = kPadding;
+    else
+        padding = kBigPadding;
+    
+    CGFloat startX = WIDTH /  2 - padding / 2 - kWidth;
+    CGFloat startY = HEIGHT / 2 - padding - kHeight / 2 - kHeight -  61;
     for (int i = 0; i < 8; i++) {
         NSInteger row  = i % 2;
         NSInteger col  = i / 2;
         NSInteger page = i / 6;
-
+        
         if (col == 3) {
             col = 0;
         }
-    
+        
         btnHome = [FWButton button];
         [btnHome setTitle:[textArr objectAtIndex:i] forState:UIControlStateNormal];
         [btnHome setImage:[UIImage imageNamed:[imageViewImageArr objectAtIndex:i]] forState:UIControlStateNormal];
         [btnHome setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:[imageViewBackImageArr objectAtIndex:i]]]];
         [btnHome setBackgroundColorHighlighted:[UIColor colorWithPatternImage:[UIImage imageNamed:[highLightedBackImageArr objectAtIndex:i]]]];
-        btnHome.frame = CGRectMake(row * (kWidth + kPadding) + page * WIDTH + startX, col * (kHeight + kPadding) + startY, kWidth, kHeight);
+        btnHome.frame = CGRectMake(row * (kWidth + padding) + page * WIDTH + startX, col * (kHeight + padding) + startY, kWidth, kHeight);
         [btnHome.titleLabel setFont:[UIFont systemFontOfSize:14]];
-
+        
         [btnHome addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
         btnHome.topPading = 0.5;
         
         [self.scrolleView addSubview:btnHome];
-        self.scrolleView.contentSize = CGSizeMake(WIDTH * 2, kHeight * 3 + kPadding * 2);
+        self.scrolleView.contentSize = CGSizeMake(WIDTH * 2, kHeight * 3 + padding * 2);
     }
 }
 
@@ -217,12 +224,12 @@
             imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
             [self presentViewController:imagePicker animated:YES completion:^{
                 [[UIApplication sharedApplication] setStatusBarHidden:YES];
-
+                
             }
              ];
         }
     }
-
+    
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -234,10 +241,10 @@
         image = [UIImage imageCompressForWidth:selectedImage targetHeight:520];
     }
     currentImage = image;
-
-        beautyVC = [[FWBeautyViewController alloc] initWithImage:currentImage];
-        [imagePicker pushViewController:beautyVC animated:YES];
-   
+    
+    beautyVC = [[FWBeautyViewController alloc] initWithImage:currentImage];
+    [imagePicker pushViewController:beautyVC animated:YES];
+    
 }
 
 - (UIImage *)imageWithImageSimple:(UIImage *)image scaleToSize:(CGSize)Newsize
