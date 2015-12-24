@@ -11,8 +11,6 @@
 
 @implementation FWTopView
 
-
-
 - (void)initView:(NSString *)numberString
 {
     self.heartImageView = [[UIImageView alloc] initWithFrame:CGRectMake(8, 8, HEART_WIDTH, HEART_HEIGHT)];

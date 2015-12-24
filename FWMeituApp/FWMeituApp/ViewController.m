@@ -190,12 +190,11 @@
             col = 0;
         }
     
-        btnHome = [FWButton buttonWithType:UIButtonTypeCustom];
+        btnHome = [FWButton button];
         [btnHome setTitle:[textArr objectAtIndex:i] forState:UIControlStateNormal];
         [btnHome setImage:[UIImage imageNamed:[imageViewImageArr objectAtIndex:i]] forState:UIControlStateNormal];
         [btnHome setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:[imageViewBackImageArr objectAtIndex:i]]]];
         [btnHome setBackgroundColorHighlighted:[UIColor colorWithPatternImage:[UIImage imageNamed:[highLightedBackImageArr objectAtIndex:i]]]];
-//        btnHome.frame =CGRectMake([(NSString *)[xArr objectAtIndex:i] floatValue], [(NSString *)[yArr objectAtIndex:i] floatValue], kWidth, kheight);
         btnHome.frame = CGRectMake(row * (kWidth + kPadding) + page * WIDTH + startX, col * (kHeight + kPadding) + startY, kWidth, kHeight);
         [btnHome.titleLabel setFont:[UIFont systemFontOfSize:14]];
 
@@ -204,7 +203,6 @@
         
         [self.scrolleView addSubview:btnHome];
         self.scrolleView.contentSize = CGSizeMake(WIDTH * 2, kHeight * 3 + kPadding * 2);
-
     }
 }
 

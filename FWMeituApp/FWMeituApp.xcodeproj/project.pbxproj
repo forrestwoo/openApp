@@ -697,7 +697,6 @@
 		DAC22B2C1C25ABBC00C9FED6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC22B1F1C25ABBC00C9FED6 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		DAC22B2D1C25ABBC00C9FED6 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC22B211C25ABBC00C9FED6 /* View+MASAdditions.m */; };
 		DAC22B2E1C25ABBC00C9FED6 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC22B241C25ABBC00C9FED6 /* ViewController+MASAdditions.m */; };
-		DAF1CF9B1C27E33100A3B9B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF1CF9A1C27E33100A3B9B1 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1611,7 +1610,6 @@
 		DAC22B221C25ABBC00C9FED6 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "3rd lib/Masnory/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		DAC22B231C25ABBC00C9FED6 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "3rd lib/Masnory/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		DAC22B241C25ABBC00C9FED6 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "3rd lib/Masnory/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		DAF1CF9A1C27E33100A3B9B1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1619,7 +1617,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAF1CF9B1C27E33100A3B9B1 /* UIKit.framework in Frameworks */,
 				D714A4741BB455D700AA950D /* CoreGraphics.framework in Frameworks */,
 				D714A4721BB455CC00AA950D /* QuartzCore.framework in Frameworks */,
 				D714A4701BB455BD00AA950D /* OpenGLES.framework in Frameworks */,
@@ -1959,7 +1956,6 @@
 		D71E6EFC1BA88A2000BCC79C = {
 			isa = PBXGroup;
 			children = (
-				DAF1CF9A1C27E33100A3B9B1 /* UIKit.framework */,
 				D71E6F071BA88A2000BCC79C /* FWMeituApp */,
 				D71E6F241BA88A2000BCC79C /* FWMeituAppTests */,
 				D71E6F061BA88A2000BCC79C /* Products */,

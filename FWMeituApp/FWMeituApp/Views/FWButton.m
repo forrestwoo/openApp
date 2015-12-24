@@ -28,9 +28,14 @@
 
 @implementation FWButton
 
-+ (FWButton *)buttonWithType:(UIButtonType)type
++ (FWButton *)button
 {
     return [super buttonWithType:UIButtonTypeCustom];
+}
+
++ (FWButton *)buttonWithType:(UIButtonType)type
+{
+    return [FWButton button];
 }
 
 - (void)setHighlighted:(BOOL)highlighted
@@ -55,11 +60,7 @@
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    //    if (self.normalButtonImage == nil)
-    //    {
-    //        self.normalButtonImage = [self imageForState:UIControlStateNormal];
-    //    }
+
     if (self.normalButtonImage == nil || self.highlightedButtonImage == nil) {
         self.normalButtonImage = [self imageForState:UIControlStateNormal];
         self.highlightedButtonImage = [self imageForState:UIControlStateHighlighted];

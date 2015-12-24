@@ -16,4 +16,6 @@
 @property (nonatomic, strong) UIColor *normalTextColor;
 @property (nonatomic, strong) UIColor *highlightedTextColor;
 @property (nonatomic, assign) float topPading;
+
++ (FWButton *) button;
 @end
