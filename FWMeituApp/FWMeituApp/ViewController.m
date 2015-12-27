@@ -4,26 +4,25 @@
 //
 //  Created by ForrestWoo on 15-9-16.
 //  Copyright (c) 2015年 ForrestWoo co,.ltd. All rights reserved.
-//375*667
 
-#define kLeftOffset  42
-#define kRightOffset 42
 #define kPadding     10
 #define kBigPadding  30
 #define kWidth       103
 #define kHeight      105
+#define kArrowWidth  30
+#define kArrowHeight 50
+#define kLogoWidth  250
+#define kLogoHeight 79
 
 
 #import "ViewController.h"
-#import "FWTopView.h"
 #import "FWButton.h"
 #import "UIImage+ImageScale.h"
 #import "Masonry.h"
 
 @interface ViewController ()
-@property (nonatomic, strong) FWTopView *topView;
-@property (nonatomic, assign)   CGRect     leftArrowFrame;
-@property (nonatomic, assign)   CGRect     rightArrowFrame;
+@property (nonatomic, assign) CGRect leftArrowFrame;
+@property (nonatomic, assign) CGRect rightArrowFrame;
 @end
 
 @implementation ViewController
@@ -40,20 +39,19 @@
     [self.view addSubview:backImage];
     
     self.scrolleView = [[UIScrollView alloc] init];
+     self.scrolleView.bounces = NO;
     self.scrolleView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.scrolleView.pagingEnabled = YES;
     self.scrolleView.showsHorizontalScrollIndicator = NO;
-    self.scrolleView.showsVerticalScrollIndicator = NO;
+    self.scrolleView.pagingEnabled = YES;
     self.scrolleView.delegate = self;
-    NSLog(@"width= %f,height = %f",WIDTH,HEIGHT);
     [self.view addSubview:self.scrolleView];
     
     UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mtxx_logo@2x.png"]];
-    image.frame = CGRectMake(0, 15, 250, 79);
+    image.frame = CGRectMake(0, 15, kLogoWidth, kLogoHeight);
     [self.view addSubview:image];
     
-    self.rightArrowFrame = CGRectMake(WIDTH - 30, HEIGHT / 2 - 50 / 2, 30, 50);
-    self.leftArrowFrame = CGRectMake(5, HEIGHT / 2 - 50 / 2, 30, 50);
+    self.rightArrowFrame = CGRectMake(WIDTH - kArrowWidth, HEIGHT / 2 - kArrowHeight / 2, kArrowWidth, kArrowHeight);
+    self.leftArrowFrame = CGRectMake(5, HEIGHT / 2 - kArrowHeight / 2, kArrowWidth, kArrowHeight);
     
     btnArrow = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -63,40 +61,26 @@
     [btnArrow addTarget:self action:@selector(btnArrowClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnArrow];
     
-    //width = 51,height = 61.
-    self.topView = [[FWTopView alloc] init];
-    [self.view addSubview:self.topView];
-    self.topView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    //width,height = 39
     UIButton *btnSetting = [UIButton buttonWithType:UIButtonTypeCustom];
-    //    btnSetting.frame = CGRectMake(330, 620, 39, 39);
+
     [btnSetting setImage:[UIImage imageNamed:@"btn_home_setting_a@2x.png"] forState:UIControlStateNormal];
     [self.view addSubview:btnSetting];
     btnSetting.translatesAutoresizingMaskIntoConstraints = NO;
     
+    /**
+     NSLayoutConstraint apply
     [self.view addConstraints:@[
-//                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0],
-//                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-6],
-//                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:51],
-//                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:61],
-//                                
-//                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-8],
-//                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-6],
-//                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:39],
-//                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:btnSetting attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
-//                                
-//                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:image attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0],
-//                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
-//                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:WIDTH],
-//                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:HEIGHT - 47 - 61]
+                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-8],
+                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-6],
+                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:39],
+                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:btnSetting attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
+                                
+                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:image attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0],
+                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
+                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:WIDTH],
+                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:HEIGHT - 47 - 61]
                                 ]];
-    [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top);
-        make.right.equalTo(self.view.mas_right).with.offset(-6);
-        make.width.equalTo(@51);
-        make.height.equalTo(@61);
-    }];
+     **/
     
     [btnSetting mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view.mas_bottom).with.offset(-8);
@@ -109,10 +93,9 @@
         make.top.equalTo(image.mas_bottom);
         make.left.equalTo(self.view.mas_left);
         make.width.equalTo(@(WIDTH-0));
-        make.height.equalTo(@(HEIGHT - 47 - 61));
+        make.height.equalTo(@(HEIGHT - 47 - 79));
     }];
     
-    [self.topView initView:@"20"];
     self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake((WIDTH - 50) / 2, HEIGHT - 39 , 50, 10)];
     self.pageControl.numberOfPages = 2;
     [self.view addSubview:self.pageControl];
@@ -258,9 +241,9 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *selectedImage = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    UIImage *image = [UIImage imageCompressForWidth:selectedImage targetWidth:375];
-    if (image.size.height > 520) {
-        image = [UIImage imageCompressForWidth:selectedImage targetHeight:520];
+    UIImage *image = [UIImage imageCompressForWidth:selectedImage targetWidth:WIDTH];
+    if (image.size.height > HEIGHT - 67 - 44) {
+        image = [UIImage imageCompressForWidth:selectedImage targetHeight:HEIGHT - 67 - 44];
     }
     currentImage = image;
     
