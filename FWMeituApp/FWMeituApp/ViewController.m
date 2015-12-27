@@ -18,6 +18,7 @@
 #import "FWTopView.h"
 #import "FWButton.h"
 #import "UIImage+ImageScale.h"
+#import "Masonry.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) FWTopView *topView;
@@ -47,8 +48,8 @@
     NSLog(@"width= %f,height = %f",WIDTH,HEIGHT);
     [self.view addSubview:self.scrolleView];
     
-    UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_topview_topback_a.png"]];
-    image.frame = CGRectMake(15, 15, 226.5, 51.5);
+    UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mtxx_logo@2x.png"]];
+    image.frame = CGRectMake(0, 15, 250, 79);
     [self.view addSubview:image];
     
     self.rightArrowFrame = CGRectMake(WIDTH - 30, HEIGHT / 2 - 50 / 2, 30, 50);
@@ -75,21 +76,42 @@
     btnSetting.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self.view addConstraints:@[
-                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0],
-                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-6],
-                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:51],
-                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:61],
-                                
-                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-8],
-                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-6],
-                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:39],
-                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:btnSetting attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
-                                
-                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:image attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0],
-                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
-                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:WIDTH],
-                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:HEIGHT - 47 - 61]
+//                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0],
+//                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-6],
+//                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:51],
+//                                [NSLayoutConstraint constraintWithItem:self.topView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:61],
+//                                
+//                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-8],
+//                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-6],
+//                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:39],
+//                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:btnSetting attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
+//                                
+//                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:image attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0],
+//                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
+//                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:WIDTH],
+//                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:HEIGHT - 47 - 61]
                                 ]];
+    [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top);
+        make.right.equalTo(self.view.mas_right).with.offset(-6);
+        make.width.equalTo(@51);
+        make.height.equalTo(@61);
+    }];
+    
+    [btnSetting mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(-8);
+        make.right.equalTo(self.view.mas_right).with.offset(-6);
+        make.width.equalTo(@39);
+        make.height.equalTo(btnSetting.mas_width);
+    }];
+    
+    [self.scrolleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(image.mas_bottom);
+        make.left.equalTo(self.view.mas_left);
+        make.width.equalTo(@(WIDTH-0));
+        make.height.equalTo(@(HEIGHT - 47 - 61));
+    }];
+    
     [self.topView initView:@"20"];
     self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake((WIDTH - 50) / 2, HEIGHT - 39 , 50, 10)];
     self.pageControl.numberOfPages = 2;

@@ -87,6 +87,8 @@
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(61, kPoint_Y, 375, 67)];
     self.scrollView.contentSize = CGSizeMake(580, 67);
     self.scrollView.backgroundColor = [UIColor blackColor];
+    self.scrollView.showsHorizontalScrollIndicator = YES;
+    self.scrollView.showsVerticalScrollIndicator = YES;
     [self.view addSubview:self.scrollView];
     
     NSArray *normalImageViewImageArr = [NSArray arrayWithObjects:

@@ -5,6 +5,8 @@
 //  Created by ForrestWoo on 15-9-18.
 //  Copyright (c) 2015年 ForrestWoo co,.ltd. All rights reserved.
 //
+#define HEART_WIDTH 35
+#define HEART_HEIGHT 35
 
 #import "FWTopView.h"
 #import "ConstantsConfig.h"
