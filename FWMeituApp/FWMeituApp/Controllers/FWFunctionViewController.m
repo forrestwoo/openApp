@@ -102,15 +102,7 @@
     
     self.effectBar = [[FWEffectBar alloc] initWithFrame:CGRectZero];
     self.effectBar.delegate = self;
-    [self.view addSubview:self.effectBar];
-    
-    self.slider = [[UISlider alloc] initWithFrame:CGRectZero];
-    self.slider.minimumValue = -100;
-    self.slider.maximumValue = 100;
-    self.slider.value = 0;
-    
-    [self.view addSubview:self.slider];
-    
+    [self.view addSubview:self.effectBar]; 
 }
 
 - (void)updateValue:(id)sender
@@ -158,6 +150,12 @@
 
 - (void)setupSliderWithFrame:(CGRect)frame
 {
+    self.slider = [[UISlider alloc] initWithFrame:CGRectZero];
+    self.slider.minimumValue = -100;
+    self.slider.maximumValue = 100;
+    self.slider.value = 0;
+    
+    [self.view addSubview:self.slider];
     self.slider.frame = frame;
     [self.slider addTarget:self action:@selector(updateValue:) forControlEvents:UIControlEventValueChanged];
 }

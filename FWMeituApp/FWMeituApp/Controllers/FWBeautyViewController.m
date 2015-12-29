@@ -93,7 +93,7 @@
     self.scrollView.bounces = NO;
     [self.view addSubview:self.scrollView];
     
-    NSArray *normalImageViewImageArr = [NSArray arrayWithObjects:@"icon_function_autoBeauty_a@2x.png",
+    NSArray *normalImageViewImageArr = [NSArray arrayWithObjects:@"icon_function_autoBeauty_a",
                                         @"icon_function_edit_a@2x.png", @"icon_function_color_a@2x.png", @"icon_function_stylize_a@2x.png",
                                         @"icon_function_border_a@2x.png", @"icon_function_mohuanbi_a@2x.png", @"icon_function_mosaic_a@2x.png",
                                         @"icon_function_text_a@2x.png", @"icon_function_bokeh_a@2x.png",
