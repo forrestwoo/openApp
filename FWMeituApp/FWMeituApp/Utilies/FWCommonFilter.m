@@ -103,7 +103,7 @@
     return [filter imageFromCurrentFramebuffer];
 }
 
-+ (UIImage *)changeValueForLookupFilter:(float)value image:(UIImage *)image;
++ (UIImage *)applyToLookupFilter:(UIImage *)image
 {
     GPUImageAmatorkaFilter *filter = [[GPUImageAmatorkaFilter alloc] init];
     [filter forceProcessingAtSize:image.size];
@@ -137,6 +137,13 @@
     [pic processImage];
     [filter useNextFrameForImageCapture];
     return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)autoBeautyFilter:(UIImage *)image
+{
+    UIImage *tempImage = [FWCommonFilter changeValueForContrastFilter:1.3 image:image];
+    
+    return tempImage;
 }
 
 @end

@@ -64,6 +64,7 @@
     [self.la1 removeFromSuperview];
     self.iv.frame = self.bounds;
     self.iv.image = image;
+    self.iv.contentMode = UIViewContentModeScaleAspectFit;
     
     self.la.text = text;
 }

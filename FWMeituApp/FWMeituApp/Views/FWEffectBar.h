@@ -19,7 +19,7 @@
 
 @interface FWEffectBar : UIScrollView
 
-@property (nonatomic, weak) id <FWEffectBarDelegate>delegate;
+@property (nonatomic, assign) id<FWEffectBarDelegate> effectBardelegate;
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic, weak) FWEffectBarItem *selectedItem;
 @property UIEdgeInsets contentEdgeInsets;

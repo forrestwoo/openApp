@@ -10,7 +10,7 @@
 
 @interface UIImage (ImageScale)
 
-+(UIImage *) imageCompressForWidth:(UIImage *)sourceImage targetWidth:(CGFloat)defineWidth;
-+(UIImage *) imageCompressForWidth:(UIImage *)sourceImage targetHeight:(CGFloat)defineHeight;
++(UIImage *) scaleImage:(UIImage *)sourceImage targetWidth:(CGFloat)defineWidth;
++(UIImage *) scaleImage:(UIImage *)sourceImage targetHeight:(CGFloat)defineHeight;
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation UIImage (ImageScale)
 
-+(UIImage *) imageCompressForWidth:(UIImage *)sourceImage targetWidth:(CGFloat)defineWidth{
++(UIImage *) scaleImage:(UIImage *)sourceImage targetWidth:(CGFloat)defineWidth{
     UIImage *newImage = nil;
     CGSize imageSize = sourceImage.size;
     CGFloat width = imageSize.width;
@@ -56,7 +56,7 @@
     return newImage;
 }
 
-+(UIImage *) imageCompressForWidth:(UIImage *)sourceImage targetHeight:(CGFloat)defineHeight{
++(UIImage *) scaleImage:(UIImage *)sourceImage targetHeight:(CGFloat)defineHeight{
     UIImage *newImage = nil;
     CGSize imageSize = sourceImage.size;
     CGFloat width = imageSize.width;

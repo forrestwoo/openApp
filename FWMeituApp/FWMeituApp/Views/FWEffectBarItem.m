@@ -124,18 +124,13 @@
                                       imageStartingY + _imagePositionAdjustment.vertical,
                                       imageSize.width, imageSize.height);
             [image drawInRect:frame];
-//            NSLog(@"image frame:%@,%f,%f", NSStringFromCGRect(CGRectMake(roundf(frameSize.width / 2 - imageSize.width / 2) +
-//                                                                         _imagePositionAdjustment.horizontal,
-//                                                                         imageStartingY + _imagePositionAdjustment.vertical,
-//                                                                         imageSize.width, imageSize.height)),imageStartingY,_imagePositionAdjustment.vertical);
+
             CGContextSetFillColorWithColor(context, [titleAttributes[NSForegroundColorAttributeName] CGColor]);
             
             CGRect frame1 = CGRectMake(roundf(frameSize.width / 2 - titleSize.width / 2) +
                                        _titlePositionAdjustment.horizontal,
                                        imageStartingY + imageSize.height + _titlePositionAdjustment.vertical,
                                        titleSize.width, titleSize.height);
-//            NSLog(@"text frame:%@", NSStringFromCGRect(frame1));
-//            NSLog(@"self frame:%@", NSStringFromCGRect(rect));
             [_title drawInRect:frame1
                 withAttributes:titleAttributes];
         } else {

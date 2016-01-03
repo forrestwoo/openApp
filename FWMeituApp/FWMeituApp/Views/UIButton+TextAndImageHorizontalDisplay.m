@@ -12,8 +12,8 @@
 
 - (void) setImage:(UIImage *)image withTitle:(NSString *)title forState:(UIControlState)state {    
     [self.imageView setContentMode:UIViewContentModeCenter];
-    [self setImageEdgeInsets:UIEdgeInsetsMake(-8.0,
-                                              0.0,
+    [self setImageEdgeInsets:UIEdgeInsetsMake(0.0,
+                                              -5.0,
                                               0.0,
                                               0.0)];
     [self setImage:image forState:state];
@@ -22,8 +22,8 @@
     [self.titleLabel setBackgroundColor:[UIColor clearColor]];
     [self.titleLabel setFont:[UIFont systemFontOfSize:12.0]];
     [self.titleLabel setTextColor:[UIColor whiteColor]];
-    [self setTitleEdgeInsets:UIEdgeInsetsMake(-8.0,
-                                              0.0,
+    [self setTitleEdgeInsets:UIEdgeInsetsMake(0.0,
+                                              -10.0,
                                               0.0,
                                               0.0)];
     [self setTitle:title forState:state];

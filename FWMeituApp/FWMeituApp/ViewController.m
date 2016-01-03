@@ -240,13 +240,8 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *selectedImage = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    UIImage *image = [UIImage imageCompressForWidth:selectedImage targetWidth:WIDTH];
-    if (image.size.height > HEIGHT - 67 - 44) {
-        image = [UIImage imageCompressForWidth:selectedImage targetHeight:HEIGHT - 67 - 44];
-    }
-    currentImage = image;
+    beautyVC = [[FWBeautyViewController alloc] initWithImage:selectedImage];
     
-    beautyVC = [[FWBeautyViewController alloc] initWithImage:currentImage];
     [imagePicker pushViewController:beautyVC animated:YES];
     
 }

@@ -66,21 +66,8 @@
 - (void)initImageView
 {
     self.imageView = [[UIImageView alloc] initWithImage:self.image];
-    CGSize size = self.image.size;
-    CGFloat imageWidth = size.width;
-    CGFloat imageHeight = size.height;
-    CGFloat xPoiont = 0;
-    CGFloat yPoint = 44;
-    if (imageWidth == WIDTH) {
-        yPoint = (HEIGHT - 44 - kHeight - imageHeight) / 2.0 + 44;
-    }
-    if (imageHeight == HEIGHT - 44 - kHeight ) {
-        xPoiont = (WIDTH - imageWidth) / 2.0 ;
-    }
-    
-    self.imageView.frame = CGRectMake(xPoiont, yPoint, 375, HEIGHT - 44 - kHeight );
-    [self.imageView sizeToFit];
-    self.imageView.clipsToBounds = YES;
+    self.imageView.frame = CGRectMake(0, 44, WIDTH, HEIGHT - 44 - kHeight);
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     [self.view addSubview:self.imageView];
 }
@@ -132,89 +119,51 @@
     NSString *text = [btn titleLabel].text;
     UIImage *image = self.image;
     if (image.size.height > 460) {
-        image = [UIImage imageCompressForWidth:self.image targetHeight:460];
+        //        image = [UIImage imageCompressForWidth:self.image targetHeight:460];
     }
     
-    if ([text isEqualToString:@"智能优化"]) {
-        NSDictionary *autoDict = [[FWCommonTools getPlistDictionaryForButton] objectForKey:@"AutoBeauty"];
-        
-        NSArray *normalImageArr = [autoDict objectForKey:@"normalImages"];
-        NSArray *hightlightedImageArr = [autoDict objectForKey:@"HighlightedImages"];
-        NSArray *textArr = [autoDict objectForKey:@"Texts"];
-        FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:image normalImageArr:normalImageArr highlightedImageArr:hightlightedImageArr textArr:textArr type:text];
+    if ([text isEqualToString:@"智能优化"])
+    {
+        FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:self.image type:FWBeautyProcessTypeAutoBeauty];
         [self presentViewController:vc animated:YES completion:^{
         }];
-        NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
-        for (int i = 0; i < [textArr count]; i++) {
-            FWEffectBarItem *item = [[FWEffectBarItem alloc] initWithFrame:CGRectZero];
-            [item setFinishedSelectedImage:[UIImage imageNamed:[hightlightedImageArr objectAtIndex:i]] withFinishedUnselectedImage:[UIImage imageNamed:[normalImageArr objectAtIndex:i]] ];
-            item.title = [textArr objectAtIndex:i];
-            [arr addObject:item];
-        }
-        [vc setupEffectBarWithFrame:CGRectMake(0, HEIGHT - kCancelHeight - 10 - 20 - 30, WIDTH, 53) items:arr];
+        [vc displayAutoBeautyPage];
+    }
+    else if ([text isEqualToString:@"增强"])
+    {
+        FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:self.image type:FWBeautyProcessTypeColorList];
+        [self presentViewController:vc animated:YES completion:^{
+        }];
+        [vc displayColorListPage];
+    }
+    else if ([text isEqualToString:@"编辑"]) {
+        FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:self.image type:FWBeautyProcessTypeEdit];
+        [self presentViewController:vc animated:YES completion:^{
+        }];
+        [vc displayEditPage];
+        
+        //                CGRect frame1 = CGRectMake(87.5, 550, 200, 20);
+        //                [vc setupSliderWithFrame:frame1];
     }else
-        if ([text isEqualToString:@"增强"]) {
-            NSDictionary *autoDict = [[FWCommonTools getPlistDictionaryForButton] objectForKey:@"ColorValue"];
+        if ([text isEqualToString:@"特效"]) {
+            //            NSDictionary *autoDict = [[FWCommonTools getPlistDictionaryForButton] objectForKey:@"speciallyeffect"];
+            //
+            //            NSArray *textArr = [autoDict objectForKey:@"Texts"];
+            //            FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:image normalImageArr:nil highlightedImageArr:nil textArr:textArr type:text];
+            //            [self presentViewController:vc animated:YES completion:^{
+            //            }];
+            //            NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
+            //            for (int i = 0; i < [textArr count]; i++) {
+            //                FWEffectBarItem *item = [[FWEffectBarItem alloc] initWithFrame:CGRectZero];
+            //                item.title = [textArr objectAtIndex:i];
+            //                [arr addObject:item];
+            //            }
+            //            [vc setupEffectBarWithFrame:CGRectMake(100, HEIGHT - 50, 160, 53) items:arr];
+            //            [vc setupSEView];
             
-            NSArray *normalImageArr = [autoDict objectForKey:@"normalImages"];
-            NSArray *hightlightedImageArr = [autoDict objectForKey:@"HighlightedImages"];
-            NSArray *textArr = [autoDict objectForKey:@"Texts"];
-            FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:image normalImageArr:normalImageArr highlightedImageArr:hightlightedImageArr textArr:textArr type:text];
-            [self presentViewController:vc animated:YES completion:^{
-            }];
-            NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
-            for (int i = 0; i < [textArr count]; i++) {
-                FWEffectBarItem *item = [[FWEffectBarItem alloc] initWithFrame:CGRectZero];
-                [item setFinishedSelectedImage:[UIImage imageNamed:[hightlightedImageArr objectAtIndex:i]] withFinishedUnselectedImage:[UIImage imageNamed:[normalImageArr objectAtIndex:i]] ];
-                item.title = [textArr objectAtIndex:i];
-                [arr addObject:item];
-            }
-            [vc setupEffectBarWithFrame:CGRectMake(0, HEIGHT - kCancelHeight - 10 - 20 - 30, WIDTH, 53) items:arr];
-            CGRect frame1 = CGRectMake(87.5, 550, 200, 20);
-            [vc setupSliderWithFrame:frame1];
-        }else
-            if ([text isEqualToString:@"编辑"]) {
-                NSDictionary *autoDict = [[FWCommonTools getPlistDictionaryForButton] objectForKey:@"Edit"];
-                
-                NSArray *normalImageArr = [autoDict objectForKey:@"normalImages"];
-                NSArray *hightlightedImageArr = [autoDict objectForKey:@"HighlightedImages"];
-                NSArray *textArr = [autoDict objectForKey:@"Texts"];
-                FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:image normalImageArr:normalImageArr highlightedImageArr:hightlightedImageArr textArr:textArr type:text];
-                [self presentViewController:vc animated:YES completion:^{
-                }];
-                NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
-                for (int i = 0; i < [textArr count]; i++) {
-                    FWEffectBarItem *item = [[FWEffectBarItem alloc] initWithFrame:CGRectZero];
-                    [item setFinishedSelectedImage:[UIImage imageNamed:[hightlightedImageArr objectAtIndex:i]] withFinishedUnselectedImage:[UIImage imageNamed:[normalImageArr objectAtIndex:i]] ];
-                    item.title = [textArr objectAtIndex:i];
-                    [arr addObject:item];
-                }
-                [vc setupEffectBarWithFrame:CGRectMake(100, HEIGHT - 50, 160, 53) items:arr];
-                [vc setupButtonsWithFrame:CGRectZero];
-                [vc setupImageView];
-                
-                //                CGRect frame1 = CGRectMake(87.5, 550, 200, 20);
-                //                [vc setupSliderWithFrame:frame1];
-            }else
-                if ([text isEqualToString:@"特效"]) {
-                    NSDictionary *autoDict = [[FWCommonTools getPlistDictionaryForButton] objectForKey:@"speciallyeffect"];
-                    
-                    NSArray *textArr = [autoDict objectForKey:@"Texts"];
-                    FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:image normalImageArr:nil highlightedImageArr:nil textArr:textArr type:text];
-                    [self presentViewController:vc animated:YES completion:^{
-                    }];
-                    NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
-                    for (int i = 0; i < [textArr count]; i++) {
-                        FWEffectBarItem *item = [[FWEffectBarItem alloc] initWithFrame:CGRectZero];
-                        item.title = [textArr objectAtIndex:i];
-                        [arr addObject:item];
-                    }
-                    [vc setupEffectBarWithFrame:CGRectMake(100, HEIGHT - 50, 160, 53) items:arr];
-                    [vc setupSEView];
-                    
-                    //                CGRect frame1 = CGRectMake(87.5, 550, 200, 20);
-                    //                [vc setupSliderWithFrame:frame1];
-                }
+            //                CGRect frame1 = CGRectMake(87.5, 550, 200, 20);
+            //                [vc setupSliderWithFrame:frame1];
+        }
 }
 
 @end

@@ -105,9 +105,9 @@
 - (void)tabBarItemWasSelected:(id)sender {
     [self setSelectedItem:sender];
     
-    if ([[self delegate] respondsToSelector:@selector(effectBar:didSelectItemAtIndex:)]) {
+    if ([[self effectBardelegate] respondsToSelector:@selector(effectBar:didSelectItemAtIndex:)]) {
         NSInteger index = [self.items indexOfObject:self.selectedItem];
-        [[self delegate] effectBar:self didSelectItemAtIndex:index];
+        [[self effectBardelegate] effectBar:self didSelectItemAtIndex:index];
     }
 }
 

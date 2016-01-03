@@ -2,6 +2,39 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>scaleMode</key>
+	<dict>
+		<key>normalImages</key>
+		<array>
+			<string>icon_clipScaleAny_a</string>
+			<string>icon_clipScale11_a</string>
+			<string>icon_clipScale23_a</string>
+			<string>icon_clipScale32_a</string>
+			<string>icon_clipScale34_a</string>
+			<string>icon_clipScale43_a</string>
+			<string>icon_clipScale169_a</string>
+		</array>
+		<key>HighlightedImages</key>
+		<array>
+			<string>icon_clipScaleAny_b</string>
+			<string>icon_clipScale11_b</string>
+			<string>icon_clipScale23_b</string>
+			<string>icon_clipScale32_b</string>
+			<string>icon_clipScale34_b</string>
+			<string>icon_clipScale43_b</string>
+			<string>icon_clipScale169_b</string>
+		</array>
+		<key>Texts</key>
+		<array>
+			<string>自由</string>
+			<string>1:1</string>
+			<string>2:3</string>
+			<string>3:2</string>
+			<string>3:4</string>
+			<string>4:3</string>
+			<string>16:9</string>
+		</array>
+	</dict>
 	<key>speciallyeffect</key>
 	<dict>
 		<key>Texts</key>

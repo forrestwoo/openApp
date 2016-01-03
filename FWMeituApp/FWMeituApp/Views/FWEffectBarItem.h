@@ -28,11 +28,6 @@
 @property (nonatomic) UIOffset titlePositionAdjustment;
 
 /**
- * For title's text attributes see
- * https://developer.apple.com/library/ios/documentation/uikit/reference/NSString_UIKit_Additions/Reference/Reference.html
- */
-
-/**
  * The title attributes dictionary used for tab bar item's unselected state.
  */
 @property (copy) NSDictionary *unselectedTitleAttributes;

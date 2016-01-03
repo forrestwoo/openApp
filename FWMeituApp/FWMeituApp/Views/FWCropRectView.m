@@ -100,6 +100,7 @@
     return self;
 }
 
+/*
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
@@ -114,7 +115,7 @@
     float offsetY = newPoint.y - beganPoint.y;
     self.center = CGPointMake(self.center.x + offsetX, self.center.y + offsetY);
 }
-
+*/
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
