@@ -7,40 +7,47 @@
 //
 
 #import "FWEffectBar.h"
-#import "FWEffectBarItem.h"
 
 @interface FWEffectBar ()
-
-@property (nonatomic) CGFloat itemWidth;
 
 @end
 
 @implementation FWEffectBar
 
-- (id)initWithFrame:(CGRect)frame {
+- (id)initWithFrame:(CGRect)frame
+{
     self = [super initWithFrame:frame];
     if (self) {
+        [self commonInit];
     }
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
     self = [super initWithCoder:aDecoder];
     if (self) {
+        [self commonInit];
     }
     return self;
 }
 
-- (id)init {
+- (id)init
+{
     return [self initWithFrame:CGRectZero];
 }
 
-- (void)layoutSubviews {
+- (void)commonInit
+{
+    self.bounces = NO;
+    self.margin = 15;
+    self.itemWidth = 50;
+    self.itemBeginX = 15;
+}
+
+- (void)layoutSubviews
+{
     CGSize frameSize = self.frame.size;
-    CGFloat minimumContentHeight = [self minimumContentHeight];
-    
-    [self setItemWidth:roundf((frameSize.width - [self contentEdgeInsets].left -
-                               [self contentEdgeInsets].right) / [[self items] count])];
     
     NSInteger index = 0;
     
@@ -48,29 +55,27 @@
     
     for (FWEffectBarItem *item in [self items]) {
         CGFloat itemHeight = [item itemHeight];
-        
         if (!itemHeight) {
             itemHeight = frameSize.height;
         }
         
-        [item setFrame:CGRectMake(self.contentEdgeInsets.left + (index * self.itemWidth),
-                                  roundf(frameSize.height - itemHeight) - self.contentEdgeInsets.top,
-                                  self.itemWidth, itemHeight - self.contentEdgeInsets.bottom)];
+        [item setFrame:CGRectMake(_itemBeginX + index * (_itemWidth + _margin),
+                                  0,
+                                  self.itemWidth, self.frame.size.height)];
         [item setNeedsDisplay];
+//        NSLog(@"item frame is :%@", NSStringFromCGRect(item.frame));
         
         index++;
     }
+    
+    CGSize contentSize = CGSizeMake(_itemBeginX + [_items count] * _itemWidth + ([_items count] - 1) * _margin, self.frame.size.height);
+    self.contentSize = contentSize;
 }
 
 #pragma mark - Configuration
 
-- (void)setItemWidth:(CGFloat)itemWidth {
-    if (itemWidth > 0) {
-        _itemWidth = itemWidth;
-    }
-}
-
-- (void)setItems:(NSArray *)items {
+- (void)setItems:(NSArray *)items
+{
     for (FWEffectBarItem *item in _items) {
         [item removeFromSuperview];
     }
@@ -80,38 +85,29 @@
         [item addTarget:self action:@selector(tabBarItemWasSelected:) forControlEvents:UIControlEventTouchDown];
         [self addSubview:item];
     }
+    
 }
 
-- (void)setHeight:(CGFloat)height {
+- (void)setHeight:(CGFloat)height
+{
     [self setFrame:CGRectMake(CGRectGetMinX(self.frame), CGRectGetMinY(self.frame),
                               CGRectGetWidth(self.frame), height)];
 }
 
-- (CGFloat)minimumContentHeight {
-    CGFloat minimumTabBarContentHeight = CGRectGetHeight([self frame]);
-    
-    for (FWEffectBarItem *item in [self items]) {
-        CGFloat itemHeight = [item itemHeight];
-        if (itemHeight && (itemHeight < minimumTabBarContentHeight)) {
-            minimumTabBarContentHeight = itemHeight;
-        }
-    }
-    
-    return minimumTabBarContentHeight;
-}
-
 #pragma mark - Item selection
 
-- (void)tabBarItemWasSelected:(id)sender {
+- (void)tabBarItemWasSelected:(id)sender
+{
     [self setSelectedItem:sender];
     
-    if ([[self effectBardelegate] respondsToSelector:@selector(effectBar:didSelectItemAtIndex:)]) {
+    if ([[self effectBarDelegate] respondsToSelector:@selector(effectBar:didSelectItemAtIndex:)]) {
         NSInteger index = [self.items indexOfObject:self.selectedItem];
-        [[self effectBardelegate] effectBar:self didSelectItemAtIndex:index];
+        [[self effectBarDelegate] effectBar:self didSelectItemAtIndex:index];
     }
 }
 
-- (void)setSelectedItem:(FWEffectBarItem *)selectedItem {
+- (void)setSelectedItem:(FWEffectBarItem *)selectedItem
+{
     if (selectedItem == _selectedItem) {
         return;
     }

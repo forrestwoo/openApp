@@ -10,6 +10,8 @@
 
 @interface FWEffectBarItem : UIControl
 
+@property BOOL ShowBorder;
+
 /**
  * itemHeight is an optional property. When set it is used instead of tabBar's height.
  */
@@ -58,6 +60,7 @@
  * Sets the tab bar item's selected and unselected images.
  */
 - (void)setFinishedSelectedImage:(UIImage *)selectedImage withFinishedUnselectedImage:(UIImage *)unselectedImage;
+
 
 #pragma mark - Background configuration
 

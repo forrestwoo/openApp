@@ -12,6 +12,7 @@
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
 
+#define kBarHeight 55
 #define kTitleWidth 60
 #define kTitleHeight 20
 #define kCancelHeight 30

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 #import "FWButton.h"
-#import "FWFunctionViewController.h"
 
 @interface FWBeautyViewController : UIViewController
 {

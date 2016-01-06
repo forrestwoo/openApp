@@ -50,7 +50,7 @@
     // Setup defaults
     
     [self setBackgroundColor:[UIColor clearColor]];
-    
+    self.ShowBorder = NO;
     _title = @"";
     _titlePositionAdjustment = UIOffsetZero;
     
@@ -59,16 +59,22 @@
                                        NSFontAttributeName: [UIFont systemFontOfSize:12],
                                        NSForegroundColorAttributeName: [UIColor whiteColor],
                                        };
+        _selectedTitleAttributes = @{
+                                     NSFontAttributeName: [UIFont systemFontOfSize:12],
+                                     NSForegroundColorAttributeName: [UIColor colorWithRed:17 / 255.0 green:129 / 255.0 blue:243 / 255.0 alpha:1],
+                                     };
     } else {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
         _unselectedTitleAttributes = @{
                                        UITextAttributeFont: [UIFont systemFontOfSize:12],
                                        UITextAttributeTextColor: [UIColor blackColor],
                                        };
+        _selectedTitleAttributes = @{
+                                     NSFontAttributeName: [UIFont systemFontOfSize:12],
+                                     UITextAttributeTextColor: [UIColor colorWithRed:17 / 255.0 green:129 / 255.0 blue:243 / 255.0 alpha:1],
+                                     };
 #endif
     }
-    
-    _selectedTitleAttributes = [_unselectedTitleAttributes copy];
 }
 
 - (void)drawRect:(CGRect)rect
@@ -81,15 +87,29 @@
     UIImage *image = nil;
     CGFloat imageStartingY = 0.0f;
     
-    if ([self isSelected]) {
+    if ([self isSelected])
+    {
+        if (self.ShowBorder)
+        {
+            self.layer.borderWidth = 2;
+            self.layer.borderColor = [UIColor colorWithRed:13 / 255.0 green:99 / 255.0 blue:188 / 255.0 alpha:1.0].CGColor;
+        }
+        
         image = [self selectedImage];
         backgroundImage = [self selectedBackgroundImage];
         titleAttributes = [self selectedTitleAttributes];
         
-        if (!titleAttributes) {
+        if (!titleAttributes)
+        {
             titleAttributes = [self unselectedTitleAttributes];
         }
-    } else {
+    }
+    else
+    {
+        if (self.ShowBorder)
+        {
+            self.layer.borderWidth = 0;
+        }
         image = [self unselectedImage];
         backgroundImage = [self unselectedBackgroundImage];
         titleAttributes = [self unselectedTitleAttributes];
@@ -103,15 +123,19 @@
     
     // Draw image and title
     
-    if (![_title length]) {
+    if (![_title length])
+    {
         [image drawInRect:CGRectMake(roundf(frameSize.width / 2 - imageSize.width / 2) +
                                      _imagePositionAdjustment.horizontal,
                                      roundf(frameSize.height / 2 - imageSize.height / 2) +
                                      _imagePositionAdjustment.vertical,
                                      imageSize.width, imageSize.height)];
-    } else {
+    }
+    else
+    {
         
-        if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
+        if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1)
+        {
             CGSize ts = CGSizeMake(frameSize.width, 20);
             titleSize = [_title boundingRectWithSize:ts
                                              options:NSStringDrawingUsesLineFragmentOrigin
@@ -124,7 +148,7 @@
                                       imageStartingY + _imagePositionAdjustment.vertical,
                                       imageSize.width, imageSize.height);
             [image drawInRect:frame];
-
+            
             CGContextSetFillColorWithColor(context, [titleAttributes[NSForegroundColorAttributeName] CGColor]);
             
             CGRect frame1 = CGRectMake(roundf(frameSize.width / 2 - titleSize.width / 2) +
@@ -133,7 +157,9 @@
                                        titleSize.width, titleSize.height);
             [_title drawInRect:frame1
                 withAttributes:titleAttributes];
-        } else {
+        }
+        else
+        {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
             titleSize = [_title sizeWithFont:titleAttributes[UITextAttributeFont]
                            constrainedToSize:CGSizeMake(frameSize.width, 20)];
@@ -149,7 +175,8 @@
             
             UIColor *shadowColor = titleAttributes[UITextAttributeTextShadowColor];
             
-            if (shadowColor) {
+            if (shadowColor)
+            {
                 CGContextSetShadowWithColor(context, CGSizeMake(titleShadowOffset.horizontal, titleShadowOffset.vertical),
                                             1.0, [shadowColor CGColor]);
             }
@@ -169,7 +196,7 @@
 
 - (UIImage *)finishedSelectedImage
 {
-  return [self selectedImage];
+    return [self selectedImage];
 }
 
 - (UIImage *)finishedUnselectedImage

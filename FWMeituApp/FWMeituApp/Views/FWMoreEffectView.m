@@ -69,4 +69,23 @@
     self.la.text = text;
 }
 
+- (void)setImage:(UIImage *)image
+{
+    [self.tv removeFromSuperview];
+    [self.la1 removeFromSuperview];
+    self.iv.frame = self.bounds;
+    self.iv.image = image;
+    self.iv.contentMode = UIViewContentModeScaleAspectFill;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+//    if ([self.delegate respondsToSelector:@selector(touchView:)]) {
+//        [self.delegate performSelector:@selector(touchView:) withObject:self];
+//    }
+    
+        self.layer.borderWidth = 2.0;
+        self.layer.borderColor = [UIColor colorWithRed:16.0 / 255 green:80.0 / 255 blue:252.0 / 255 alpha:1.0].CGColor;
+}
+
 @end

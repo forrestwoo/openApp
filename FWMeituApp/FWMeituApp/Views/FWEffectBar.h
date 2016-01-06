@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FWEffectBarItem.h"
 
-@class FWEffectBar, FWEffectBarItem;
+@class FWEffectBar;
 
 @protocol FWEffectBarDelegate <NSObject>
 
@@ -19,19 +20,15 @@
 
 @interface FWEffectBar : UIScrollView
 
-@property (nonatomic, assign) id<FWEffectBarDelegate> effectBardelegate;
+@property (nonatomic, assign) id<FWEffectBarDelegate> effectBarDelegate;
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic, weak) FWEffectBarItem *selectedItem;
-@property UIEdgeInsets contentEdgeInsets;
-
+@property CGFloat margin;
+@property (nonatomic) CGFloat itemWidth;
+@property CGFloat itemBeginX;
 /**
  * Sets the height of tab bar.
  */
 - (void)setHeight:(CGFloat)height;
-
-/**
- * Returns the minimum height of tab bar's items.
- */
-- (CGFloat)minimumContentHeight;
 
 @end

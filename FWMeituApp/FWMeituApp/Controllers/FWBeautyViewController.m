@@ -11,6 +11,10 @@
 
 #import "UIImage+ImageScale.h"
 #import "FWBeautyViewController.h"
+#import "FWAutoBeautyViewController.h"
+#import "FWEditViewController.h"
+#import "FWColorListViewController.h"
+#import "FWBorderViewController.h"
 
 @interface FWBeautyViewController ()
 {
@@ -117,53 +121,57 @@
 {
     UIButton *btn = (UIButton *)sender;
     NSString *text = [btn titleLabel].text;
-    UIImage *image = self.image;
-    if (image.size.height > 460) {
-        //        image = [UIImage imageCompressForWidth:self.image targetHeight:460];
-    }
     
     if ([text isEqualToString:@"智能优化"])
     {
-        FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:self.image type:FWBeautyProcessTypeAutoBeauty];
+        FWAutoBeautyViewController *vc = [[FWAutoBeautyViewController alloc] initWithImage:self.image];
+        
         [self presentViewController:vc animated:YES completion:^{
         }];
-        [vc displayAutoBeautyPage];
     }
     else if ([text isEqualToString:@"增强"])
     {
-        FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:self.image type:FWBeautyProcessTypeColorList];
+        FWColorListViewController *vc = [[FWColorListViewController alloc] initWithImage:self.image];
         [self presentViewController:vc animated:YES completion:^{
         }];
-        [vc displayColorListPage];
     }
-    else if ([text isEqualToString:@"编辑"]) {
-        FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:self.image type:FWBeautyProcessTypeEdit];
+    else if ([text isEqualToString:@"编辑"])
+    {
+        FWEditViewController *vc = [[FWEditViewController alloc] initWithImage:self.image];
         [self presentViewController:vc animated:YES completion:^{
         }];
-        [vc displayEditPage];
+        
+    }
+    else if ([text isEqualToString:@"特效"])
+    {
+        //            FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:self.image type:FWBeautyProcessTypeFilter];
+        //            [self presentViewController:vc animated:YES completion:^{
+        //            }];
+        //            [vc displayEditPage];
+        //            NSDictionary *autoDict = [[FWCommonTools getPlistDictionaryForButton] objectForKey:@"speciallyeffect"];
+        //
+        //            NSArray *textArr = [autoDict objectForKey:@"Texts"];
+        //            FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:image normalImageArr:nil highlightedImageArr:nil textArr:textArr type:text];
+        //            [self presentViewController:vc animated:YES completion:^{
+        //            }];
+        //            NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
+        //            for (int i = 0; i < [textArr count]; i++) {
+        //                FWEffectBarItem *item = [[FWEffectBarItem alloc] initWithFrame:CGRectZero];
+        //                item.title = [textArr objectAtIndex:i];
+        //                [arr addObject:item];
+        //            }
+        //            [vc setupEffectBarWithFrame:CGRectMake(100, HEIGHT - 50, 160, 53) items:arr];
+        //            [vc setupSEView];
         
         //                CGRect frame1 = CGRectMake(87.5, 550, 200, 20);
         //                [vc setupSliderWithFrame:frame1];
-    }else
-        if ([text isEqualToString:@"特效"]) {
-            //            NSDictionary *autoDict = [[FWCommonTools getPlistDictionaryForButton] objectForKey:@"speciallyeffect"];
-            //
-            //            NSArray *textArr = [autoDict objectForKey:@"Texts"];
-            //            FWFunctionViewController *vc = [[FWFunctionViewController alloc] initWithImage:image normalImageArr:nil highlightedImageArr:nil textArr:textArr type:text];
-            //            [self presentViewController:vc animated:YES completion:^{
-            //            }];
-            //            NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
-            //            for (int i = 0; i < [textArr count]; i++) {
-            //                FWEffectBarItem *item = [[FWEffectBarItem alloc] initWithFrame:CGRectZero];
-            //                item.title = [textArr objectAtIndex:i];
-            //                [arr addObject:item];
-            //            }
-            //            [vc setupEffectBarWithFrame:CGRectMake(100, HEIGHT - 50, 160, 53) items:arr];
-            //            [vc setupSEView];
-            
-            //                CGRect frame1 = CGRectMake(87.5, 550, 200, 20);
-            //                [vc setupSliderWithFrame:frame1];
-        }
+    }
+    else if ([text isEqualToString:@"边框"])
+    {
+        FWBorderViewController *vc = [[FWBorderViewController alloc] initWithImage:self.image];
+        [self presentViewController:vc animated:YES completion:^{
+        }];
+    }
 }
 
 @end
