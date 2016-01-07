@@ -9,6 +9,7 @@
 #import "FWBorderViewController.h"
 #import "FWDataManager.h"
 #import "FWMoreEffectView.h"
+#import "UIImage+ImageScale.h"
 
 #define kWidth 50
 #define kHeight 70
@@ -63,7 +64,7 @@
     [self.view addSubview:self.btnSave];
     [self.btnSave addTarget:self action:@selector(btnCancelOrSaveClicked:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.styleBar = [[FWEffectBar alloc] initWithFrame:CGRectMake(80, HEIGHT - 40, 200, 20)];
+    self.styleBar = [[FWEffectBar alloc] initWithFrame:CGRectMake(50, HEIGHT - 40, 200, 20)];
     NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:0];
 
     NSArray *titles = [NSArray arrayWithObjects:@"海报边框", @"简单边框", @"炫彩边框", nil];
@@ -81,11 +82,6 @@
     [self effectBar:self.styleBar didSelectItemAtIndex:0];
     [self.view addSubview:self.styleBar];
     
-    [self setupSimpleBorderView];
-}
-
-- (void)setupSimpleBorderView
-{
     FWMoreEffectView *seView = [[FWMoreEffectView alloc] initWithFrame:CGRectMake(15, HEIGHT - 50 - kHeight, kWidth, kHeight)];
     [self.view addSubview:seView];
     
@@ -94,27 +90,45 @@
     self.borderStyleBar.itemBeginX = 15.0;
     self.borderStyleBar.itemWidth = 50.0;
     self.borderStyleBar.margin = 10.0;
-    
-    NSArray *imageArr = nil;
-    if ([self.styleBar.selectedItem.title isEqualToString:@"海报边框"])
-        imageArr = [NSArray arrayWithObjects:@"pb1", @"pb2", @"pb3", @"pb4", @"pb5", @"pb6", @"pb7", @"pb8", @"pb9", @"pb10",nil];
-    else if([self.styleBar.selectedItem.title isEqualToString:@"简单边框"])
-        imageArr = [NSArray arrayWithObjects:@"border_baikuang_a", @"border_baolilai_a", @"border_heikuang_a", @"border_luxiangji_a", @"border_onenight_a", @"border_simple_15", @"border_simple_16", @"border_simple_17", @"border_simple_18", @"border_simple_19",nil];
-    else if([self.styleBar.selectedItem.title isEqualToString:@"炫彩边框"])
-        imageArr = [NSArray arrayWithObjects:@"xborder_aixin_a", @"xborder_guangyun_a", @"xborder_qisehua_a", @"xborder_wujiaoxing_a", @"xborder_xueye_a", @"xborder_yinhe_a",nil];
-    
+    [self.view addSubview:self.borderStyleBar];
+    [self setupPosterBorder];
+}
+
+- (void)setupBorderEffect:(NSArray *)images
+{
     FWEffectBarItem *item = nil;
     NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:0];
     
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < [images count]; i++)
     {
         item = [[FWEffectBarItem alloc] initWithFrame:CGRectMake((kWidth + kSpace) * i + 10, 0, kWidth, kHeight)];
-        [item setFinishedSelectedImage:[UIImage imageNamed:[imageArr objectAtIndex:i]] withFinishedUnselectedImage:[UIImage imageNamed:[imageArr objectAtIndex:i]]];
+        item.backgroundColor = [UIColor whiteColor];
+        UIImage *img1 = [UIImage scaleImage:[UIImage imageNamed:[images objectAtIndex:i]] targetWidth:50];
+        
+        [item setFinishedSelectedImage:img1 withFinishedUnselectedImage:img1];
         [items addObject:item];
     }
     
     self.borderStyleBar.items = items;
-    [self.view addSubview:self.borderStyleBar];
+    
+}
+
+//简单边框视图
+- (void)setupSimpleBorderView
+{
+    [self setupBorderEffect:[NSArray arrayWithObjects:@"border_baikuang_a.jpg", @"border_baolilai_a.jpg", @"border_heikuang_a.jpg", @"border_luxiangji_a.jpg", @"border_onenight_a.jpg", @"border_simple_15.jpg", @"border_simple_16.jpg", @"border_simple_17.jpg", @"border_simple_18.jpg", @"border_simple_19.jpg",nil]];
+}
+
+//海报边框视图
+- (void)setupPosterBorder
+{
+    [self setupBorderEffect:[NSArray arrayWithObjects:@"pb1", @"pb2", @"pb3", @"pb4", @"pb5", @"pb6", @"pb7", @"pb8", @"pb9", @"pb10",nil]];
+}
+
+//炫彩边框视图
+- (void)setupDazzleBorder
+{
+    [self setupBorderEffect:[NSArray arrayWithObjects:@"xborder_aixin_a.jpg", @"xborder_guangyun_a.jpg", @"xborder_qisehua_a.jpg", @"xborder_wujiaoxing_a.jpg", @"xborder_xueye_a.jpg", @"xborder_yinhe_a.jpg",nil]];
 }
 
 #pragma mark - FWEffectBarDelegate
@@ -124,11 +138,15 @@
     {
         switch (index) {
             case 0:
-                self.imageView.image = self.image;
+                [self setupPosterBorder];
                 break;
                 
             case 1:
-                self.imageView.image = self.currentImage;
+                [self setupSimpleBorderView];
+                break;
+                
+            case 2:
+                [self setupDazzleBorder];
                 break;
         }
     }
@@ -137,7 +155,7 @@
         FWEffectBarItem *item = (FWEffectBarItem *)[bar.items objectAtIndex:index];
         item.ShowBorder = YES;
     }
-
+    
 }
 
 //隐藏状态栏
@@ -165,15 +183,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
