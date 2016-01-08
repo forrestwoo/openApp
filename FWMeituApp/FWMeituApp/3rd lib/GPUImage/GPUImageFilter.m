@@ -46,18 +46,6 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
 );
 #endif
 
-@interface GPUImageFilter ()
-{
-    GLuint filterFramebuffer;
-}
-
-// Managing the display FBOs
-- (CGSize)sizeOfFBO;
-- (void)createFilterFBO;
-- (void)destroyFilterFBO;
-- (void)setFilterFBO;
-
-@end
 
 @implementation GPUImageFilter
 
@@ -143,15 +131,15 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     return self;
 }
 
-//- (id)init;
-//{
-//    if (!(self = [self initWithFragmentShaderFromString:kGPUImagePassthroughFragmentShaderString]))
-//    {
-//		return nil;
-//    }
-//    
-//    return self;
-//}
+- (id)init;
+{
+    if (!(self = [self initWithFragmentShaderFromString:kGPUImagePassthroughFragmentShaderString]))
+    {
+		return nil;
+    }
+    
+    return self;
+}
 
 - (void)initializeAttributes;
 {
@@ -225,47 +213,6 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     {
         return outputSize;
     }
-}
-
-- (void)createFilterFBO;
-{
-    glActiveTexture(GL_TEXTURE1);
-    glGenFramebuffers(1, &filterFramebuffer);
-    glBindFramebuffer(GL_FRAMEBUFFER, filterFramebuffer);
-    
-    CGSize currentFBOSize = [self sizeOfFBO];
-    //    NSLog(@"Filter size: %f, %f", currentFBOSize.width, currentFBOSize.height);
-    
-    glRenderbufferStorage(GL_RENDERBUFFER, GL_RGBA8_OES, (int)currentFBOSize.width, (int)currentFBOSize.height);
-    glBindTexture(GL_TEXTURE_2D, outputTexture);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, (int)currentFBOSize.width, (int)currentFBOSize.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, 0);
-    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, outputTexture, 0);
-    
-    GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
-    
-    NSAssert(status == GL_FRAMEBUFFER_COMPLETE, @"Incomplete filter FBO: %d", status);
-}
-
-- (void)destroyFilterFBO;
-{
-    if (filterFramebuffer)
-    {
-        glDeleteFramebuffers(1, &filterFramebuffer);
-        filterFramebuffer = 0;
-    }
-}
-
-- (void)setFilterFBO;
-{
-    if (!filterFramebuffer)
-    {
-        [self createFilterFBO];
-    }
-    
-    glBindFramebuffer(GL_FRAMEBUFFER, filterFramebuffer);
-    
-    CGSize currentFBOSize = [self sizeOfFBO];
-    glViewport(0, 0, (int)currentFBOSize.width, (int)currentFBOSize.height);
 }
 
 #pragma mark -
@@ -622,25 +569,6 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     [self informTargetsAboutNewFrameAtTime:frameTime];
 }
 
-- (void)newFrameReady;
-{
-    static const GLfloat squareVertices[] = {
-        -1.0f, -1.0f,
-        1.0f, -1.0f,
-        -1.0f,  1.0f,
-        1.0f,  1.0f,
-    };
-    
-    static const GLfloat squareTextureCoordinates[] = {
-        0.0f, 0.0f,
-        1.0f, 0.0f,
-        0.0f,  1.0f,
-        1.0f,  1.0f,
-    };
-    
-    [self renderToTextureWithVertices:squareVertices textureCoordinates:squareTextureCoordinates];
-}
-
 - (NSInteger)nextAvailableTextureIndex;
 {
     return 0;
@@ -746,10 +674,6 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     [self setupFilterForSize:[self sizeOfFBO]];
 }
 
-- (void)setInputSize:(CGSize)newSize {
-    
-}
-
 - (void)setInputRotation:(GPUImageRotationMode)newInputRotation atIndex:(NSInteger)textureIndex;
 {
     inputRotation = newInputRotation;
@@ -826,28 +750,4 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
 #pragma mark -
 #pragma mark Accessors
 
-- (UIImage *)imageFromCurrentlyProcessedOutput;
-{
-    [GPUImageContext useImageProcessingContext];
-    [self setFilterFBO];
-    
-    CGSize currentFBOSize = [self sizeOfFBO];
-    
-    NSUInteger totalBytesForImage = (int)currentFBOSize.width * (int)currentFBOSize.height * 4;
-    GLubyte *rawImagePixels = (GLubyte *)malloc(totalBytesForImage);
-    glReadPixels(0, 0, (int)currentFBOSize.width, (int)currentFBOSize.height, GL_RGBA, GL_UNSIGNED_BYTE, rawImagePixels);
-    
-    CGDataProviderRef dataProvider = CGDataProviderCreateWithData(NULL, rawImagePixels, totalBytesForImage, dataProviderReleaseCallback);
-    CGColorSpaceRef defaultRGBColorSpace = CGColorSpaceCreateDeviceRGB();
-    
-    CGImageRef cgImageFromBytes = CGImageCreate((int)currentFBOSize.width, (int)currentFBOSize.height, 8, 32, 4 * (int)currentFBOSize.width, defaultRGBColorSpace, kCGBitmapByteOrderDefault, dataProvider, NULL, NO, kCGRenderingIntentDefault);
-    UIImage *finalImage = [UIImage imageWithCGImage:cgImageFromBytes scale:1.0 orientation:UIImageOrientationLeft];
-    
-    CGImageRelease(cgImageFromBytes);
-    CGDataProviderRelease(dataProvider);
-    CGColorSpaceRelease(defaultRGBColorSpace);
-    //    free(rawImagePixels);
-    
-    return finalImage;
-}
 @end

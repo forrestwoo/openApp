@@ -110,7 +110,6 @@
     }
     
     self.borderStyleBar.items = items;
-    
 }
 
 //简单边框视图

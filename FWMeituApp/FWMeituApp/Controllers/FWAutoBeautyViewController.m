@@ -94,6 +94,31 @@
             self.currentImage = [FWCommonFilter autoBeautyFilter:self.image];
             self.imageView.image = self.currentImage;
             break;
+            
+        case 2:
+            self.currentImage = [FWCommonFilter applyToLookupFilter:self.image];
+            self.imageView.image = self.currentImage;
+            break;
+            
+        case 3:
+            self.currentImage = [FWCommonFilter applyAmatorkaFilter:self.image];
+            self.imageView.image = self.currentImage;
+            break;
+            
+        case 4:
+            self.currentImage = [FWCommonFilter applyMissetikateFilter:self.image];
+            self.imageView.image = self.currentImage;
+            break;
+            
+        case 5:
+            self.currentImage = [FWCommonFilter applySoftEleganceFilter:self.image];
+            self.imageView.image = self.currentImage;
+            break;
+            
+        case 6:
+            self.currentImage = [FWCommonFilter applyNashvilleFilter:self.image];
+            self.imageView.image = self.currentImage;
+            break;
     }
 }
 
@@ -120,15 +145,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

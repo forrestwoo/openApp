@@ -8,6 +8,8 @@
 
 #import "FWCommonFilter.h"
 #import "FWCommonTools.h"
+#import "FWNashvilleFilter.h"
+#import "FWLordKelvinFilter.h"
 
 @implementation FWCommonFilter
 
@@ -103,18 +105,6 @@
     return [filter imageFromCurrentFramebuffer];
 }
 
-+ (UIImage *)applyToLookupFilter:(UIImage *)image
-{
-    GPUImageAmatorkaFilter *filter = [[GPUImageAmatorkaFilter alloc] init];
-    [filter forceProcessingAtSize:image.size];
-    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
-    [pic addTarget:filter];
-    
-    [pic processImage];
-    [filter useNextFrameForImageCapture];
-    return [filter imageFromCurrentFramebuffer];
-}
-
 + (UIImage *)changeValueForMissEtikateFilter:(float)value image:(UIImage *)image
 {
     GPUImageMissEtikateFilter *filter = [[GPUImageMissEtikateFilter alloc] init];
@@ -144,6 +134,66 @@
     UIImage *tempImage = [FWCommonFilter changeValueForContrastFilter:1.3 image:image];
     
     return tempImage;
+}
+
++ (UIImage *)applyToLookupFilter:(UIImage *)image
+{
+    FWLordKelvinFilter *filter = [[FWLordKelvinFilter alloc] init];
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)applyAmatorkaFilter:(UIImage *)image
+{
+    GPUImageAmatorkaFilter *filter = [[GPUImageAmatorkaFilter alloc] init];
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)applyMissetikateFilter:(UIImage *)image
+{
+    GPUImageMissEtikateFilter *filter = [[GPUImageMissEtikateFilter alloc] init];
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)applySoftEleganceFilter:(UIImage *)image
+{
+    GPUImageSoftEleganceFilter *filter = [[GPUImageSoftEleganceFilter alloc] init];
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)applyNashvilleFilter:(UIImage *)image
+{
+    FWNashvilleFilter *filter = [[FWNashvilleFilter alloc] init];
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    return [filter imageFromCurrentFramebuffer];
 }
 
 @end

@@ -34,7 +34,6 @@ typedef struct GPUTextureOptions {
 - (id)initWithSize:(CGSize)framebufferSize;
 - (id)initWithSize:(CGSize)framebufferSize textureOptions:(GPUTextureOptions)fboTextureOptions onlyTexture:(BOOL)onlyGenerateTexture;
 - (id)initWithSize:(CGSize)framebufferSize overriddenTexture:(GLuint)inputTexture;
-void dataProviderReleaseCallback (void *info, const void *data, size_t size);
 
 // Usage
 - (void)activateFramebuffer;

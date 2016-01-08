@@ -42,4 +42,12 @@
 //智能优化
 + (UIImage *)autoBeautyFilter:(UIImage *)image;
 
++ (UIImage *)applyAmatorkaFilter:(UIImage *)image;
+
++ (UIImage *)applyMissetikateFilter:(UIImage *)image;
+
++ (UIImage *)applySoftEleganceFilter:(UIImage *)image;
+
++ (UIImage *)applyNashvilleFilter:(UIImage *)image;
+
 @end

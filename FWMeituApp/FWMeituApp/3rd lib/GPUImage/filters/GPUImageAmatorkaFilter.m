@@ -20,6 +20,7 @@
     NSAssert(image, @"To use GPUImageAmatorkaFilter you need to add lookup_amatorka.png from GPUImage/framework/Resources to your application bundle.");
     
     lookupImageSource = [[GPUImagePicture alloc] initWithImage:image];
+    
     GPUImageLookupFilter *lookupFilter = [[GPUImageLookupFilter alloc] init];
     [self addFilter:lookupFilter];
     
