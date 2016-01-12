@@ -11,6 +11,7 @@
 @interface FWEffectBarItem : UIControl
 
 @property BOOL ShowBorder;
+@property BOOL titleOverlay;
 
 /**
  * itemHeight is an optional property. When set it is used instead of tabBar's height.

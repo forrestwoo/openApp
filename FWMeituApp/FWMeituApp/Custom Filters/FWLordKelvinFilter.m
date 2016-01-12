@@ -6,7 +6,7 @@
 //  Copyright © 2016年 ForrestWoo co,.ltd. All rights reserved.
 //
 
-NSString *const kLordKelvinShaderString = SHADER_STRING
+NSString *const kFWLordKelvinShaderString = SHADER_STRING
 (
  precision lowp float;
  
@@ -41,7 +41,7 @@ NSString *const kLordKelvinShaderString = SHADER_STRING
 
 - (id)init;
 {
-    if (!(self = [super initWithFragmentShaderFromString:kLordKelvinShaderString]))
+    if (!(self = [super initWithFragmentShaderFromString:kFWLordKelvinShaderString]))
     {
         return nil;
     }

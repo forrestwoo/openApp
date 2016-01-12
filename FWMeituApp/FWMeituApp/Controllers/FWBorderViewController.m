@@ -45,7 +45,7 @@
     
     //显示图片
     self.imageView = [[UIImageView alloc] initWithImage:self.image];
-    self.imageView.frame = CGRectMake(0, 0, WIDTH, HEIGHT - 50 - 70);
+    self.imageView.frame = CGRectMake(0, 0, WIDTH, HEIGHT - 130);
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:self.imageView];
     

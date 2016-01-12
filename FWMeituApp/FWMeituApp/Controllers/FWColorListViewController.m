@@ -9,7 +9,7 @@
 #import "FWColorListViewController.h"
 #import "FWDataManager.h"
 
-#import "FWCommonFilter.h"
+#import "FWApplyFilter.h"
 
 @interface FWColorListViewController ()
 
@@ -174,32 +174,32 @@
 {
     switch (self.selectedIndex) {
         case 0:
-            self.currentImage = [FWCommonFilter changeValueForBrightnessFilter:self.slider.value image:self.image];
+            self.currentImage = [FWApplyFilter changeValueForBrightnessFilter:self.slider.value image:self.image];
             break;
             
         case 1:
-            self.currentImage = [FWCommonFilter changeValueForContrastFilter:self.slider.value image:self.image];
+            self.currentImage = [FWApplyFilter changeValueForContrastFilter:self.slider.value image:self.image];
             self.imageView.image =   self.currentImage;
             break;
             
         case 2:
-            self.currentImage = [FWCommonFilter changeValueForWhiteBalanceFilter:self.slider.value image:self.image];
+            self.currentImage = [FWApplyFilter changeValueForWhiteBalanceFilter:self.slider.value image:self.image];
             break;
             
         case 3:
-            self.currentImage = [FWCommonFilter changeValueForSaturationFilter:self.slider.value image:self.image];
+            self.currentImage = [FWApplyFilter changeValueForSaturationFilter:self.slider.value image:self.image];
             break;
             
         case 4:
-            self.currentImage = [FWCommonFilter changeValueForHightlightFilter:self.slider.value image:self.image];
+            self.currentImage = [FWApplyFilter changeValueForHightlightFilter:self.slider.value image:self.image];
             break;
             
         case 5:
-            self.currentImage = [FWCommonFilter changeValueForLowlightFilter:self.slider.value image:self.image];
+            self.currentImage = [FWApplyFilter changeValueForLowlightFilter:self.slider.value image:self.image];
             break;
             
         case 6:
-            self.currentImage = [FWCommonFilter changeValueForExposureFilter:self.slider.value image:self.image];
+            self.currentImage = [FWApplyFilter changeValueForExposureFilter:self.slider.value image:self.image];
             break;
             
         default:

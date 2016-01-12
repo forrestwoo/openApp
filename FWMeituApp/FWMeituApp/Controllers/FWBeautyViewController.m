@@ -15,6 +15,7 @@
 #import "FWEditViewController.h"
 #import "FWColorListViewController.h"
 #import "FWBorderViewController.h"
+#import "FWFiltersViewController.h"
 
 @interface FWBeautyViewController ()
 {
@@ -144,6 +145,9 @@
     }
     else if ([text isEqualToString:@"特效"])
     {
+        FWFiltersViewController *vc = [[FWFiltersViewController alloc] initWithImage:self.image];
+        [self presentViewController:vc animated:YES completion:^{
+        }];
     }
     else if ([text isEqualToString:@"边框"])
     {

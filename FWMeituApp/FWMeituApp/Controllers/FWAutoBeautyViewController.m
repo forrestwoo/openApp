@@ -9,7 +9,7 @@
 #import "FWAutoBeautyViewController.h"
 
 #import "FWDataManager.h"
-#import "FWCommonFilter.h"
+#import "FWApplyFilter.h"
 
 @interface FWAutoBeautyViewController ()
 
@@ -91,32 +91,32 @@
             break;
             
         case 1:
-            self.currentImage = [FWCommonFilter autoBeautyFilter:self.image];
+            self.currentImage = [FWApplyFilter autoBeautyFilter:self.image];
             self.imageView.image = self.currentImage;
             break;
             
         case 2:
-            self.currentImage = [FWCommonFilter applyToLookupFilter:self.image];
+//            self.currentImage = [FWCommonFilter applyToLookupFilter:self.image];
             self.imageView.image = self.currentImage;
             break;
             
         case 3:
-            self.currentImage = [FWCommonFilter applyAmatorkaFilter:self.image];
+            self.currentImage = [FWApplyFilter applyAmatorkaFilter:self.image];
             self.imageView.image = self.currentImage;
             break;
             
         case 4:
-            self.currentImage = [FWCommonFilter applyMissetikateFilter:self.image];
+            self.currentImage = [FWApplyFilter applyMissetikateFilter:self.image];
             self.imageView.image = self.currentImage;
             break;
             
         case 5:
-            self.currentImage = [FWCommonFilter applySoftEleganceFilter:self.image];
+            self.currentImage = [FWApplyFilter applySoftEleganceFilter:self.image];
             self.imageView.image = self.currentImage;
             break;
             
         case 6:
-            self.currentImage = [FWCommonFilter applyNashvilleFilter:self.image];
+            self.currentImage = [FWApplyFilter applyNashvilleFilter:self.image];
             self.imageView.image = self.currentImage;
             break;
     }

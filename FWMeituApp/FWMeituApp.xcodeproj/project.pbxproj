@@ -96,7 +96,7 @@
 		D70EC2901BAACFF400A1EC26 /* icon_home_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D70EC27A1BAACFF400A1EC26 /* icon_home_star@2x.png */; };
 		D70EC2911BAACFF400A1EC26 /* icon_home_star@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D70EC27B1BAACFF400A1EC26 /* icon_home_star@3x.png */; };
 		D70FC0AC1BAF1CC100711F55 /* FWButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D70FC0AB1BAF1CC100711F55 /* FWButton.m */; };
-		D71064491BBECDCF00DF04AC /* FWCommonFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D71064481BBECDCF00DF04AC /* FWCommonFilter.m */; };
+		D71064491BBECDCF00DF04AC /* FWApplyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D71064481BBECDCF00DF04AC /* FWApplyFilter.m */; };
 		D710780D1BCA3C5E00DBF1D9 /* FWTriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D710780C1BCA3C5E00DBF1D9 /* FWTriangleView.m */; };
 		D71078101BCA424E00DBF1D9 /* UIButton+TextAndImageHorizontalDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = D710780F1BCA424E00DBF1D9 /* UIButton+TextAndImageHorizontalDisplay.m */; };
 		D7112CF21BC420B200D916E1 /* FWCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D7112CF11BC420B200D916E1 /* FWCommonTools.m */; };
@@ -475,6 +475,13 @@
 		D7F893171BB32AE40067726B /* UIImage+ImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F893161BB32AE40067726B /* UIImage+ImageScale.m */; };
 		D7FC52E61BAB26F700275BD4 /* item_bg_purple_a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7FC52E51BAB26F700275BD4 /* item_bg_purple_a@2x.png */; };
 		DA73C36D1C40078900CFA3D2 /* FWLordKelvinFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA73C36C1C40078900CFA3D2 /* FWLordKelvinFilter.m */; };
+		DA73C3701C40106200CFA3D2 /* FWFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA73C36F1C40106200CFA3D2 /* FWFiltersViewController.m */; };
+		DA73C3771C401E3C00CFA3D2 /* blur_activated.png in Resources */ = {isa = PBXBuildFile; fileRef = DA73C3711C401E3C00CFA3D2 /* blur_activated.png */; };
+		DA73C3781C401E3C00CFA3D2 /* blur_deactivated.png in Resources */ = {isa = PBXBuildFile; fileRef = DA73C3721C401E3C00CFA3D2 /* blur_deactivated.png */; };
+		DA73C3791C401E3C00CFA3D2 /* dark_corner_activated.png in Resources */ = {isa = PBXBuildFile; fileRef = DA73C3731C401E3C00CFA3D2 /* dark_corner_activated.png */; };
+		DA73C37A1C401E3C00CFA3D2 /* dark_corner_deactivated.png in Resources */ = {isa = PBXBuildFile; fileRef = DA73C3741C401E3C00CFA3D2 /* dark_corner_deactivated.png */; };
+		DA73C37B1C401E3C00CFA3D2 /* icon_compare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA73C3751C401E3C00CFA3D2 /* icon_compare@2x.png */; };
+		DA73C37C1C401E3C00CFA3D2 /* icon_compare@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA73C3761C401E3C00CFA3D2 /* icon_compare@3x.png */; };
 		DA81C5271C3D545D001E208C /* FWAutoBeautyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA81C5261C3D545D001E208C /* FWAutoBeautyViewController.m */; };
 		DA81C52A1C3D5AF3001E208C /* FWDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA81C5291C3D5AF3001E208C /* FWDataManager.m */; };
 		DA81C52D1C3D5EC1001E208C /* FWEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA81C52C1C3D5EC1001E208C /* FWEditViewController.m */; };
@@ -514,6 +521,10 @@
 		DA8857711C3ACDF800B53653 /* pb9@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA88575D1C3ACDF800B53653 /* pb9@3x.png */; };
 		DA8857721C3ACDF800B53653 /* pb10@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA88575E1C3ACDF800B53653 /* pb10@2x.png */; };
 		DA8857731C3ACDF800B53653 /* pb10@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA88575F1C3ACDF800B53653 /* pb10@3x.png */; };
+		DA92B3F21C43F1C4000376CA /* FWSutroFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92B3F11C43F1C4000376CA /* FWSutroFilter.m */; };
+		DA92B3F51C43F1DA000376CA /* FWToasterFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92B3F41C43F1DA000376CA /* FWToasterFilter.m */; };
+		DA92B3F81C43F1EB000376CA /* FWBrannanFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92B3F71C43F1EB000376CA /* FWBrannanFilter.m */; };
+		DA92B3FB1C43F1FF000376CA /* FWHefeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92B3FA1C43F1FF000376CA /* FWHefeFilter.m */; };
 		DAC22B251C25ABBC00C9FED6 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC22B0D1C25ABBC00C9FED6 /* MASCompositeConstraint.m */; };
 		DAC22B261C25ABBC00C9FED6 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC22B0F1C25ABBC00C9FED6 /* MASConstraint.m */; };
 		DAC22B271C25ABBC00C9FED6 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC22B121C25ABBC00C9FED6 /* MASConstraintMaker.m */; };
@@ -524,6 +535,19 @@
 		DAC22B2C1C25ABBC00C9FED6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC22B1F1C25ABBC00C9FED6 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		DAC22B2D1C25ABBC00C9FED6 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC22B211C25ABBC00C9FED6 /* View+MASAdditions.m */; };
 		DAC22B2E1C25ABBC00C9FED6 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC22B241C25ABBC00C9FED6 /* ViewController+MASAdditions.m */; };
+		DAD664B11C4383B500845765 /* FWAmaroFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD664B01C4383B500845765 /* FWAmaroFilter.m */; };
+		DAD664B41C438BA800845765 /* FWRiseFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD664B31C438BA800845765 /* FWRiseFilter.m */; };
+		DAD664B71C438DDF00845765 /* FWHudsonFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD664B61C438DDF00845765 /* FWHudsonFilter.m */; };
+		DAD664BA1C438ECE00845765 /* FWXproIIFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD664B91C438ECE00845765 /* FWXproIIFilter.m */; };
+		DAD664BD1C43905000845765 /* FW1977Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD664BC1C43905000845765 /* FW1977Filter.m */; };
+		DAD664C01C43907400845765 /* FWValenciaFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD664BF1C43907400845765 /* FWValenciaFilter.m */; };
+		DAD664C31C43909300845765 /* FWWaldenFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD664C21C43909300845765 /* FWWaldenFilter.m */; };
+		DAD664C61C4390AA00845765 /* FWLomofiFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD664C51C4390AA00845765 /* FWLomofiFilter.m */; };
+		DAD664C91C43936B00845765 /* FWInkwellFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD664C81C43936B00845765 /* FWInkwellFilter.m */; };
+		DAD664CC1C43945300845765 /* FWSierraFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD664CB1C43945300845765 /* FWSierraFilter.m */; };
+		DAD664CF1C43964400845765 /* FWFiveInputFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD664CE1C43964400845765 /* FWFiveInputFilter.m */; };
+		DAD664D21C439B4B00845765 /* FWSixInputFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD664D11C439B4B00845765 /* FWSixInputFilter.m */; };
+		DAD664D51C439FE600845765 /* FWEarlybirdFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD664D41C439FE600845765 /* FWEarlybirdFilter.m */; };
 		DAD8BF1D1C350513002F0FE1 /* icon_slider_thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8BF1B1C350513002F0FE1 /* icon_slider_thumb@2x.png */; };
 		DAD8BF1E1C350513002F0FE1 /* icon_slider_thumb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8BF1C1C350513002F0FE1 /* icon_slider_thumb@3x.png */; };
 		DAD8BF211C3505FD002F0FE1 /* slider_tip_white_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD8BF1F1C3505FD002F0FE1 /* slider_tip_white_bg@2x.png */; };
@@ -830,8 +854,8 @@
 		D70EC27B1BAACFF400A1EC26 /* icon_home_star@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_home_star@3x.png"; path = "Images/icon_home_star@3x.png"; sourceTree = "<group>"; };
 		D70FC0AA1BAF1CC100711F55 /* FWButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWButton.h; path = Views/FWButton.h; sourceTree = "<group>"; };
 		D70FC0AB1BAF1CC100711F55 /* FWButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWButton.m; path = Views/FWButton.m; sourceTree = "<group>"; };
-		D71064471BBECDCF00DF04AC /* FWCommonFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWCommonFilter.h; path = Utilies/FWCommonFilter.h; sourceTree = "<group>"; };
-		D71064481BBECDCF00DF04AC /* FWCommonFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWCommonFilter.m; path = Utilies/FWCommonFilter.m; sourceTree = "<group>"; };
+		D71064471BBECDCF00DF04AC /* FWApplyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWApplyFilter.h; path = Utilies/FWApplyFilter.h; sourceTree = "<group>"; };
+		D71064481BBECDCF00DF04AC /* FWApplyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWApplyFilter.m; path = Utilies/FWApplyFilter.m; sourceTree = "<group>"; };
 		D710780B1BCA3C5E00DBF1D9 /* FWTriangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWTriangleView.h; path = Views/FWTriangleView.h; sourceTree = "<group>"; };
 		D710780C1BCA3C5E00DBF1D9 /* FWTriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWTriangleView.m; path = Views/FWTriangleView.m; sourceTree = "<group>"; };
 		D710780E1BCA424E00DBF1D9 /* UIButton+TextAndImageHorizontalDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+TextAndImageHorizontalDisplay.h"; path = "FWMeituApp/Views/UIButton+TextAndImageHorizontalDisplay.h"; sourceTree = SOURCE_ROOT; };
@@ -1252,6 +1276,14 @@
 		D7FC52E51BAB26F700275BD4 /* item_bg_purple_a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item_bg_purple_a@2x.png"; path = "Images/item_bg_purple_a@2x.png"; sourceTree = "<group>"; };
 		DA73C36B1C40078900CFA3D2 /* FWLordKelvinFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWLordKelvinFilter.h; path = "Custom Filters/FWLordKelvinFilter.h"; sourceTree = "<group>"; };
 		DA73C36C1C40078900CFA3D2 /* FWLordKelvinFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWLordKelvinFilter.m; path = "Custom Filters/FWLordKelvinFilter.m"; sourceTree = "<group>"; };
+		DA73C36E1C40106200CFA3D2 /* FWFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWFiltersViewController.h; path = Controllers/FWFiltersViewController.h; sourceTree = "<group>"; };
+		DA73C36F1C40106200CFA3D2 /* FWFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWFiltersViewController.m; path = Controllers/FWFiltersViewController.m; sourceTree = "<group>"; };
+		DA73C3711C401E3C00CFA3D2 /* blur_activated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blur_activated.png; path = "Images/美化图片/blur_activated.png"; sourceTree = "<group>"; };
+		DA73C3721C401E3C00CFA3D2 /* blur_deactivated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blur_deactivated.png; path = "Images/美化图片/blur_deactivated.png"; sourceTree = "<group>"; };
+		DA73C3731C401E3C00CFA3D2 /* dark_corner_activated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dark_corner_activated.png; path = "Images/美化图片/dark_corner_activated.png"; sourceTree = "<group>"; };
+		DA73C3741C401E3C00CFA3D2 /* dark_corner_deactivated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dark_corner_deactivated.png; path = "Images/美化图片/dark_corner_deactivated.png"; sourceTree = "<group>"; };
+		DA73C3751C401E3C00CFA3D2 /* icon_compare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_compare@2x.png"; path = "Images/美化图片/icon_compare@2x.png"; sourceTree = "<group>"; };
+		DA73C3761C401E3C00CFA3D2 /* icon_compare@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_compare@3x.png"; path = "Images/美化图片/icon_compare@3x.png"; sourceTree = "<group>"; };
 		DA81C5251C3D545D001E208C /* FWAutoBeautyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWAutoBeautyViewController.h; path = Controllers/FWAutoBeautyViewController.h; sourceTree = "<group>"; };
 		DA81C5261C3D545D001E208C /* FWAutoBeautyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWAutoBeautyViewController.m; path = Controllers/FWAutoBeautyViewController.m; sourceTree = "<group>"; };
 		DA81C5281C3D5AF3001E208C /* FWDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWDataManager.h; path = Utilies/FWDataManager.h; sourceTree = "<group>"; };
@@ -1296,6 +1328,14 @@
 		DA88575D1C3ACDF800B53653 /* pb9@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pb9@3x.png"; sourceTree = "<group>"; };
 		DA88575E1C3ACDF800B53653 /* pb10@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pb10@2x.png"; sourceTree = "<group>"; };
 		DA88575F1C3ACDF800B53653 /* pb10@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pb10@3x.png"; sourceTree = "<group>"; };
+		DA92B3F01C43F1C4000376CA /* FWSutroFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWSutroFilter.h; path = "Custom Filters/FWSutroFilter.h"; sourceTree = "<group>"; };
+		DA92B3F11C43F1C4000376CA /* FWSutroFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWSutroFilter.m; path = "Custom Filters/FWSutroFilter.m"; sourceTree = "<group>"; };
+		DA92B3F31C43F1DA000376CA /* FWToasterFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWToasterFilter.h; path = "Custom Filters/FWToasterFilter.h"; sourceTree = "<group>"; };
+		DA92B3F41C43F1DA000376CA /* FWToasterFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWToasterFilter.m; path = "Custom Filters/FWToasterFilter.m"; sourceTree = "<group>"; };
+		DA92B3F61C43F1EB000376CA /* FWBrannanFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWBrannanFilter.h; path = "Custom Filters/FWBrannanFilter.h"; sourceTree = "<group>"; };
+		DA92B3F71C43F1EB000376CA /* FWBrannanFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWBrannanFilter.m; path = "Custom Filters/FWBrannanFilter.m"; sourceTree = "<group>"; };
+		DA92B3F91C43F1FF000376CA /* FWHefeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWHefeFilter.h; path = "Custom Filters/FWHefeFilter.h"; sourceTree = "<group>"; };
+		DA92B3FA1C43F1FF000376CA /* FWHefeFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWHefeFilter.m; path = "Custom Filters/FWHefeFilter.m"; sourceTree = "<group>"; };
 		DAC22B0C1C25ABBC00C9FED6 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = "3rd lib/Masnory/MASCompositeConstraint.h"; sourceTree = "<group>"; };
 		DAC22B0D1C25ABBC00C9FED6 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = "3rd lib/Masnory/MASCompositeConstraint.m"; sourceTree = "<group>"; };
 		DAC22B0E1C25ABBC00C9FED6 /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = "3rd lib/Masnory/MASConstraint.h"; sourceTree = "<group>"; };
@@ -1321,6 +1361,32 @@
 		DAC22B221C25ABBC00C9FED6 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "3rd lib/Masnory/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		DAC22B231C25ABBC00C9FED6 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "3rd lib/Masnory/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		DAC22B241C25ABBC00C9FED6 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "3rd lib/Masnory/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		DAD664AF1C4383B500845765 /* FWAmaroFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWAmaroFilter.h; path = "Custom Filters/FWAmaroFilter.h"; sourceTree = "<group>"; };
+		DAD664B01C4383B500845765 /* FWAmaroFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWAmaroFilter.m; path = "Custom Filters/FWAmaroFilter.m"; sourceTree = "<group>"; };
+		DAD664B21C438BA800845765 /* FWRiseFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWRiseFilter.h; path = "Custom Filters/FWRiseFilter.h"; sourceTree = "<group>"; };
+		DAD664B31C438BA800845765 /* FWRiseFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWRiseFilter.m; path = "Custom Filters/FWRiseFilter.m"; sourceTree = "<group>"; };
+		DAD664B51C438DDF00845765 /* FWHudsonFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWHudsonFilter.h; path = "Custom Filters/FWHudsonFilter.h"; sourceTree = "<group>"; };
+		DAD664B61C438DDF00845765 /* FWHudsonFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWHudsonFilter.m; path = "Custom Filters/FWHudsonFilter.m"; sourceTree = "<group>"; };
+		DAD664B81C438ECE00845765 /* FWXproIIFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWXproIIFilter.h; path = "Custom Filters/FWXproIIFilter.h"; sourceTree = "<group>"; };
+		DAD664B91C438ECE00845765 /* FWXproIIFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWXproIIFilter.m; path = "Custom Filters/FWXproIIFilter.m"; sourceTree = "<group>"; };
+		DAD664BB1C43905000845765 /* FW1977Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FW1977Filter.h; path = "Custom Filters/FW1977Filter.h"; sourceTree = "<group>"; };
+		DAD664BC1C43905000845765 /* FW1977Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FW1977Filter.m; path = "Custom Filters/FW1977Filter.m"; sourceTree = "<group>"; };
+		DAD664BE1C43907400845765 /* FWValenciaFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWValenciaFilter.h; path = "Custom Filters/FWValenciaFilter.h"; sourceTree = "<group>"; };
+		DAD664BF1C43907400845765 /* FWValenciaFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWValenciaFilter.m; path = "Custom Filters/FWValenciaFilter.m"; sourceTree = "<group>"; };
+		DAD664C11C43909300845765 /* FWWaldenFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWWaldenFilter.h; path = "Custom Filters/FWWaldenFilter.h"; sourceTree = "<group>"; };
+		DAD664C21C43909300845765 /* FWWaldenFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWWaldenFilter.m; path = "Custom Filters/FWWaldenFilter.m"; sourceTree = "<group>"; };
+		DAD664C41C4390AA00845765 /* FWLomofiFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWLomofiFilter.h; path = "Custom Filters/FWLomofiFilter.h"; sourceTree = "<group>"; };
+		DAD664C51C4390AA00845765 /* FWLomofiFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWLomofiFilter.m; path = "Custom Filters/FWLomofiFilter.m"; sourceTree = "<group>"; };
+		DAD664C71C43936B00845765 /* FWInkwellFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWInkwellFilter.h; path = "Custom Filters/FWInkwellFilter.h"; sourceTree = "<group>"; };
+		DAD664C81C43936B00845765 /* FWInkwellFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWInkwellFilter.m; path = "Custom Filters/FWInkwellFilter.m"; sourceTree = "<group>"; };
+		DAD664CA1C43945300845765 /* FWSierraFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWSierraFilter.h; path = "Custom Filters/FWSierraFilter.h"; sourceTree = "<group>"; };
+		DAD664CB1C43945300845765 /* FWSierraFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWSierraFilter.m; path = "Custom Filters/FWSierraFilter.m"; sourceTree = "<group>"; };
+		DAD664CD1C43964400845765 /* FWFiveInputFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWFiveInputFilter.h; path = "Custom Filters/FWFiveInputFilter.h"; sourceTree = "<group>"; };
+		DAD664CE1C43964400845765 /* FWFiveInputFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWFiveInputFilter.m; path = "Custom Filters/FWFiveInputFilter.m"; sourceTree = "<group>"; };
+		DAD664D01C439B4B00845765 /* FWSixInputFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWSixInputFilter.h; path = "Custom Filters/FWSixInputFilter.h"; sourceTree = "<group>"; };
+		DAD664D11C439B4B00845765 /* FWSixInputFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWSixInputFilter.m; path = "Custom Filters/FWSixInputFilter.m"; sourceTree = "<group>"; };
+		DAD664D31C439FE600845765 /* FWEarlybirdFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWEarlybirdFilter.h; path = "Custom Filters/FWEarlybirdFilter.h"; sourceTree = "<group>"; };
+		DAD664D41C439FE600845765 /* FWEarlybirdFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWEarlybirdFilter.m; path = "Custom Filters/FWEarlybirdFilter.m"; sourceTree = "<group>"; };
 		DAD8BF1B1C350513002F0FE1 /* icon_slider_thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_slider_thumb@2x.png"; path = "Images/美化图片/icon_slider_thumb@2x.png"; sourceTree = "<group>"; };
 		DAD8BF1C1C350513002F0FE1 /* icon_slider_thumb@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_slider_thumb@3x.png"; path = "Images/美化图片/icon_slider_thumb@3x.png"; sourceTree = "<group>"; };
 		DAD8BF1F1C3505FD002F0FE1 /* slider_tip_white_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider_tip_white_bg@2x.png"; path = "Images/美化图片/slider_tip_white_bg@2x.png"; sourceTree = "<group>"; };
@@ -1713,6 +1779,12 @@
 		D7044D531BAEBA5900C41E94 /* Beauty */ = {
 			isa = PBXGroup;
 			children = (
+				DA73C3711C401E3C00CFA3D2 /* blur_activated.png */,
+				DA73C3721C401E3C00CFA3D2 /* blur_deactivated.png */,
+				DA73C3731C401E3C00CFA3D2 /* dark_corner_activated.png */,
+				DA73C3741C401E3C00CFA3D2 /* dark_corner_deactivated.png */,
+				DA73C3751C401E3C00CFA3D2 /* icon_compare@2x.png */,
+				DA73C3761C401E3C00CFA3D2 /* icon_compare@3x.png */,
 				DAD8BF1F1C3505FD002F0FE1 /* slider_tip_white_bg@2x.png */,
 				DAD8BF201C3505FD002F0FE1 /* slider_tip_white_bg@3x.png */,
 				DAD8BF1B1C350513002F0FE1 /* icon_slider_thumb@2x.png */,
@@ -1837,8 +1909,6 @@
 				D711E1971BA9740D002F04DC /* ConstantsConfig.h */,
 				D7F893151BB32AE40067726B /* UIImage+ImageScale.h */,
 				D7F893161BB32AE40067726B /* UIImage+ImageScale.m */,
-				D71064471BBECDCF00DF04AC /* FWCommonFilter.h */,
-				D71064481BBECDCF00DF04AC /* FWCommonFilter.m */,
 				D7112CF01BC420B200D916E1 /* FWCommonTools.h */,
 				D7112CF11BC420B200D916E1 /* FWCommonTools.m */,
 				DA81C5281C3D5AF3001E208C /* FWDataManager.h */,
@@ -2650,6 +2720,44 @@
 				DADD99171C3FAC24000108EE /* FWNashvilleFilter.m */,
 				DA73C36B1C40078900CFA3D2 /* FWLordKelvinFilter.h */,
 				DA73C36C1C40078900CFA3D2 /* FWLordKelvinFilter.m */,
+				DAD664AF1C4383B500845765 /* FWAmaroFilter.h */,
+				DAD664B01C4383B500845765 /* FWAmaroFilter.m */,
+				DAD664B21C438BA800845765 /* FWRiseFilter.h */,
+				DAD664B31C438BA800845765 /* FWRiseFilter.m */,
+				DA73C36E1C40106200CFA3D2 /* FWFiltersViewController.h */,
+				DA73C36F1C40106200CFA3D2 /* FWFiltersViewController.m */,
+				D71064471BBECDCF00DF04AC /* FWApplyFilter.h */,
+				D71064481BBECDCF00DF04AC /* FWApplyFilter.m */,
+				DAD664B51C438DDF00845765 /* FWHudsonFilter.h */,
+				DAD664B61C438DDF00845765 /* FWHudsonFilter.m */,
+				DAD664B81C438ECE00845765 /* FWXproIIFilter.h */,
+				DAD664B91C438ECE00845765 /* FWXproIIFilter.m */,
+				DAD664BB1C43905000845765 /* FW1977Filter.h */,
+				DAD664BC1C43905000845765 /* FW1977Filter.m */,
+				DAD664BE1C43907400845765 /* FWValenciaFilter.h */,
+				DAD664BF1C43907400845765 /* FWValenciaFilter.m */,
+				DAD664C11C43909300845765 /* FWWaldenFilter.h */,
+				DAD664C21C43909300845765 /* FWWaldenFilter.m */,
+				DAD664C41C4390AA00845765 /* FWLomofiFilter.h */,
+				DAD664C51C4390AA00845765 /* FWLomofiFilter.m */,
+				DAD664C71C43936B00845765 /* FWInkwellFilter.h */,
+				DAD664C81C43936B00845765 /* FWInkwellFilter.m */,
+				DAD664CA1C43945300845765 /* FWSierraFilter.h */,
+				DAD664CB1C43945300845765 /* FWSierraFilter.m */,
+				DAD664CD1C43964400845765 /* FWFiveInputFilter.h */,
+				DAD664CE1C43964400845765 /* FWFiveInputFilter.m */,
+				DAD664D01C439B4B00845765 /* FWSixInputFilter.h */,
+				DAD664D11C439B4B00845765 /* FWSixInputFilter.m */,
+				DAD664D31C439FE600845765 /* FWEarlybirdFilter.h */,
+				DAD664D41C439FE600845765 /* FWEarlybirdFilter.m */,
+				DA92B3F01C43F1C4000376CA /* FWSutroFilter.h */,
+				DA92B3F11C43F1C4000376CA /* FWSutroFilter.m */,
+				DA92B3F31C43F1DA000376CA /* FWToasterFilter.h */,
+				DA92B3F41C43F1DA000376CA /* FWToasterFilter.m */,
+				DA92B3F61C43F1EB000376CA /* FWBrannanFilter.h */,
+				DA92B3F71C43F1EB000376CA /* FWBrannanFilter.m */,
+				DA92B3F91C43F1FF000376CA /* FWHefeFilter.h */,
+				DA92B3FA1C43F1FF000376CA /* FWHefeFilter.m */,
 			);
 			name = "Custom Filters";
 			sourceTree = "<group>";
@@ -3108,6 +3216,7 @@
 				D7F892D91BB325540067726B /* text_font_thumbnail9@3x.png in Resources */,
 				D7F8927E1BB325540067726B /* magic_brush_04@2x.png in Resources */,
 				D7F893031BB325540067726B /* icon_autobeauty4_a@3x.png in Resources */,
+				DA73C3781C401E3C00CFA3D2 /* blur_deactivated.png in Resources */,
 				D70EC2881BAACFF400A1EC26 /* icon_home_meipai@2x.png in Resources */,
 				DAD8BF1E1C350513002F0FE1 /* icon_slider_thumb@3x.png in Resources */,
 				D70EC2911BAACFF400A1EC26 /* icon_home_star@3x.png in Resources */,
@@ -3177,6 +3286,7 @@
 				D72DC1A31BC27A0D00822A83 /* icon_clipScale32_a@3x.png in Resources */,
 				D7044D991BAEBA7300C41E94 /* icon_function_stylize_b@3x.png in Resources */,
 				D7F893001BB325540067726B /* icon_autobeauty3_b@2x.png in Resources */,
+				DA73C37C1C401E3C00CFA3D2 /* icon_compare@3x.png in Resources */,
 				D7F892AB1BB325540067726B /* mosaic_style_12@3x.jpg in Resources */,
 				D7F892371BB325540067726B /* xborder_aixin_a@2x.jpg in Resources */,
 				D7F8924F1BB325540067726B /* icon_edit_sharp_a@2x.png in Resources */,
@@ -3267,6 +3377,7 @@
 				D77B66B01BC9805C00DE9E69 /* earlybirdOverlayMap.png in Resources */,
 				DA8857711C3ACDF800B53653 /* pb9@3x.png in Resources */,
 				D77B66BE1BC9805C00DE9E69 /* sierraMap.png in Resources */,
+				DA73C3771C401E3C00CFA3D2 /* blur_activated.png in Resources */,
 				D7F892F51BB325540067726B /* icon_shade_b@3x.png in Resources */,
 				D70EC2831BAACFF400A1EC26 /* icon_home_camera@3x.png in Resources */,
 				D7F8922F1BB325540067726B /* border_simple_16@2x.jpg in Resources */,
@@ -3286,6 +3397,7 @@
 				D7F892BF1BB325540067726B /* icon_btn_textfont_b@3x.png in Resources */,
 				D7F892541BB325540067726B /* icon_function_autoBeauty_a@3x.png in Resources */,
 				DA849B7D1C2C5AD300EEB0B1 /* mtxx_logo@3x.png in Resources */,
+				DA73C37A1C401E3C00CFA3D2 /* dark_corner_deactivated.png in Resources */,
 				D7F8924C1BB325540067726B /* icon_edit_rotate_a@3x.png in Resources */,
 				D71751CA1BA9480A004E9291 /* icon_share_camera@2x.png in Resources */,
 				DAD8CFFB1C2FCDE0005E3408 /* HomeData.plist in Resources */,
@@ -3311,6 +3423,7 @@
 				D70A6EEA1BC558E1009D4469 /* PEPhotoCropEditorBorder@2x.png in Resources */,
 				DA81C5401C3D733E001E208C /* btn_flip_leftright_a@2x.png in Resources */,
 				D77B66B71BC9805C00DE9E69 /* hudsonMap.png in Resources */,
+				DA73C37B1C401E3C00CFA3D2 /* icon_compare@2x.png in Resources */,
 				D7F892C31BB325540067726B /* icon_btn_textstyle_b@3x.png in Resources */,
 				D70EC25A1BAAC8F000A1EC26 /* icon_app_miniApp@3x.png in Resources */,
 				D71751C31BA9480A004E9291 /* bg_default_view_mt-736.jpg in Resources */,
@@ -3391,6 +3504,7 @@
 				D70A6EE91BC558E1009D4469 /* PEPhotoCropEditorBorder.png in Resources */,
 				DADD97641C3F97C6000108EE /* Framework in Resources */,
 				D7F892311BB325540067726B /* border_simple_17@2x.jpg in Resources */,
+				DA73C3791C401E3C00CFA3D2 /* dark_corner_activated.png in Resources */,
 				D72DC19D1BC27A0D00822A83 /* icon_clipScale11_b@3x.png in Resources */,
 				D7F892CE1BB325540067726B /* text_font_thumbnail4@2x.png in Resources */,
 				DAD8CFF91C2FC154005E3408 /* ic_function_meirong_b@3x.png in Resources */,
@@ -3535,6 +3649,8 @@
 				DADD98E61C3F9E18000108EE /* GPUImagePolarPixellateFilter.m in Sources */,
 				DADD99111C3F9E18000108EE /* GPUImageWeakPixelInclusionFilter.m in Sources */,
 				DADD989C1C3F9E18000108EE /* GPUImageColorLocalBinaryPatternFilter.m in Sources */,
+				DA92B3F21C43F1C4000376CA /* FWSutroFilter.m in Sources */,
+				DAD664C31C43909300845765 /* FWWaldenFilter.m in Sources */,
 				DADD97111C3F973E000108EE /* GPUImageMovieComposition.m in Sources */,
 				DADD98CC1C3F9E18000108EE /* GPUImageLevelsFilter.m in Sources */,
 				DADD99031C3F9E18000108EE /* GPUImageThresholdedNonMaximumSuppressionFilter.m in Sources */,
@@ -3554,7 +3670,9 @@
 				DADD98EC1C3F9E18000108EE /* GPUImageRGBErosionFilter.m in Sources */,
 				DADD98B71C3F9E18000108EE /* GPUImageGaussianSelectiveBlurFilter.m in Sources */,
 				DADD98D41C3F9E18000108EE /* GPUImageLuminosityBlendFilter.m in Sources */,
+				DA92B3F81C43F1EB000376CA /* FWBrannanFilter.m in Sources */,
 				DADD98FB1C3F9E18000108EE /* GPUImageSoftLightBlendFilter.m in Sources */,
+				DAD664BD1C43905000845765 /* FW1977Filter.m in Sources */,
 				DADD98CB1C3F9E18000108EE /* GPUImageLaplacianFilter.m in Sources */,
 				DADD98E21C3F9E18000108EE /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				DADD98DF1C3F9E18000108EE /* GPUImageOpacityFilter.m in Sources */,
@@ -3577,11 +3695,13 @@
 				DADD98CA1C3F9E18000108EE /* GPUImageLanczosResamplingFilter.m in Sources */,
 				DADD98AB1C3F9E18000108EE /* GPUImageDivideBlendFilter.m in Sources */,
 				D7C6CF401BB2E8CD00D5F9F0 /* FWEffectBarItem.m in Sources */,
+				DAD664C91C43936B00845765 /* FWInkwellFilter.m in Sources */,
 				DADD98E31C3F9E18000108EE /* GPUImagePerlinNoiseFilter.m in Sources */,
 				DADD98C91C3F9E18000108EE /* GPUImageKuwaharaRadius3Filter.m in Sources */,
 				DADD98A91C3F9E18000108EE /* GPUImageDirectionalSobelEdgeDetectionFilter.m in Sources */,
 				DADD98F01C3F9E18000108EE /* GPUImageSaturationFilter.m in Sources */,
 				DADD98D61C3F9E18000108EE /* GPUImageMedianFilter.m in Sources */,
+				DAD664B11C4383B500845765 /* FWAmaroFilter.m in Sources */,
 				DADD98D51C3F9E18000108EE /* GPUImageMaskFilter.m in Sources */,
 				D7C428C31BB2F41800193C38 /* FWEffectBar.m in Sources */,
 				DADD98D11C3F9E18000108EE /* GPUImageLowPassFilter.m in Sources */,
@@ -3619,22 +3739,27 @@
 				DADD97401C3F973E000108EE /* GPUImageTextureOutput.m in Sources */,
 				DADD98E11C3F9E18000108EE /* GPUImageOverlayBlendFilter.m in Sources */,
 				DADD989B1C3F9E18000108EE /* GPUImageColorInvertFilter.m in Sources */,
+				DAD664BA1C438ECE00845765 /* FWXproIIFilter.m in Sources */,
 				DA81C5271C3D545D001E208C /* FWAutoBeautyViewController.m in Sources */,
 				DADD973B1C3F973E000108EE /* GPUImageStillCamera.m in Sources */,
 				DADD98F81C3F9E18000108EE /* GPUImageSmoothToonFilter.m in Sources */,
 				DADD98931C3F9E18000108EE /* GPUImageCannyEdgeDetectionFilter.m in Sources */,
 				DADD99101C3F9E18000108EE /* GPUImageVoronoiConsumerFilter.m in Sources */,
 				DADD98DD1C3F9E18000108EE /* GPUImageNonMaximumSuppressionFilter.m in Sources */,
+				DAD664D51C439FE600845765 /* FWEarlybirdFilter.m in Sources */,
 				DADD98E41C3F9E18000108EE /* GPUImagePixellatePositionFilter.m in Sources */,
 				DAF1B4DF1C3BAA8F00F67094 /* FWScrollBar.m in Sources */,
 				D78E55241BC28C6D00D5FDE2 /* FWResizeControl.m in Sources */,
 				DADD98971C3F9E18000108EE /* GPUImageClosingFilter.m in Sources */,
 				DADD98B11C3F9E18000108EE /* GPUImageFASTCornerDetectionFilter.m in Sources */,
+				DA92B3F51C43F1DA000376CA /* FWToasterFilter.m in Sources */,
 				DADD98D01C3F9E18000108EE /* GPUImageLookupFilter.m in Sources */,
 				D7112CF21BC420B200D916E1 /* FWCommonTools.m in Sources */,
+				DAD664B71C438DDF00845765 /* FWHudsonFilter.m in Sources */,
 				DADD98891C3F9E18000108EE /* GPUImage3x3TextureSamplingFilter.m in Sources */,
 				DADD971D1C3F973E000108EE /* GPUImagePixellateFilter.m in Sources */,
 				DADD98DA1C3F9E18000108EE /* GPUImageMotionBlurFilter.m in Sources */,
+				DAD664CF1C43964400845765 /* FWFiveInputFilter.m in Sources */,
 				DADD96DE1C3F973E000108EE /* GPUImageFilter.m in Sources */,
 				DADD97241C3F973E000108EE /* GPUImageRawDataInput.m in Sources */,
 				DADD98D91C3F9E18000108EE /* GPUImageMosaicFilter.m in Sources */,
@@ -3643,6 +3768,7 @@
 				DADD96B71C3F973E000108EE /* GPUImageAverageColor.m in Sources */,
 				DADD974D1C3F973E000108EE /* GPUImageUIElement.m in Sources */,
 				DADD98B91C3F9E18000108EE /* GPUImageGrayscaleFilter.m in Sources */,
+				DAD664B41C438BA800845765 /* FWRiseFilter.m in Sources */,
 				DADD98FA1C3F9E18000108EE /* GPUImageSoftEleganceFilter.m in Sources */,
 				DADD98CD1C3F9E18000108EE /* GPUImageLightenBlendFilter.m in Sources */,
 				DADD98A61C3F9E18000108EE /* GPUImageDifferenceBlendFilter.m in Sources */,
@@ -3656,6 +3782,7 @@
 				DADD99071C3F9E18000108EE /* GPUImageToonFilter.m in Sources */,
 				DADD99091C3F9E18000108EE /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
 				DADD98B51C3F9E18000108EE /* GPUImageGaussianBlurFilter.m in Sources */,
+				DA73C3701C40106200CFA3D2 /* FWFiltersViewController.m in Sources */,
 				DADD988F1C3F9E18000108EE /* GPUImageBilateralFilter.m in Sources */,
 				D71078101BCA424E00DBF1D9 /* UIButton+TextAndImageHorizontalDisplay.m in Sources */,
 				DADD98A21C3F9E18000108EE /* GPUImageCropFilter.m in Sources */,
@@ -3674,17 +3801,19 @@
 				DADD98E81C3F9E18000108EE /* GPUImagePosterizeFilter.m in Sources */,
 				DADD97011C3F973E000108EE /* GPUImageLineGenerator.m in Sources */,
 				DADD98C71C3F9E18000108EE /* GPUImageJFAVoronoiFilter.m in Sources */,
+				DAD664D21C439B4B00845765 /* FWSixInputFilter.m in Sources */,
 				DAC22B271C25ABBC00C9FED6 /* MASConstraintMaker.m in Sources */,
 				D7081B771BAD4CC5002EE475 /* FWBeautyViewController.m in Sources */,
 				DADD98ED1C3F9E18000108EE /* GPUImageRGBFilter.m in Sources */,
 				D78E55271BC2918F00D5FDE2 /* FWCropRectView.m in Sources */,
+				DAD664C61C4390AA00845765 /* FWLomofiFilter.m in Sources */,
 				DADD99021C3F9E18000108EE /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,
 				DADD98AD1C3F9E18000108EE /* GPUImageErosionFilter.m in Sources */,
 				DADD96E21C3F973E000108EE /* GPUImageFramebuffer.m in Sources */,
 				DADD97381C3F973E000108EE /* GPUImageSolidColorGenerator.m in Sources */,
 				DADD98951C3F9E18000108EE /* GPUImageChromaKeyBlendFilter.m in Sources */,
 				DADD98C41C3F9E18000108EE /* GPUImageHueBlendFilter.m in Sources */,
-				D71064491BBECDCF00DF04AC /* FWCommonFilter.m in Sources */,
+				D71064491BBECDCF00DF04AC /* FWApplyFilter.m in Sources */,
 				DAC22B291C25ABBC00C9FED6 /* MASViewAttribute.m in Sources */,
 				DADD98A01C3F9E18000108EE /* GPUImageColourFASTSamplingOperation.m in Sources */,
 				DADD98911C3F9E18000108EE /* GPUImageBrightnessFilter.m in Sources */,
@@ -3712,6 +3841,7 @@
 				DADD98C21C3F9E18000108EE /* GPUImageHistogramFilter.m in Sources */,
 				DADD98921C3F9E18000108EE /* GPUImageBulgeDistortionFilter.m in Sources */,
 				DADD98AF1C3F9E18000108EE /* GPUImageExposureFilter.m in Sources */,
+				DAD664CC1C43945300845765 /* FWSierraFilter.m in Sources */,
 				DADD98941C3F9E18000108EE /* GPUImageCGAColorspaceFilter.m in Sources */,
 				DADD98B61C3F9E18000108EE /* GPUImageGaussianBlurPositionFilter.m in Sources */,
 				DAC22B281C25ABBC00C9FED6 /* MASLayoutConstraint.m in Sources */,
@@ -3720,6 +3850,7 @@
 				DADD97181C3F973E000108EE /* GPUImageOutput.m in Sources */,
 				D70FC0AC1BAF1CC100711F55 /* FWButton.m in Sources */,
 				DADD973F1C3F973E000108EE /* GPUImageTextureInput.m in Sources */,
+				DA92B3FB1C43F1FF000376CA /* FWHefeFilter.m in Sources */,
 				DADD988A1C3F9E18000108EE /* GPUImageAdaptiveThresholdFilter.m in Sources */,
 				DADD98FC1C3F9E18000108EE /* GPUImageSourceOverBlendFilter.m in Sources */,
 				DADD98F31C3F9E18000108EE /* GPUImageSharpenFilter.m in Sources */,
@@ -3730,6 +3861,7 @@
 				DADD98991C3F9E18000108EE /* GPUImageColorBurnBlendFilter.m in Sources */,
 				DADD99061C3F9E18000108EE /* GPUImageToneCurveFilter.m in Sources */,
 				DADD98F91C3F9E18000108EE /* GPUImageSobelEdgeDetectionFilter.m in Sources */,
+				DAD664C01C43907400845765 /* FWValenciaFilter.m in Sources */,
 				DADD98F61C3F9E18000108EE /* GPUImageSketchFilter.m in Sources */,
 				D71E6F0B1BA88A2000BCC79C /* main.m in Sources */,
 				DADD98E01C3F9E18000108EE /* GPUImageOpeningFilter.m in Sources */,

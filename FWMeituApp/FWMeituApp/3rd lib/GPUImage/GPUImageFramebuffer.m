@@ -267,7 +267,6 @@ void dataProviderUnlockCallback (void *info, const void *data, size_t size);
     }
 
     NSAssert(framebufferReferenceCount > 0, @"Tried to overrelease a framebuffer, did you forget to call -useNextFrameForImageCapture before using -imageFromCurrentFramebuffer?");
-    NSLog(@"framebufferReferenceCount:%lu",framebufferReferenceCount);
     framebufferReferenceCount--;
     if (framebufferReferenceCount < 1)
     {

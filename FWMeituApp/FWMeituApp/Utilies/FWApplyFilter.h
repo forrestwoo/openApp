@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FWCommonFilter : NSObject
+@interface FWApplyFilter : NSObject
 
 //亮度
 + (UIImage *)changeValueForBrightnessFilter:(float)value image:(UIImage *)image;
@@ -24,20 +24,12 @@
 
 //暗部
 + (UIImage *)changeValueForLowlightFilter:(float)value image:(UIImage *)image;
-//- (void)changeValueForBrightnessFilter:(float)value;
-//- (void)changeValueForBrightnessFilter:(float)value;
-//- (void)changeValueForBrightnessFilter:(float)value;
+
 //智能补光
 + (UIImage *)changeValueForExposureFilter:(float)value image:(UIImage *)image;
 
 //色温
 + (UIImage *)changeValueForWhiteBalanceFilter:(float)value image:(UIImage *)image;
-
-+ (UIImage *)applyToLookupFilter:(UIImage *)image;
-
-+ (UIImage *)changeValueForMissEtikateFilter:(float)value image:(UIImage *)image;
-
-+ (UIImage *)changeValueForSoftEleganceFilter:(float)value image:(UIImage *)image;
 
 //智能优化
 + (UIImage *)autoBeautyFilter:(UIImage *)image;
@@ -49,5 +41,44 @@
 + (UIImage *)applySoftEleganceFilter:(UIImage *)image;
 
 + (UIImage *)applyNashvilleFilter:(UIImage *)image;
+
++ (UIImage *)applyLordKelvinFilter:(UIImage *)image;
+
++ (UIImage *)applyAmaroFilter:(UIImage *)image;
+
++ (UIImage *)applyRiseFilter:(UIImage *)image;
+
++ (UIImage *)applyHudsonFilter:(UIImage *)image;
+
++ (UIImage *)applyXproIIFilter:(UIImage *)image;
+
++ (UIImage *)apply1977Filter:(UIImage *)image;
+
++ (UIImage *)applyValenciaFilter:(UIImage *)image;
+
++ (UIImage *)applyWaldenFilter:(UIImage *)image;
+
++ (UIImage *)applyLomofiFilter:(UIImage *)image;
+
++ (UIImage *)applyInkwellFilter:(UIImage *)image;
+
++ (UIImage *)applySierraFilter:(UIImage *)image;
+
++ (UIImage *)applyEarlybirdFilter:(UIImage *)image;
+
++ (UIImage *)applySutroFilter:(UIImage *)image;
+
++ (UIImage *)applyToasterFilter:(UIImage *)image;
+
++ (UIImage *)applyBrannanFilter:(UIImage *)image;
+
++ (UIImage *)applyHefeFilter:(UIImage *)image;
+
+
+//自然饱和度
++ (UIImage *)changeValueForVibranceFilter:(float)value image:(UIImage *)image;
+
+//锐化
++ (UIImage *)changeValueForSharpenilter:(float)value image:(UIImage *)image;
 
 @end

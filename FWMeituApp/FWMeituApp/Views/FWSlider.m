@@ -50,7 +50,7 @@
         _tipView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"slider_tip_white_bg"]];
 
         [self updateTipViewframe];
-        [self.superview.superview addSubview:_tipView];
+        [self addSubview:_tipView];
 
         _tipView.alpha = 0.0;
     }
@@ -122,6 +122,7 @@
 //    popoverRect.origin.y = self.frame.origin.y - popoverRect.size.height - 1;
     
     self.tipView.frame = popoverRect;
+    NSLog(@"frame:%@",NSStringFromCGRect(popoverRect));
 }
 
 - (void)showPopoverAnimated:(BOOL)animated

@@ -1,14 +1,14 @@
 //
-//  FWNashvilleFilter.m
+//  FW1977Filter.m
 //  FWMeituApp
 //
-//  Created by hzkmn on 16/1/8.
+//  Created by hzkmn on 16/1/11.
 //  Copyright © 2016年 ForrestWoo co,.ltd. All rights reserved.
 //
 
-#import "FWNashvilleFilter.h"
+#import "FW1977Filter.h"
 
-NSString *const kFWNashvilleShaderString = SHADER_STRING
+NSString *const kFW1977ShaderString = SHADER_STRING
 (
  precision lowp float;
  
@@ -19,20 +19,23 @@ NSString *const kFWNashvilleShaderString = SHADER_STRING
  
  void main()
  {
+     
      vec3 texel = texture2D(inputImageTexture, textureCoordinate).rgb;
+     
      texel = vec3(
                   texture2D(inputImageTexture2, vec2(texel.r, .16666)).r,
                   texture2D(inputImageTexture2, vec2(texel.g, .5)).g,
                   texture2D(inputImageTexture2, vec2(texel.b, .83333)).b);
+     
      gl_FragColor = vec4(texel, 1.0);
  }
  );
 
-@implementation FWFilter1
+@implementation FWFilter9
 
 - (id)init;
 {
-    if (!(self = [super initWithFragmentShaderFromString:kFWNashvilleShaderString]))
+    if (!(self = [super initWithFragmentShaderFromString:kFW1977ShaderString]))
     {
         return nil;
     }
@@ -42,7 +45,7 @@ NSString *const kFWNashvilleShaderString = SHADER_STRING
 
 @end
 
-@implementation FWNashvilleFilter
+@implementation FW1977Filter
 
 - (id)init
 {
@@ -51,14 +54,18 @@ NSString *const kFWNashvilleShaderString = SHADER_STRING
         return nil;
     }
     
-    UIImage *image = [UIImage imageNamed:@"nashvilleMap.png"];
-    
-    imageSource = [[GPUImagePicture alloc] initWithImage:image];
-    FWFilter1 *filter = [[FWFilter1 alloc] init];
-    
+    FWFilter9 *filter = [[FWFilter9 alloc] init];
     [self addFilter:filter];
-    [imageSource addTarget:filter atTextureLocation:1];
-    [imageSource processImage];
+    
+    UIImage *image = [UIImage imageNamed:@"1977map"];
+    imageSource1 = [[GPUImagePicture alloc] initWithImage:image];
+    [imageSource1 addTarget:filter atTextureLocation:1];
+    [imageSource1 processImage];
+    
+    UIImage *image1 = [UIImage imageNamed:@"1977blowout"];
+    imageSource2 = [[GPUImagePicture alloc] initWithImage:image1];
+    [imageSource2 addTarget:filter atTextureLocation:2];
+    [imageSource2 processImage];
     
     self.initialFilters = [NSArray arrayWithObjects:filter, nil];
     self.terminalFilter = filter;
