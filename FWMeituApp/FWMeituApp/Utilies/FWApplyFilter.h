@@ -74,6 +74,8 @@
 
 + (UIImage *)applyHefeFilter:(UIImage *)image;
 
++ (UIImage *)applyGlassFilter:(UIImage *)image;
+
 
 //自然饱和度
 + (UIImage *)changeValueForVibranceFilter:(float)value image:(UIImage *)image;

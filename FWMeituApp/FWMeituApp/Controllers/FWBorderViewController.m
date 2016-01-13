@@ -153,6 +153,7 @@
     {
         FWEffectBarItem *item = (FWEffectBarItem *)[bar.items objectAtIndex:index];
         item.ShowBorder = YES;
+        [self.borderStyleBar scrollRectToVisible:item.frame  animated:YES];
     }
     
 }

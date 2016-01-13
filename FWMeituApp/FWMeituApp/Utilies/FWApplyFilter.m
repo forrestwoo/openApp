@@ -430,4 +430,16 @@
     return [filter imageFromCurrentFramebuffer];
 }
 
++ (UIImage *)applyGlassFilter:(UIImage *)image
+{
+    GPUImageGlassSphereFilter *filter = [[GPUImageGlassSphereFilter alloc] init];
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    return [filter imageFromCurrentFramebuffer];
+}
+
 @end

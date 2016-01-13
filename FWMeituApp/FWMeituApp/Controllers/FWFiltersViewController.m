@@ -26,6 +26,9 @@
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIImage *currentImage;
 
+@property BOOL isBlurActivate;
+@property BOOL isDarkCornerActivate;
+
 @end
 
 @implementation FWFiltersViewController
@@ -86,13 +89,16 @@
     
     UIButton * btnBlur = [UIButton buttonWithType:UIButtonTypeCustom];
     [btnBlur setImage:[UIImage imageNamed:@"blur_deactivated"] forState:UIControlStateNormal];
+    self.isBlurActivate = NO;
     btnBlur.frame = CGRectMake(10, HEIGHT - 45 - kHeight, 25, 25);
     [btnBlur addTarget:self action:@selector(btnBlurClicked:) forControlEvents:UIControlEventTouchUpInside];
     btnBlur.backgroundColor = [UIColor clearColor];
     [self.view addSubview:btnBlur];
     
     UIButton * btnDark = [UIButton buttonWithType:UIButtonTypeCustom];
+    
     [btnDark setImage:[UIImage imageNamed:@"dark_corner_deactivated"] forState:UIControlStateNormal];
+    self.isDarkCornerActivate = NO;
     btnDark.frame = CGRectMake(10, HEIGHT - 10 - kHeight, 25, 25);
     [btnDark addTarget:self action:@selector(btnDarkClicked:) forControlEvents:UIControlEventTouchUpInside];
     btnDark.backgroundColor = [UIColor clearColor];
@@ -109,12 +115,34 @@
 
 - (void)btnBlurClicked:(id)sender
 {
-    
+    UIButton *btn = (UIButton *)sender;
+
+    if (self.isBlurActivate)
+    {
+        [btn setImage:[UIImage imageNamed:@"blur_deactivated"] forState:UIControlStateNormal];
+        self.isBlurActivate = NO;
+    }
+    else
+    {
+        [btn setImage:[UIImage imageNamed:@"blur_activated"] forState:UIControlStateNormal];
+        self.isBlurActivate = YES;
+    }
 }
 
 - (void)btnDarkClicked:(id)sender
 {
+    UIButton *btn = (UIButton *)sender;
     
+    if (self.isBlurActivate)
+    {
+        [btn setImage:[UIImage imageNamed:@"dark_corner_deactivated"] forState:UIControlStateNormal];
+        self.isDarkCornerActivate = NO;
+    }
+    else
+    {
+        [btn setImage:[UIImage imageNamed:@"dark_corner_activated"] forState:UIControlStateNormal];
+        self.isDarkCornerActivate = YES;
+    }
 }
 
 - (void)setupFilterWithNormalImages:(NSArray *)normalImages HighlightImages:(NSArray *)highlightImages titles:(NSArray *)titles
@@ -130,7 +158,7 @@
         UIImage *img = [UIImage scaleImage:self.image targetHeight:70];
         
         [item setFinishedSelectedImage:img withFinishedUnselectedImage:img];
-        item.title = [titles objectAtIndex:i];
+        item.title = [NSString stringWithFormat:@"%i",i];
         [items addObject:item];
     }
     
@@ -187,7 +215,8 @@
     {
         FWEffectBarItem *item = (FWEffectBarItem *)[bar.items objectAtIndex:index];
         item.ShowBorder = YES;
-        
+        [self.filterStyleBar scrollRectToVisible:item.frame  animated:YES];
+
         switch (index) {
             case 0:
                 self.imageView.image = self.image;
@@ -295,7 +324,6 @@
         }
         
     }
-    
 }
 
 //隐藏状态栏

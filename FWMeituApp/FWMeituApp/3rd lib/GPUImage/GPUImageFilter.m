@@ -2,6 +2,7 @@
 #import "GPUImagePicture.h"
 #import <AVFoundation/AVFoundation.h>
 
+
 // Hardcode the vertex shader for standard filters, but this can be overridden
 NSString *const kGPUImageVertexShaderString = SHADER_STRING
 (
@@ -137,7 +138,7 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     {
 		return nil;
     }
-    
+
     return self;
 }
 
@@ -196,6 +197,7 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     dispatch_semaphore_signal(imageCaptureSemaphore);
     
     CGImageRef image = [framebuffer newCGImageFromFramebufferContents];
+    
     return image;
 }
 

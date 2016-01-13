@@ -501,6 +501,7 @@
 		DA81C54B1C3D733E001E208C /* btn_img_rotate_right_b.png in Resources */ = {isa = PBXBuildFile; fileRef = DA81C53F1C3D733E001E208C /* btn_img_rotate_right_b.png */; };
 		DA849B7C1C2C5AD300EEB0B1 /* mtxx_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA849B7A1C2C5AD300EEB0B1 /* mtxx_logo@2x.png */; };
 		DA849B7D1C2C5AD300EEB0B1 /* mtxx_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA849B7B1C2C5AD300EEB0B1 /* mtxx_logo@3x.png */; };
+		DA87DE0F1C467A8E0075AFB0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87DE0E1C467A8E0075AFB0 /* MBProgressHUD.m */; };
 		DA8857601C3ACDF800B53653 /* pb1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA88574C1C3ACDF800B53653 /* pb1@2x.png */; };
 		DA8857611C3ACDF800B53653 /* pb1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA88574D1C3ACDF800B53653 /* pb1@3x.png */; };
 		DA8857621C3ACDF800B53653 /* pb2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA88574E1C3ACDF800B53653 /* pb2@2x.png */; };
@@ -1308,6 +1309,8 @@
 		DA81C53F1C3D733E001E208C /* btn_img_rotate_right_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_img_rotate_right_b.png; sourceTree = "<group>"; };
 		DA849B7A1C2C5AD300EEB0B1 /* mtxx_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mtxx_logo@2x.png"; path = "Images/mtxx_logo@2x.png"; sourceTree = "<group>"; };
 		DA849B7B1C2C5AD300EEB0B1 /* mtxx_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mtxx_logo@3x.png"; path = "Images/mtxx_logo@3x.png"; sourceTree = "<group>"; };
+		DA87DE0D1C467A8E0075AFB0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "3rd lib/MBProgressHUD/MBProgressHUD.h"; sourceTree = "<group>"; };
+		DA87DE0E1C467A8E0075AFB0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "3rd lib/MBProgressHUD/MBProgressHUD.m"; sourceTree = "<group>"; };
 		DA88574C1C3ACDF800B53653 /* pb1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pb1@2x.png"; sourceTree = "<group>"; };
 		DA88574D1C3ACDF800B53653 /* pb1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pb1@3x.png"; sourceTree = "<group>"; };
 		DA88574E1C3ACDF800B53653 /* pb2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pb2@2x.png"; sourceTree = "<group>"; };
@@ -1882,6 +1885,7 @@
 		D717519D1BA94106004E9291 /* 3rd lib */ = {
 			isa = PBXGroup;
 			children = (
+				DA87DE0C1C467A480075AFB0 /* MBProgressHUD */,
 				DADD955F1C3F96F8000108EE /* GPUImage */,
 				DAC22B0B1C25AB9E00C9FED6 /* Masnory */,
 			);
@@ -1906,6 +1910,8 @@
 		D71751A01BA94126004E9291 /* Utilies */ = {
 			isa = PBXGroup;
 			children = (
+				D71064471BBECDCF00DF04AC /* FWApplyFilter.h */,
+				D71064481BBECDCF00DF04AC /* FWApplyFilter.m */,
 				D711E1971BA9740D002F04DC /* ConstantsConfig.h */,
 				D7F893151BB32AE40067726B /* UIImage+ImageScale.h */,
 				D7F893161BB32AE40067726B /* UIImage+ImageScale.m */,
@@ -2591,6 +2597,15 @@
 			path = zhinengyouhua;
 			sourceTree = "<group>";
 		};
+		DA87DE0C1C467A480075AFB0 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				DA87DE0D1C467A8E0075AFB0 /* MBProgressHUD.h */,
+				DA87DE0E1C467A8E0075AFB0 /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		DAC22B0B1C25AB9E00C9FED6 /* Masnory */ = {
 			isa = PBXGroup;
 			children = (
@@ -2626,6 +2641,8 @@
 		DAD50FEF1C3D22EF000CBB80 /* Beauty picture */ = {
 			isa = PBXGroup;
 			children = (
+				DA73C36E1C40106200CFA3D2 /* FWFiltersViewController.h */,
+				DA73C36F1C40106200CFA3D2 /* FWFiltersViewController.m */,
 				D7081B741BAD4CC5002EE475 /* FWBeautyViewController.h */,
 				D7081B751BAD4CC5002EE475 /* FWBeautyViewController.m */,
 				DA81C5251C3D545D001E208C /* FWAutoBeautyViewController.h */,
@@ -2724,10 +2741,6 @@
 				DAD664B01C4383B500845765 /* FWAmaroFilter.m */,
 				DAD664B21C438BA800845765 /* FWRiseFilter.h */,
 				DAD664B31C438BA800845765 /* FWRiseFilter.m */,
-				DA73C36E1C40106200CFA3D2 /* FWFiltersViewController.h */,
-				DA73C36F1C40106200CFA3D2 /* FWFiltersViewController.m */,
-				D71064471BBECDCF00DF04AC /* FWApplyFilter.h */,
-				D71064481BBECDCF00DF04AC /* FWApplyFilter.m */,
 				DAD664B51C438DDF00845765 /* FWHudsonFilter.h */,
 				DAD664B61C438DDF00845765 /* FWHudsonFilter.m */,
 				DAD664B81C438ECE00845765 /* FWXproIIFilter.h */,
@@ -3646,6 +3659,7 @@
 				D7F893171BB32AE40067726B /* UIImage+ImageScale.m in Sources */,
 				DADD99051C3F9E18000108EE /* GPUImageTiltShiftFilter.m in Sources */,
 				DADD990F1C3F9E18000108EE /* GPUImageVignetteFilter.m in Sources */,
+				DA87DE0F1C467A8E0075AFB0 /* MBProgressHUD.m in Sources */,
 				DADD98E61C3F9E18000108EE /* GPUImagePolarPixellateFilter.m in Sources */,
 				DADD99111C3F9E18000108EE /* GPUImageWeakPixelInclusionFilter.m in Sources */,
 				DADD989C1C3F9E18000108EE /* GPUImageColorLocalBinaryPatternFilter.m in Sources */,
