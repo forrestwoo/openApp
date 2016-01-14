@@ -2,6 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Blur</key>
+	<dict>
+		<key>Texts</key>
+		<array>
+			<string>图形虚化</string>
+			<string>直线虚化</string>
+		</array>
+		<key>normalImages</key>
+		<array>
+			<string>icon_blur_round_a</string>
+			<string>icon_blur_line_a</string>
+		</array>
+		<key>HighlightedImages</key>
+		<array>
+			<string>icon_blur_round_b</string>
+			<string>icon_blur_line_b</string>
+		</array>
+	</dict>
 	<key>Border</key>
 	<dict>
 		<key>PosterBorder</key>

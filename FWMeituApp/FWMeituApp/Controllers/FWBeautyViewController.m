@@ -16,6 +16,7 @@
 #import "FWColorListViewController.h"
 #import "FWBorderViewController.h"
 #import "FWFiltersViewController.h"
+#import "FWBlurViewController.h"
 
 @interface FWBeautyViewController ()
 {
@@ -152,6 +153,12 @@
     else if ([text isEqualToString:@"边框"])
     {
         FWBorderViewController *vc = [[FWBorderViewController alloc] initWithImage:self.image];
+        [self presentViewController:vc animated:YES completion:^{
+        }];
+    }
+    else if ([text isEqualToString:@"背景虚化"])
+    {
+        FWBlurViewController *vc = [[FWBlurViewController alloc] initWithImage:self.image];
         [self presentViewController:vc animated:YES completion:^{
         }];
     }
