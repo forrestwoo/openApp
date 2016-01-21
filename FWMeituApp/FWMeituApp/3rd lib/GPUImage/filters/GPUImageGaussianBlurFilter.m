@@ -256,7 +256,7 @@
     for (NSUInteger currentGaussianWeightIndex = 0; currentGaussianWeightIndex < blurRadius + 1; currentGaussianWeightIndex++)
     {
         standardGaussianWeights[currentGaussianWeightIndex] = (1.0 / sqrt(2.0 * M_PI * pow(sigma, 2.0))) * exp(-pow(currentGaussianWeightIndex, 2.0) / (2.0 * pow(sigma, 2.0)));
-        
+        //sqrt
         if (currentGaussianWeightIndex == 0)
         {
             sumOfWeights += standardGaussianWeights[currentGaussianWeightIndex];

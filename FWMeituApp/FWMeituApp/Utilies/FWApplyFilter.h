@@ -31,8 +31,16 @@
 //色温
 + (UIImage *)changeValueForWhiteBalanceFilter:(float)value image:(UIImage *)image;
 
+//自然饱和度
++ (UIImage *)changeValueForVibranceFilter:(float)value image:(UIImage *)image;
+
+//锐化
++ (UIImage *)changeValueForSharpenilter:(float)value image:(UIImage *)image;
+
 //智能优化
 + (UIImage *)autoBeautyFilter:(UIImage *)image;
+
+//复杂滤镜
 
 + (UIImage *)applyAmatorkaFilter:(UIImage *)image;
 
@@ -76,11 +84,28 @@
 
 + (UIImage *)applyGlassFilter:(UIImage *)image;
 
+//模糊效果
++ (UIImage *)applyBoxBlur:(UIImage *)image;
 
-//自然饱和度
-+ (UIImage *)changeValueForVibranceFilter:(float)value image:(UIImage *)image;
++ (UIImage *)applyGaussianBlur:(UIImage *)image;
++ (UIImage *)applyGaussianSelectiveBlur:(UIImage *)image;
++ (UIImage *)applyiOSBlur:(UIImage *)image;
++ (UIImage *)applyMotionBlur:(UIImage *)image;
++ (UIImage *)applyZoomBlur:(UIImage *)image;
++ (UIImage *)applyColorInvertFilter:(UIImage *)image;
++ (UIImage *)applySepiaFilter:(UIImage *)image;
++ (UIImage *)applyHistogramFilter:(UIImage *)image;
++ (UIImage *)applyRGBFilter:(UIImage *)image;
++ (UIImage *)applyToneCurveFilter:(UIImage *)image;
++ (UIImage *)applySketchFilter:(UIImage *)image;
+/**
+ GPUImageGaussianBlurFilter
+ GPUImageBoxBlurFilter
+ GPUImageGaussianSelectiveBlurFilter
+ GPUImageiOSBlurFilter
+ GPUImageMotionBlurFilter
+ GPUImageZoomBlurFilter
+ */
 
-//锐化
-+ (UIImage *)changeValueForSharpenilter:(float)value image:(UIImage *)image;
 
 @end

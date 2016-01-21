@@ -219,92 +219,75 @@
 
         switch (index) {
             case 0:
-                self.imageView.image = self.image;
+                self.currentImage = self.image;
                 break;
                 
             case 1:
-                self.currentImage= [FWApplyFilter applyAmaroFilter:self.image];
-                self.imageView.image = self.currentImage;
+                self.currentImage= [FWApplyFilter applySketchFilter:self.image];
                 break;
                 
             case 2:
                 self.currentImage = [FWApplyFilter applySoftEleganceFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 3:
                 self.currentImage =[FWApplyFilter applyMissetikateFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 4:
                 self.currentImage =[FWApplyFilter applyNashvilleFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 5:
                 self.currentImage =[FWApplyFilter applyLordKelvinFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 6:
                 self.currentImage = [FWApplyFilter applyAmatorkaFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 7:
                 self.currentImage = [FWApplyFilter applyRiseFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 8:
                 self.currentImage= [FWApplyFilter applyHudsonFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 9:
                 self.currentImage = [FWApplyFilter applyXproIIFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 10:
                 self.currentImage =[FWApplyFilter apply1977Filter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 11:
                 self.currentImage =[FWApplyFilter applyValenciaFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 12:
                 self.currentImage =[FWApplyFilter applyWaldenFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 13:
                 self.currentImage = [FWApplyFilter applyLomofiFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 14:
                 self.currentImage = [FWApplyFilter applyInkwellFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 15:
                 self.currentImage= [FWApplyFilter applySierraFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 16:
                 self.currentImage = [FWApplyFilter applyEarlybirdFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 17:
                 self.currentImage =[FWApplyFilter applySutroFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 18:
@@ -314,15 +297,14 @@
                 
             case 19:
                 self.currentImage =[FWApplyFilter applyBrannanFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
                 
             case 20:
                 self.currentImage = [FWApplyFilter applyHefeFilter:self.image];
-                self.imageView.image = self.currentImage;
                 break;
         }
         
+        self.imageView.image = self.currentImage;
     }
 }
 

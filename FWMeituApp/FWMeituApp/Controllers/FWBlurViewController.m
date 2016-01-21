@@ -8,6 +8,7 @@
 
 #import "FWBlurViewController.h"
 #import "FWDataManager.h"
+#import "FWApplyFilter.h"
 
 @interface FWBlurViewController ()
 
@@ -119,6 +120,7 @@
         [btn setImage:[UIImage imageNamed:[arr objectAtIndex:i]] forState:UIControlStateNormal];
         btn.frame = CGRectMake(10 + (35 + 10) * i, 0, 35, 35);
         [btn addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
+        btn.tag = 10000 + i;
         [self.subView addSubview:btn];
     }
     
@@ -130,6 +132,28 @@
     [self hideShapeView];
     
     [self.btnBlurType setImage:((UIButton *)sender).currentImage forState:UIControlStateNormal];
+    switch (((UIButton *)sender).tag) {
+        case 10000:
+            self.currentImage = [FWApplyFilter applyGaussianBlur:self.image];
+            break;
+            
+        case 10001:
+            self.currentImage = [FWApplyFilter applyGaussianSelectiveBlur:self.image];
+            break;
+            
+        case 10002:
+            self.currentImage = [FWApplyFilter applyiOSBlur:self.image];
+            break;
+            
+        case 10003:
+            self.currentImage = [FWApplyFilter applyMotionBlur:self.image];
+            break;
+            
+        case 10004:
+            self.currentImage = [FWApplyFilter applyZoomBlur:self.image];
+            break;
+    }
+    self.imageView.image = self.currentImage;
 }
 
 

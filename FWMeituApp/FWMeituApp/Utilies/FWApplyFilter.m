@@ -32,6 +32,7 @@
 
 + (UIImage *)changeValueForBrightnessFilter:(float)value image:(UIImage *)image;
 {
+    
     GPUImageBrightnessFilter *filter = [[GPUImageBrightnessFilter alloc] init];
     filter.brightness = value;
     [filter forceProcessingAtSize:image.size];
@@ -436,10 +437,194 @@
     [filter forceProcessingAtSize:image.size];
     GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
     [pic addTarget:filter];
-    
     [pic processImage];
     [filter useNextFrameForImageCapture];
     return [filter imageFromCurrentFramebuffer];
 }
 
++ (UIImage *)applyBoxBlur:(UIImage *)image
+{
+    GPUImageBoxBlurFilter *filter = [[GPUImageBoxBlurFilter alloc] init];
+//    GPUImageGaussianBlurFilter
+//    GPUImageGaussianSelectiveBlurFilter
+//    GPUImageTiltShiftFilter
+//    GPUImageMedianFilter
+    
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)applyGaussianBlur:(UIImage *)image
+{
+    GPUImageGaussianBlurFilter *filter = [[GPUImageGaussianBlurFilter alloc] init];
+//    filter.texelSpacingMultiplier = 5.0;
+    filter.blurRadiusInPixels = 5.0;
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)applyGaussianSelectiveBlur:(UIImage *)image
+{
+    GPUImageGaussianSelectiveBlurFilter *filter = [[GPUImageGaussianSelectiveBlurFilter alloc] init];
+    //    filter.texelSpacingMultiplier = 5.0;
+    filter.excludeCircleRadius = 120 / 320.0;
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)applyiOSBlur:(UIImage *)image
+{
+//    GPUImageiOSBlurFilter *filter = [[GPUImageiOSBlurFilter alloc] init];
+//    //    filter.texelSpacingMultiplier = 5.0;
+//    
+//    [filter forceProcessingAtSize:image.size];
+//    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+//    [pic addTarget:filter];
+//    [pic processImage];
+//    [filter useNextFrameForImageCapture];
+//    return [filter imageFromCurrentFramebuffer];
+    GPUImageGaussianSelectiveBlurFilter *filter = [[GPUImageGaussianSelectiveBlurFilter alloc] init];
+    //    filter.texelSpacingMultiplier = 5.0;
+    filter.excludeCircleRadius = 200 / 320.0;
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)applyMotionBlur:(UIImage *)image
+{
+//    GPUImageMotionBlurFilter *filter = [[GPUImageMotionBlurFilter alloc] init];
+//    //    filter.texelSpacingMultiplier = 5.0;
+//    
+//    [filter forceProcessingAtSize:image.size];
+//    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+//    [pic addTarget:filter];
+//    [pic processImage];
+//    [filter useNextFrameForImageCapture];
+//    return [filter imageFromCurrentFramebuffer];
+    GPUImageGaussianSelectiveBlurFilter *filter = [[GPUImageGaussianSelectiveBlurFilter alloc] init];
+    //    filter.texelSpacingMultiplier = 5.0;
+    filter.excludeCircleRadius = 10 / 320.0;
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)applyZoomBlur:(UIImage *)image
+{
+//    GPUImageZoomBlurFilter *filter = [[GPUImageZoomBlurFilter alloc] init];
+//    //    filter.texelSpacingMultiplier = 5.0;
+//
+//    [filter forceProcessingAtSize:image.size];
+//    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+//    [pic addTarget:filter];
+//    [pic processImage];
+//    [filter useNextFrameForImageCapture];
+//    return [filter imageFromCurrentFramebuffer];
+    GPUImageGaussianSelectiveBlurFilter *filter = [[GPUImageGaussianSelectiveBlurFilter alloc] init];
+    //    filter.texelSpacingMultiplier = 5.0;
+    filter.excludeCircleRadius = 320 / 320.0;
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    
+    return [filter imageFromCurrentFramebuffer];
+}
++ (UIImage *)applyColorInvertFilter:(UIImage *)image
+{
+    GPUImageColorInvertFilter *filter = [[GPUImageColorInvertFilter alloc] init];
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    
+    return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)applySepiaFilter:(UIImage *)image
+{
+    GPUImageSepiaFilter *filter = [[GPUImageSepiaFilter alloc] init];
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    
+    return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)applyHistogramFilter:(UIImage *)image
+{
+    GPUImageHistogramGenerator *filter = [[GPUImageHistogramGenerator alloc] init];
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    
+    return [filter imageFromCurrentFramebuffer];
+}
+
+
++ (UIImage *)applyRGBFilter:(UIImage *)image
+{
+    GPUImageRGBFilter *filter = [[GPUImageRGBFilter alloc] init];
+    filter.red = 0.3;
+    filter.green = 0.3;
+    filter.blue = 0.3;
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    
+    return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)applyToneCurveFilter:(UIImage *)image
+{
+    GPUImageToneCurveFilter *filter = [[GPUImageToneCurveFilter alloc] init];
+
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    
+    return [filter imageFromCurrentFramebuffer];
+}
+
++ (UIImage *)applySketchFilter:(UIImage *)image
+{
+    GPUImageSketchFilter *filter = [[GPUImageSketchFilter alloc] init];
+    
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    
+    return [filter imageFromCurrentFramebuffer];
+}
 @end

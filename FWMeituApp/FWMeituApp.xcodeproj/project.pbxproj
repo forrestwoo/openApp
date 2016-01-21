@@ -533,6 +533,7 @@
 		DA8857711C3ACDF800B53653 /* pb9@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA88575D1C3ACDF800B53653 /* pb9@3x.png */; };
 		DA8857721C3ACDF800B53653 /* pb10@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA88575E1C3ACDF800B53653 /* pb10@2x.png */; };
 		DA8857731C3ACDF800B53653 /* pb10@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA88575F1C3ACDF800B53653 /* pb10@3x.png */; };
+		DA8E8C911C4FDD9D0010D285 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8E8C901C4FDD9D0010D285 /* CloudKit.framework */; };
 		DA92B3F21C43F1C4000376CA /* FWSutroFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92B3F11C43F1C4000376CA /* FWSutroFilter.m */; };
 		DA92B3F51C43F1DA000376CA /* FWToasterFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92B3F41C43F1DA000376CA /* FWToasterFilter.m */; };
 		DA92B3F81C43F1EB000376CA /* FWBrannanFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92B3F71C43F1EB000376CA /* FWBrannanFilter.m */; };
@@ -1354,6 +1355,7 @@
 		DA88575D1C3ACDF800B53653 /* pb9@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pb9@3x.png"; sourceTree = "<group>"; };
 		DA88575E1C3ACDF800B53653 /* pb10@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pb10@2x.png"; sourceTree = "<group>"; };
 		DA88575F1C3ACDF800B53653 /* pb10@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pb10@3x.png"; sourceTree = "<group>"; };
+		DA8E8C901C4FDD9D0010D285 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		DA92B3F01C43F1C4000376CA /* FWSutroFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWSutroFilter.h; path = "Custom Filters/FWSutroFilter.h"; sourceTree = "<group>"; };
 		DA92B3F11C43F1C4000376CA /* FWSutroFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWSutroFilter.m; path = "Custom Filters/FWSutroFilter.m"; sourceTree = "<group>"; };
 		DA92B3F31C43F1DA000376CA /* FWToasterFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWToasterFilter.h; path = "Custom Filters/FWToasterFilter.h"; sourceTree = "<group>"; };
@@ -1782,6 +1784,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8E8C911C4FDD9D0010D285 /* CloudKit.framework in Frameworks */,
 				D714A4741BB455D700AA950D /* CoreGraphics.framework in Frameworks */,
 				D714A4721BB455CC00AA950D /* QuartzCore.framework in Frameworks */,
 				D714A4701BB455BD00AA950D /* OpenGLES.framework in Frameworks */,
@@ -1905,14 +1908,14 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		D717519D1BA94106004E9291 /* 3rd lib */ = {
+		D717519D1BA94106004E9291 /* vender */ = {
 			isa = PBXGroup;
 			children = (
 				DA87DE0C1C467A480075AFB0 /* MBProgressHUD */,
 				DADD955F1C3F96F8000108EE /* GPUImage */,
 				DAC22B0B1C25AB9E00C9FED6 /* Masnory */,
 			);
-			name = "3rd lib";
+			name = vender;
 			sourceTree = "<group>";
 		};
 		D717519E1BA94112004E9291 /* Network */ = {
@@ -2048,6 +2051,7 @@
 		D71E6EFC1BA88A2000BCC79C = {
 			isa = PBXGroup;
 			children = (
+				DA8E8C901C4FDD9D0010D285 /* CloudKit.framework */,
 				D71E6F071BA88A2000BCC79C /* FWMeituApp */,
 				D71E6F241BA88A2000BCC79C /* FWMeituAppTests */,
 				D71E6F061BA88A2000BCC79C /* Products */,
@@ -2072,7 +2076,7 @@
 				D71751A01BA94126004E9291 /* Utilies */,
 				D717519F1BA9411A004E9291 /* Controllers */,
 				D717519E1BA94112004E9291 /* Network */,
-				D717519D1BA94106004E9291 /* 3rd lib */,
+				D717519D1BA94106004E9291 /* vender */,
 				D717519C1BA940FA004E9291 /* Views */,
 				D717519B1BA940EB004E9291 /* Models */,
 				D71E6F311BA88BAB00BCC79C /* Images */,
@@ -3148,6 +3152,7 @@
 				TargetAttributes = {
 					D71E6F041BA88A2000BCC79C = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = GMQZZ9LJB4;
 					};
 					D71E6F201BA88A2000BCC79C = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -4050,11 +4055,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "FWMeituApp/FWMeituApp-prefix.pch";
 				INFOPLIST_FILE = FWMeituApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -4062,11 +4070,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "FWMeituApp/FWMeituApp-prefix.pch";
 				INFOPLIST_FILE = FWMeituApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FW.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

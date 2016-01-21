@@ -7,6 +7,7 @@
 //
 
 #import "FWCommonTools.h"
+#import <CloudKit/CloudKit.h>
 
 @implementation FWCommonTools
 
