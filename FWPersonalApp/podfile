@@ -1,0 +1,4 @@
+xcodeproj 'Portfolio/Portfolio.xcodeproj' 
+platform :ios,'6.1'
+
+pod 'ReactiveCocoa'

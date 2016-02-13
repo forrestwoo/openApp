@@ -475,7 +475,7 @@
 {
     GPUImageGaussianSelectiveBlurFilter *filter = [[GPUImageGaussianSelectiveBlurFilter alloc] init];
     //    filter.texelSpacingMultiplier = 5.0;
-    filter.excludeCircleRadius = 120 / 320.0;
+    filter.excludeCircleRadius = 50 / 320.0;
     [filter forceProcessingAtSize:image.size];
     GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
     [pic addTarget:filter];
