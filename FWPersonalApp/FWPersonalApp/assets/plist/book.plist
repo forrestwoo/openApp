@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>tangshii300</key>
+	<string>http://so.gushiwen.org/gushi/tangshi.aspx</string>
+	<key>songci</key>
+	<string>http://so.gushiwen.org/gushi/songsan.aspx</string>
+	<key>lunyu</key>
+	<string>http://so.gushiwen.org/guwen/book_2.aspx</string>
+	<key>shiji</key>
+	<string>http://so.gushiwen.org/guwen/book_5.aspx</string>
+	<key>sunzibingfa</key>
+	<string>http://so.gushiwen.org/guwen/book_3.aspx</string>
+	<key>shanhaijing</key>
+	<string>http://so.gushiwen.org/guwen/book_1.aspx</string>
+	<key>zhouyi</key>
+	<string>http://so.gushiwen.org/guwen/book_6.aspx</string>
+	<key>daodejing</key>
+	<string>http://so.gushiwen.org/guwen/book_28.aspx</string>
+	<key>guiguji</key>
+	<string>http://so.gushiwen.org/guwen/book_27.aspx</string>
+	<key>huangdineijing</key>
+	<string>http://so.gushiwen.org/guwen/book_10.aspx</string>
+	<key>zizhitongjian</key>
+	<string>http://so.gushiwen.org/guwen/book_8.aspx</string>
+	<key>daxue</key>
+	<string>http://so.gushiwen.org/guwen/book_20.aspx</string>
+	<key>zhuangzi</key>
+	<string>http://so.gushiwen.org/guwen/book_26.aspx</string>
+	<key>lvshichunqiu</key>
+	<string>http://so.gushiwen.org/guwen/book_44.aspx</string>
+	<key>mengzi</key>
+	<string>http://so.gushiwen.org/guwen/book_11.aspx</string>
+	<key>sanzijing</key>
+	<string>http://so.gushiwen.org/guwen/book_15.aspx</string>
+	<key>zhongyong</key>
+	<string>http://so.gushiwen.org/guwen/book_21.aspx</string>
+	<key>zuozhuan</key>
+	<string>http://so.gushiwen.org/guwen/book_19.aspx</string>
+	<key>hanfeizi</key>
+	<string>http://so.gushiwen.org/guwen/book_31.aspx</string>
+	<key>zhanguoce</key>
+	<string>http://so.gushiwen.org/guwen/book_53.aspx</string>
+	<key>liji</key>
+	<string>http://so.gushiwen.org/guwen/book_23.aspx</string>
+	<key>mozi</key>
+	<string>http://so.gushiwen.org/guwen/book_29.aspx</string>
+	<key>shangshu</key>
+	<string>http://so.gushiwen.org/guwen/book_22.aspx</string>
+	<key>zhouli</key>
+	<string>http://so.gushiwen.org/guwen/book_24.aspx</string>
+	<key>chuci</key>
+	<string>http://so.gushiwen.org/gushi/chuci.aspx</string>
+	<key>shijing</key>
+	<string>http://so.gushiwen.org/gushi/shijing.aspx</string>
+	<key>baijiaxing</key>
+	<string>http://so.gushiwen.org/guwen/book_16.aspx</string>
+</dict>
+</plist>

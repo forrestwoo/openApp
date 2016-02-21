@@ -7,21 +7,49 @@
 //
 
 #import "ViewController.h"
+#import "FWButton.h"
+#import "FWAncientPoetryCollectionViewController.h"
+#import "FWBookshelfCollectionViewLayout.h"
 
 @interface ViewController ()
+
+//@property (nonatomic, strong) UIView *backgroundView;
+//@property (nonatomic, strong) UIView *foregroundView;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    FWButton *btnTang = [FWButton buttonWithType:UIButtonTypeCustom];
+    [btnTang setTitle:@"唐诗宋词" forState:UIControlStateNormal];
+    btnTang.frame = CGRectMake(50, 50, 80, 80);
+    btnTang.backgroundColor = [UIColor blueColor];
+    [btnTang addTarget:self action:@selector(btnTangClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnTang];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)btnTangClicked:(id)sender
+{
+    FWBookshelfCollectionViewLayout *layout = [[FWBookshelfCollectionViewLayout alloc] init];
+    FWAncientPoetryCollectionViewController *vc = [[FWAncientPoetryCollectionViewController alloc] initWithCollectionViewLayout:layout];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+}
+
+- (void)setupBackgroundView
+{
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 @end
