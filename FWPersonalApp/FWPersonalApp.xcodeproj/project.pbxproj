@@ -74,7 +74,9 @@
 		DAC855EA1C74D3D500725FCA /* book.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAC855E91C74D3D500725FCA /* book.plist */; };
 		DAD0E6611C6EBEFD006AFBE4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E6601C6EBEFD006AFBE4 /* Reachability.m */; };
 		DAD0E6641C6EC3D0006AFBE4 /* RootDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD0E6631C6EC3D0006AFBE4 /* RootDataModel.m */; };
+		DAD5E9461C7EE8BB00AD3D9F /* FWBookCategoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD5E9451C7EE8BB00AD3D9F /* FWBookCategoryViewModel.m */; };
 		DADCF0DA1C7A18B600A7B7E7 /* LXReorderableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DADCF0D91C7A18B600A7B7E7 /* LXReorderableCollectionViewFlowLayout.m */; };
+		DADCF0DD1C7A198500A7B7E7 /* FWBookCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DADCF0DC1C7A198500A7B7E7 /* FWBookCategoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,8 +201,13 @@
 		DAD0E6601C6EBEFD006AFBE4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = venders/Reachability/Reachability.m; sourceTree = "<group>"; };
 		DAD0E6621C6EC3D0006AFBE4 /* RootDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootDataModel.h; path = models/RootDataModel.h; sourceTree = "<group>"; };
 		DAD0E6631C6EC3D0006AFBE4 /* RootDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootDataModel.m; path = models/RootDataModel.m; sourceTree = "<group>"; };
+		DAD5E9441C7EE8BB00AD3D9F /* FWBookCategoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWBookCategoryViewModel.h; path = viewModels/FWBookCategoryViewModel.h; sourceTree = "<group>"; };
+		DAD5E9451C7EE8BB00AD3D9F /* FWBookCategoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWBookCategoryViewModel.m; path = viewModels/FWBookCategoryViewModel.m; sourceTree = "<group>"; };
 		DADCF0D81C7A18B600A7B7E7 /* LXReorderableCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LXReorderableCollectionViewFlowLayout.h; path = venders/LX/LXReorderableCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		DADCF0D91C7A18B600A7B7E7 /* LXReorderableCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LXReorderableCollectionViewFlowLayout.m; path = venders/LX/LXReorderableCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		DADCF0DB1C7A198500A7B7E7 /* FWBookCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWBookCategoryViewController.h; path = views/book/FWBookCategoryViewController.h; sourceTree = "<group>"; };
+		DADCF0DC1C7A198500A7B7E7 /* FWBookCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWBookCategoryViewController.m; path = views/book/FWBookCategoryViewController.m; sourceTree = "<group>"; };
+		DAF9271D1C7C3BFA00270BC7 /* FWPersonalApp-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FWPersonalApp-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +332,7 @@
 				DA8440391C6E1CC300E7CC7F /* libxml2.tbd */,
 				DA8440371C6E1AE200E7CC7F /* libxml2.2.tbd */,
 				DA843FBB1C6E0A7100E7CC7F /* main.m */,
+				DAF9271D1C7C3BFA00270BC7 /* FWPersonalApp-prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -404,6 +412,7 @@
 		DA843FF61C6E0C7B00E7CC7F /* viewModels */ = {
 			isa = PBXGroup;
 			children = (
+				DAD5E9431C7EE89400AD3D9F /* book */,
 			);
 			name = viewModels;
 			sourceTree = "<group>";
@@ -490,6 +499,8 @@
 				DAAA3D1C1C75ACF300BF39CF /* FWBookShelfDecarationView.m */,
 				DAAA3D1E1C75AF9B00BF39CF /* FWBookshelfCollectionViewLayout.h */,
 				DAAA3D1F1C75AF9B00BF39CF /* FWBookshelfCollectionViewLayout.m */,
+				DADCF0DB1C7A198500A7B7E7 /* FWBookCategoryViewController.h */,
+				DADCF0DC1C7A198500A7B7E7 /* FWBookCategoryViewController.m */,
 			);
 			name = book;
 			sourceTree = "<group>";
@@ -517,6 +528,15 @@
 				DAD0E6601C6EBEFD006AFBE4 /* Reachability.m */,
 			);
 			name = Reachability;
+			sourceTree = "<group>";
+		};
+		DAD5E9431C7EE89400AD3D9F /* book */ = {
+			isa = PBXGroup;
+			children = (
+				DAD5E9441C7EE8BB00AD3D9F /* FWBookCategoryViewModel.h */,
+				DAD5E9451C7EE8BB00AD3D9F /* FWBookCategoryViewModel.m */,
+			);
+			name = book;
 			sourceTree = "<group>";
 		};
 		DADCF0D71C7A18AD00A7B7E7 /* LX */ = {
@@ -700,6 +720,7 @@
 				DAAA3D1D1C75ACF300BF39CF /* FWBookShelfDecarationView.m in Sources */,
 				DAD0E6641C6EC3D0006AFBE4 /* RootDataModel.m in Sources */,
 				DA84402A1C6E0D7F00E7CC7F /* UIProgressView+AFNetworking.m in Sources */,
+				DAD5E9461C7EE8BB00AD3D9F /* FWBookCategoryViewModel.m in Sources */,
 				DADCF0DA1C7A18B600A7B7E7 /* LXReorderableCollectionViewFlowLayout.m in Sources */,
 				DA8440251C6E0D7F00E7CC7F /* AFImageDownloader.m in Sources */,
 				DA8440241C6E0D7F00E7CC7F /* AFAutoPurgingImageCache.m in Sources */,
@@ -721,6 +742,7 @@
 				DA843FBF1C6E0A7100E7CC7F /* AppDelegate.m in Sources */,
 				DA8440261C6E0D7F00E7CC7F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DA843FBC1C6E0A7100E7CC7F /* main.m in Sources */,
+				DADCF0DD1C7A198500A7B7E7 /* FWBookCategoryViewController.m in Sources */,
 				DAAA3D1A1C75A55200BF39CF /* FWDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -862,6 +884,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/hzkmn/Desktop/test/FWPersonalApp/FWPersonalApp/FWPersonalApp-prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = FWPersonalApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -879,6 +903,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/hzkmn/Desktop/test/FWPersonalApp/FWPersonalApp/FWPersonalApp-prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = FWPersonalApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;

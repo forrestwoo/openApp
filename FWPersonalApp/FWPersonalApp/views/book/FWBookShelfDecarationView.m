@@ -6,7 +6,11 @@
 //  Copyright © 2016年 ForrstWoo. All rights reserved.
 //
 
+
+
 #import "FWBookShelfDecarationView.h"
+
+NSInteger const kDecorationViewHeight = 216;
 
 @implementation FWBookShelfDecarationView
 
@@ -14,7 +18,7 @@
 {
     if (self = [super initWithFrame:frame])
     {
-        UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 375, 216)];
+        UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenSize.width, kDecorationViewHeight)];
         img.image = [UIImage imageNamed:@"boolshelf.png"];
         [self addSubview:img];
     }

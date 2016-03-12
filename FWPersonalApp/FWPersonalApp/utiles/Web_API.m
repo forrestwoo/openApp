@@ -33,4 +33,19 @@ static NSString * const kWeatherBaseURL = @"";
     return nil;
 }
 
+- (void)htmlDataWithURLString:(NSString*)urlString completionHandler:(void (^)(NSData * __nullable data,NSError * __nullable error))completionHandler
+{
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * __nullable data, NSURLResponse * __nullable response, NSError * __nullable error) {
+        if (completionHandler) {
+            completionHandler(data,error);
+        }
+    }];
+    [dataTask resume];
+
+}
+
 @end

@@ -1,0 +1,24 @@
+//
+//  FWPersonalApp-prefix.pch
+//  FWPersonalApp
+//
+//  Created by hzkmn on 16/2/23.
+//  Copyright © 2016年 ForrstWoo. All rights reserved.
+//
+
+#ifndef FWPersonalApp_prefix_pch
+#define FWPersonalApp_prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "FWDataManager.h"
+#import "Web_API.h"
+
+#define screenSize [UIScreen mainScreen].bounds.size
+
+//width and height for bookshelf cell 
+#define kCellWidth 100
+#define kCellHeight 150
+
+#endif /* FWPersonalApp_prefix_pch */

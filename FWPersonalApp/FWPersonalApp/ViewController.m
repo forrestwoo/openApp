@@ -23,22 +23,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.title = @"我的应用";
     FWButton *btnTang = [FWButton buttonWithType:UIButtonTypeCustom];
-    [btnTang setTitle:@"唐诗宋词" forState:UIControlStateNormal];
-    btnTang.frame = CGRectMake(50, 50, 80, 80);
+    [btnTang setTitle:@"古籍" forState:UIControlStateNormal];
+    btnTang.frame = CGRectMake(20, 80, 80, 40);
     btnTang.backgroundColor = [UIColor blueColor];
     [btnTang addTarget:self action:@selector(btnTangClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnTang];
+    
+    FWButton *btnImage = [FWButton buttonWithType:UIButtonTypeCustom];
+    [btnImage setTitle:@"图片" forState:UIControlStateNormal];
+    btnImage.frame = CGRectMake(120, 80, 80, 40);
+    btnImage.backgroundColor = [UIColor blueColor];
+    [btnImage addTarget:self action:@selector(btnImageClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnImage];
 }
 
 - (void)btnTangClicked:(id)sender
 {
     FWBookshelfCollectionViewLayout *layout = [[FWBookshelfCollectionViewLayout alloc] init];
     FWAncientPoetryCollectionViewController *vc = [[FWAncientPoetryCollectionViewController alloc] initWithCollectionViewLayout:layout];
-    [self presentViewController:vc animated:YES completion:^{
-        
-    }];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)btnImageClicked:(id)sender
+{
+    FWBookshelfCollectionViewLayout *layout = [[FWBookshelfCollectionViewLayout alloc] init];
+    FWAncientPoetryCollectionViewController *vc = [[FWAncientPoetryCollectionViewController alloc] initWithCollectionViewLayout:layout];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)setupBackgroundView

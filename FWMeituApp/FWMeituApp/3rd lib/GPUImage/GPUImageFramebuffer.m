@@ -189,6 +189,7 @@ void dataProviderUnlockCallback (void *info, const void *data, size_t size);
             glBindTexture(GL_TEXTURE_2D, _texture);
             
             glTexImage2D(GL_TEXTURE_2D, 0, _textureOptions.internalFormat, (int)_size.width, (int)_size.height, 0, _textureOptions.format, _textureOptions.type, 0);
+            
             glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, _texture, 0);
         }
         
@@ -196,7 +197,7 @@ void dataProviderUnlockCallback (void *info, const void *data, size_t size);
         GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
         NSAssert(status == GL_FRAMEBUFFER_COMPLETE, @"Incomplete filter FBO: %d", status);
         #endif
-        
+        //4288 2847
         glBindTexture(GL_TEXTURE_2D, 0);
     });
 }

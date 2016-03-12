@@ -219,7 +219,7 @@
 + (UIImage *)applySoftEleganceFilter:(UIImage *)image
 {
     GPUImageSoftEleganceFilter *filter = [[GPUImageSoftEleganceFilter alloc] init];
-    [filter forceProcessingAtSize:image.size];
+    [filter forceProcessingAtSize:CGSizeMake(image.size.width / 2.0, image.size.height / 2.0)];
     GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
     [pic addTarget:filter];
     
@@ -619,7 +619,7 @@
 {
     GPUImageSketchFilter *filter = [[GPUImageSketchFilter alloc] init];
     
-    [filter forceProcessingAtSize:image.size];
+    [filter forceProcessingAtSize:CGSizeMake(image.size.width / 3.0, image.size.height / 3.0)];
     GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
     [pic addTarget:filter];
     [pic processImage];

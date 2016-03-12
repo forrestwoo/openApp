@@ -12,7 +12,6 @@
 
 NSString * const FWBookshelfCollectionViewLayoutDecorationViewKind = @"FWBookshelfCollectionViewLayoutDecorationViewKind";
 
-const NSInteger kDecorationView_HEIGHT = 216;
 @interface FWBookshelfCollectionViewLayout ()
 
 @property (nonatomic, strong) NSDictionary *bookShelfRectanges;
@@ -34,15 +33,10 @@ const NSInteger kDecorationView_HEIGHT = 216;
     self.countOfRow = ceilf(itemCount / 3.0);
     for (int row = 0; row < self.countOfRow; row++)
     {
-        dictionary[[NSIndexPath indexPathForItem:row inSection:0]] = [NSValue valueWithCGRect:CGRectMake(0, kDecorationView_HEIGHT * row, [self screenSize].width, kDecorationView_HEIGHT)];
+        dictionary[[NSIndexPath indexPathForItem:row inSection:0]] = [NSValue valueWithCGRect:CGRectMake(0, kDecorationViewHeight * row, screenSize.width, kDecorationViewHeight)];
     }
     
     self.bookShelfRectanges = [NSDictionary dictionaryWithDictionary:dictionary];
-}
-
-- (CGSize)screenSize
-{
-    return [UIScreen mainScreen].bounds.size;
 }
 
 #pragma mark Runtime Layout Calculations
@@ -86,7 +80,7 @@ const NSInteger kDecorationView_HEIGHT = 216;
     UICollectionViewLayoutAttributes *attris = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     
     NSInteger currentRow = indexPath.item / 3;
-    CGRect frame = CGRectMake(20 + (indexPath.item % 3) * (100 + 17.5), 35+ currentRow * (150 + 65), 100, 150);
+    CGRect frame = CGRectMake(20 + (indexPath.item % 3) * (kCellWidth + 17.5), 35+ currentRow * (kCellHeight + 65), kCellWidth, kCellHeight);
     attris.frame = frame;
     attris.zIndex = 1;
     
@@ -115,7 +109,7 @@ const NSInteger kDecorationView_HEIGHT = 216;
 
 - (CGSize)collectionViewContentSize
 {
-    CGSize contentSize = CGSizeMake(self.collectionView.bounds.size.width, self.countOfRow * 216);
+    CGSize contentSize = CGSizeMake(self.collectionView.bounds.size.width, self.countOfRow * kDecorationViewHeight + 20);
     
     return contentSize;
 }
