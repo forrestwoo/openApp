@@ -15,5 +15,7 @@
 @property (nonatomic, strong) NSDictionary *poetryDict;
 @property (nonatomic, strong) NSArray *poetryType;
 @property (nonatomic, strong) NSString *urlString;
+@property (nonatomic, strong) NSArray *bookContents;
+
 
 @end

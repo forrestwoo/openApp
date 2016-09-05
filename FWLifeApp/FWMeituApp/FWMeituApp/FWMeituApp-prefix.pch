@@ -1,0 +1,20 @@
+//
+//  FWMeituApp-prefix.pch
+//  FWMeituApp
+//
+//  Created by ForrestWoo on 15-9-27.
+//  Copyright (c) 2015年 ForrestWoo co,.ltd. All rights reserved.
+//
+
+#ifndef FWMeituApp_FWMeituApp_prefix_pch
+#define FWMeituApp_FWMeituApp_prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "ConstantsConfig.h"
+#import "AppDelegate.h"
+#import "GPUImage.h"
+#import "FWCommonTools.h"
+
+#endif

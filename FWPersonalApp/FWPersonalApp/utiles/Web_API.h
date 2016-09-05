@@ -10,11 +10,12 @@
 #define kDefaultKey @"book"
 @interface Web_API : NSObject
 
+NS_ASSUME_NONNULL_BEGIN
 + (Web_API *)sharedInstance;
 
-- (NSString *)getRootURL;
+- (NSString *)getRootURLForBook;
 
 - (void)htmlDataWithURLString:(NSString*)urlString completionHandler:(void (^)(NSData * __nullable data,NSError * __nullable error))completionHandler;
 
-
+NS_ASSUME_NONNULL_END
 @end

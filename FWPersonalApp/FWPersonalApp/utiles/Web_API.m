@@ -28,9 +28,9 @@ static NSString * const kWeatherBaseURL = @"";
     return [self sharedInstance];
 }
 
-- (NSString *)getRootURL
+- (NSString *)getRootURLForBook
 {
-    return nil;
+    return @"http://so.gushiwen.org";
 }
 
 - (void)htmlDataWithURLString:(NSString*)urlString completionHandler:(void (^)(NSData * __nullable data,NSError * __nullable error))completionHandler

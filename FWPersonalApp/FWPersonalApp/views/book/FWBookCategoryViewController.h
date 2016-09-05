@@ -10,8 +10,6 @@
 
 @interface FWBookCategoryViewController : UIViewController
 
-
-
 - (instancetype)initWithUrlString:(NSString *)urlString;
 
 @end

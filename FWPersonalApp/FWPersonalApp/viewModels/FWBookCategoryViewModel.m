@@ -28,63 +28,61 @@
 {
     [[Web_API sharedInstance] htmlDataWithURLString:self.urlString completionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
         TFHpple *htmlParser = [[TFHpple alloc] initWithHTMLData:data];
-        NSArray *temp1 = [htmlParser searchWithXPathQuery:@"//div[@class='leftlei']/div[@class='son2']"];
-        NSArray *temp2 = [htmlParser searchWithXPathQuery:@"//div[@class='shileft']/div[@class='bookcont']"];
         
-        NSArray *elements = nil;
-        [temp1 count] ? (elements = temp1) : (elements = temp2);
-        
-        if ([elements count])
+        //获取典籍作者
+        NSArray *elementsForAuthor = [htmlParser searchWithXPathQuery:@"//div[@class = 'son2']/p"];
+        if ([elementsForAuthor count])
         {
-            NSMutableDictionary *poetryCategory = [[NSMutableDictionary alloc] initWithCapacity:0];
-            NSMutableArray *pt = [[NSMutableArray alloc] initWithCapacity:0];
-            for (int i = 0; i < [elements count]; i++)
+            NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
+            for (int i = 0; i < [elementsForAuthor count]; i++)
             {
-                TFHppleElement *element = [elements objectAtIndex:i];
-                NSString *content = [element content];
-                NSLog(@"content is ==========%@",content);
-                NSLog(@"raw is ==========%@",[element raw]);
-                NSLog(@"content is ==========%@",content);
-                NSLog(@"raw is ==========%@",[element raw]);
-                NSString *trimString = [content stringByReplacingOccurrencesOfString:@" " withString:@""];
-                NSString *ttt = [trimString stringByReplacingOccurrencesOfString:@"\r\n" withString:@"￥"];
-//                NSLog(@"trimString is ==========%@",trimString);
-//                NSLog(@"ttt is ==========%@",ttt);
+                TFHppleElement *element = [elementsForAuthor objectAtIndex:i];
                 
-                NSArray *arr = [trimString componentsSeparatedByString:@"："];
-                //                NSLog(@"key is ==========%@",[arr objectAtIndex:0]);
-                
-                
-                NSMutableArray *values = nil;
-                NSString *ps = nil;
-                NSString *theKey = nil;
-                if ([arr count] > 1)
-                {
-                    theKey = [arr objectAtIndex:0];
-                    [pt addObject:theKey];
-                    ps = [arr objectAtIndex:1];
-                }
-                else
-                {
-                    ps = [arr objectAtIndex:0];
-                    theKey = kDefaultKey;
-                }
-                
-                values = [NSMutableArray arrayWithArray:[ps componentsSeparatedByString:@"\r\n"]];
-                
-                for (int m = 0; m < [values count]; m++) {
-                    NSString *temps = [values objectAtIndex:m];
-                    if ([temps isEqualToString:@""]) {
-                        [values removeObjectAtIndex:m];
-                    }
-                }
-                [poetryCategory setObject:values forKey:theKey];
+                NSString *key = [element content];
+                NSString *obj = [element raw];
+                NSLog(@"elementsForAuthor text is ==========%@",obj);
+                NSLog(@"elementsForAuthor author is ==========%@",key);
+                NSDictionary *dict = [NSDictionary dictionaryWithObject:obj forKey:key];
+                [arr addObject:dict];
             }
-            self.poetryDict = [[NSDictionary alloc] initWithDictionary:poetryCategory];
-            if ([pt count])
+//            self.bookContents = [[NSArray alloc] initWithArray:arr];
+        }
+        //获取典籍简介
+        NSArray *elementsForIntroduce = [htmlParser searchWithXPathQuery:@"//div[@class = 'son2']"];
+        if ([elementsForAuthor count])
+        {
+            NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
+           
+                TFHppleElement *element = [elementsForIntroduce lastObject];
+                
+                NSString *key = [element content];
+                NSString *obj = [element raw];
+                NSLog(@"elementsForIntroduce is ==========%@",obj);
+                NSLog(@"elementsForIntroduce introduction is ==========%@",key);
+                NSDictionary *dict = [NSDictionary dictionaryWithObject:obj forKey:key];
+                [arr addObject:dict];
+            
+            //            self.bookContents = [[NSArray alloc] initWithArray:arr];
+        }
+        //@"//div[@class='leftlei']/div[@class='son2']"
+        //获取典籍目录
+        NSArray *elementsForContent = [htmlParser searchWithXPathQuery:@"//span/a[@href]"];
+        
+        if ([elementsForContent count])
+        {
+            NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
+            for (int i = 0; i < [elementsForContent count]; i++)
             {
-                self.poetryType = [[NSArray alloc] initWithArray:pt];
+                TFHppleElement *element = [elementsForContent objectAtIndex:i];
+                
+                NSString *key = [element content];
+                NSString *obj = [element objectForKey:@"href"];
+                NSLog(@"text is ==========%@",[element objectForKey:@"href"]);
+                NSLog(@"content is ==========%@",[element content]);
+                NSDictionary *dict = [NSDictionary dictionaryWithObject:obj forKey:key];
+                [arr addObject:dict];
             }
+            self.bookContents = [[NSArray alloc] initWithArray:arr];
         }
     }];
 }
