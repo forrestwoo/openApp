@@ -234,6 +234,7 @@
 		A8EFCF1C1D7FFF2F0015735C /* BDDynamicGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFCF161D7FFF2F0015735C /* BDDynamicGridCell.m */; };
 		A8EFCF1D1D7FFF2F0015735C /* BDDynamicGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFCF181D7FFF2F0015735C /* BDDynamicGridViewController.m */; };
 		A8EFCF1E1D7FFF2F0015735C /* BDRowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFCF1B1D7FFF2F0015735C /* BDRowInfo.m */; };
+		A8EFCF211D7FFFD30015735C /* FWWebimageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFCF201D7FFFD30015735C /* FWWebimageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -691,6 +692,8 @@
 		A8EFCF191D7FFF2F0015735C /* BDDynamicGridViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDDynamicGridViewDelegate.h; sourceTree = "<group>"; };
 		A8EFCF1A1D7FFF2F0015735C /* BDRowInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDRowInfo.h; sourceTree = "<group>"; };
 		A8EFCF1B1D7FFF2F0015735C /* BDRowInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDRowInfo.m; sourceTree = "<group>"; };
+		A8EFCF1F1D7FFFD30015735C /* FWWebimageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWWebimageViewController.h; sourceTree = "<group>"; };
+		A8EFCF201D7FFFD30015735C /* FWWebimageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWWebimageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -793,6 +796,8 @@
 				A8BC24241D7B54E800CB27AC /* FWtestVC.m */,
 				A8BC24291D7B6BA200CB27AC /* FWImageCell.h */,
 				A8BC242A1D7B6BA200CB27AC /* FWImageCell.m */,
+				A8EFCF1F1D7FFFD30015735C /* FWWebimageViewController.h */,
+				A8EFCF201D7FFFD30015735C /* FWWebimageViewController.m */,
 			);
 			path = FWLifeApp;
 			sourceTree = "<group>";
@@ -1398,6 +1403,7 @@
 				A8EFCED41D7FFC9D0015735C /* GPUImageSwirlFilter.m in Sources */,
 				A807C3231D7968BF00328236 /* SDWebImageManager.m in Sources */,
 				A8EFCED01D7FFC9D0015735C /* GPUImageSourceOverBlendFilter.m in Sources */,
+				A8EFCF211D7FFFD30015735C /* FWWebimageViewController.m in Sources */,
 				A8EFCE631D7FFC9D0015735C /* GPUImageBilateralFilter.m in Sources */,
 				A8EFCE921D7FFC9D0015735C /* GPUImageHighlightShadowFilter.m in Sources */,
 				A8EFCF0F1D7FFC9E0015735C /* NSArray+MASAdditions.m in Sources */,

@@ -18,7 +18,7 @@
 #import "SDWebImageManager.h"
 
 #define kMargin 5
-@interface ViewController ()
+@interface ViewController () <FWImageViewOfCellGestureDelegate>
 {
     CGFloat _adjustheight;
 }
@@ -103,12 +103,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.imageUrls.count;
+    return ceilf(self.imageUrls.count / 2.0);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return _adjustheight;
+    return 160;
+}
+
+- (void)gestureImage:(UIImage *)image
+{
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -119,21 +124,28 @@
     if (cell == nil)
     {
         cell = [[FWImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.gesturedelegate = self;
     }
     
-    [cell.imageView setShowActivityIndicatorView:YES];
-    [cell.imageView setIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [cell.FirstImageView setShowActivityIndicatorView:YES];
+    [cell.FirstImageView setIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
-    cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [cell.secondImageView setShowActivityIndicatorView:YES];
+    [cell.secondImageView setIndicatorStyle:UIActivityIndicatorViewStyleGray];
 
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[self.imageUrls objectAtIndex:indexPath.row]]
+    cell.FirstImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [cell.FirstImageView sd_setImageWithURL:[NSURL URLWithString:[self.imageUrls objectAtIndex:indexPath.row *2]]
                       placeholderImage:[UIImage imageNamed:@"ll.png"] options:SDWebImageRefreshCached];
-    CGSize newSize = [self CellSizeToFit:cell.imageView.image.size];
-    CGRect frame = CGRectMake(5, 5, newSize.width, newSize.height);
-    cell.imageView.frame = frame;
+    
+    if (indexPath.row + 1 < [self.imageUrls count]) {
+        [cell.secondImageView sd_setImageWithURL:[NSURL URLWithString:[self.imageUrls objectAtIndex:(indexPath.row * 2 + 1)]]
+                                placeholderImage:[UIImage imageNamed:@"ll.png"] options:SDWebImageRefreshCached];
+    }
     
     return cell;
 }
+
+
 
 - (CGSize)CellSizeToFit:(CGSize)size
 {

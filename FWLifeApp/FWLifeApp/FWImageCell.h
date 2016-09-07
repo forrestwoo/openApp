@@ -8,7 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FWImageViewOfCellGestureDelegate <NSObject>
+
+NS_ASSUME_NONNULL_BEGIN
+- (void)gestureImage:(UIImage *)image;
+
+NS_ASSUME_NONNULL_END
+
+@end
+
 @interface FWImageCell : UITableViewCell
 
-@property(nonatomic,nonnull, strong)UIImageView *myImageView;
+NS_ASSUME_NONNULL_BEGIN
+
+@property (nonatomic,nonnull, strong)UIImageView *FirstImageView;
+@property (nonatomic,nonnull, strong)UIImageView *secondImageView;
+@property (nonatomic, weak) id<FWImageViewOfCellGestureDelegate> gesturedelegate;
+NS_ASSUME_NONNULL_END
+
+- (void)setViews;
+
 @end

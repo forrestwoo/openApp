@@ -14,12 +14,43 @@
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
     {
-        CGRect frame = self.bounds;
-        self.myImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5,  frame.size.width, frame.size.height)];
-        [self.contentView addSubview:self.myImageView];
+        self.FirstImageView = [[UIImageView alloc] init];
+        self.FirstImageView.contentMode = UIViewContentModeScaleAspectFill;
+        self.FirstImageView.clipsToBounds = YES;
+        [self.contentView addSubview:self.FirstImageView];
+        
+        self.secondImageView = [[UIImageView alloc] init];
+        self.secondImageView.contentMode = UIViewContentModeScaleAspectFill;
+        self.secondImageView.clipsToBounds = YES;
+        
+        [self.contentView addSubview:self.secondImageView];
+        
+        self.FirstImageView.frame = CGRectMake(5, 5,  ([[UIScreen mainScreen] bounds].size.width  - 15) / 2, 150);
+        self.secondImageView.frame = CGRectMake(10 + ([[UIScreen mainScreen] bounds].size.width  - 15) / 2, 5,  ([[UIScreen mainScreen] bounds].size.width  - 15) / 2, 150);
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        self.FirstImageView.userInteractionEnabled = self.secondImageView.userInteractionEnabled = YES;
+        
+        UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+        [self.FirstImageView addGestureRecognizer:tapGes];
+        [self.secondImageView addGestureRecognizer:tapGes];
+        
     }
     
     return self;
+}
+
+- (void)tap:(UIGestureRecognizer *)ges
+{
+    if (ges.view && [self.gesturedelegate respondsToSelector:@selector(gestureImage:)] && [ges.view isKindOfClass:[UIImageView class]]) {
+        UIImageView *iv = (UIImageView *)ges.view;
+        [self.gesturedelegate performSelector:@selector(gestureImage:) withObject:iv.image];
+    }
+}
+
+- (void)setViews
+{
+    
 }
 
 
