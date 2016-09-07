@@ -13,9 +13,9 @@
 #import "Web_API.h"
 #import "UIImageView+WebCache.h"
 #import "NSString+ArrayForImage.h"
-#import "FWtestVC.h"
 #import "FWImageCell.h"
 #import "SDWebImageManager.h"
+#import "FWFullImageViewController.h"
 
 #define kMargin 5
 @interface ViewController () <FWImageViewOfCellGestureDelegate>
@@ -36,8 +36,9 @@
     _adjustheight = 0.0;
     
     NSString *urlString = [kWebsite stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, [self screenWidth], [self screenheight]) style:UITableViewStylePlain];
+self.title = @"图片";
+    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [self screenWidth], [self screenheight] - 0) style:UITableViewStylePlain];
     self.tableView.delegate  = self;
     self.tableView.dataSource = self;
     
@@ -113,7 +114,9 @@
 
 - (void)gestureImage:(UIImage *)image
 {
-    
+//    UIImage *im = image;
+    FWFullImageViewController *vc = [[FWFullImageViewController alloc] initWithImage:image];
+    [self.navigationController pushViewController:vc animated:NO];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

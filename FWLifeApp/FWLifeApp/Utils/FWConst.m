@@ -8,4 +8,4 @@
 
 #import "FWConst.h"
 //0,29,
-NSString *const kWebsite = @"http://image.baidu.com/search/index?tn=baiduimage&word=风景&pn=0";
+NSString *const kWebsite = @"http://image.baidu.com/search/index?tn=baiduimage&word=壁纸&pn=0";

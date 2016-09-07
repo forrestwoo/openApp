@@ -10,12 +10,12 @@
 
 @implementation FWDataManager
 
-+ (NSDictionary *)getDataForPoetry
++ (NSDictionary *)getDataSourceFromPlist
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"book" ofType:@"plist"];
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+    NSString *plistPathString = [[NSBundle mainBundle] pathForResource:@"effectViewInfo" ofType:@"plist"];
     
-    return dict;
+    return [[NSDictionary alloc] initWithContentsOfFile:plistPathString];
 }
+
 
 @end

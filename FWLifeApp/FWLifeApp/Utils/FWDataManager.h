@@ -10,6 +10,6 @@
 
 @interface FWDataManager : NSObject
 
-+ (NSDictionary *)getDataForPoetry;
++ (NSDictionary *)getDataSourceFromPlist;
 
 @end

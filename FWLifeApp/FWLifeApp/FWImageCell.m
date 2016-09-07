@@ -32,8 +32,10 @@
         self.FirstImageView.userInteractionEnabled = self.secondImageView.userInteractionEnabled = YES;
         
         UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+        UITapGestureRecognizer *tapGes1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+
         [self.FirstImageView addGestureRecognizer:tapGes];
-        [self.secondImageView addGestureRecognizer:tapGes];
+        [self.secondImageView addGestureRecognizer:tapGes1];
         
     }
     
