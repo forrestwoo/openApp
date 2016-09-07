@@ -231,6 +231,9 @@
 		A8EFCF111D7FFC9E0015735C /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFCE551D7FFC9D0015735C /* View+MASAdditions.m */; };
 		A8EFCF121D7FFC9E0015735C /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFCE581D7FFC9D0015735C /* ViewController+MASAdditions.m */; };
 		A8EFCF131D7FFC9E0015735C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFCE5B1D7FFC9D0015735C /* MBProgressHUD.m */; };
+		A8EFCF1C1D7FFF2F0015735C /* BDDynamicGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFCF161D7FFF2F0015735C /* BDDynamicGridCell.m */; };
+		A8EFCF1D1D7FFF2F0015735C /* BDDynamicGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFCF181D7FFF2F0015735C /* BDDynamicGridViewController.m */; };
+		A8EFCF1E1D7FFF2F0015735C /* BDRowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFCF1B1D7FFF2F0015735C /* BDRowInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -681,6 +684,13 @@
 		A8EFCE581D7FFC9D0015735C /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		A8EFCE5A1D7FFC9D0015735C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		A8EFCE5B1D7FFC9D0015735C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		A8EFCF151D7FFF2F0015735C /* BDDynamicGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDDynamicGridCell.h; sourceTree = "<group>"; };
+		A8EFCF161D7FFF2F0015735C /* BDDynamicGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDDynamicGridCell.m; sourceTree = "<group>"; };
+		A8EFCF171D7FFF2F0015735C /* BDDynamicGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDDynamicGridViewController.h; sourceTree = "<group>"; };
+		A8EFCF181D7FFF2F0015735C /* BDDynamicGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDDynamicGridViewController.m; sourceTree = "<group>"; };
+		A8EFCF191D7FFF2F0015735C /* BDDynamicGridViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDDynamicGridViewDelegate.h; sourceTree = "<group>"; };
+		A8EFCF1A1D7FFF2F0015735C /* BDRowInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDRowInfo.h; sourceTree = "<group>"; };
+		A8EFCF1B1D7FFF2F0015735C /* BDRowInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDRowInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -697,6 +707,7 @@
 		A807C2F91D7968BF00328236 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				A8EFCF141D7FFF2F0015735C /* BDDynamicGridView */,
 				A8EFCCDE1D7FFC9D0015735C /* GPUImage */,
 				A8EFCE3F1D7FFC9D0015735C /* Masnory */,
 				A8EFCE591D7FFC9D0015735C /* MBProgressHUD */,
@@ -1267,6 +1278,20 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		A8EFCF141D7FFF2F0015735C /* BDDynamicGridView */ = {
+			isa = PBXGroup;
+			children = (
+				A8EFCF151D7FFF2F0015735C /* BDDynamicGridCell.h */,
+				A8EFCF161D7FFF2F0015735C /* BDDynamicGridCell.m */,
+				A8EFCF171D7FFF2F0015735C /* BDDynamicGridViewController.h */,
+				A8EFCF181D7FFF2F0015735C /* BDDynamicGridViewController.m */,
+				A8EFCF191D7FFF2F0015735C /* BDDynamicGridViewDelegate.h */,
+				A8EFCF1A1D7FFF2F0015735C /* BDRowInfo.h */,
+				A8EFCF1B1D7FFF2F0015735C /* BDRowInfo.m */,
+			);
+			path = BDDynamicGridView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1392,6 +1417,7 @@
 				A8EFCF0B1D7FFC9E0015735C /* MASConstraintMaker.m in Sources */,
 				A8EFCECC1D7FFC9D0015735C /* GPUImageSmoothToonFilter.m in Sources */,
 				A8EFCEA81D7FFC9D0015735C /* GPUImageLuminosityBlendFilter.m in Sources */,
+				A8EFCF1E1D7FFF2F0015735C /* BDRowInfo.m in Sources */,
 				A8EFCEE71D7FFC9E0015735C /* GPUImageXYDerivativeFilter.m in Sources */,
 				A8EFCEE21D7FFC9E0015735C /* GPUImageVibranceFilter.m in Sources */,
 				A8EFCE5E1D7FFC9D0015735C /* GPUImageAdaptiveThresholdFilter.m in Sources */,
@@ -1455,6 +1481,7 @@
 				A8EFCEE91D7FFC9E0015735C /* GLProgram.m in Sources */,
 				A8EFCF051D7FFC9E0015735C /* GPUImageMovieWriter.m in Sources */,
 				A8EFCE7E1D7FFC9D0015735C /* GPUImageDissolveBlendFilter.m in Sources */,
+				A8EFCF1C1D7FFF2F0015735C /* BDDynamicGridCell.m in Sources */,
 				A8EFCE701D7FFC9D0015735C /* GPUImageColorLocalBinaryPatternFilter.m in Sources */,
 				A807C31C1D7968BF00328236 /* MKAnnotationView+WebCache.m in Sources */,
 				A807C3201D7968BF00328236 /* SDWebImageDecoder.m in Sources */,
@@ -1520,6 +1547,7 @@
 				A8EFCE721D7FFC9D0015735C /* GPUImageColorPackingFilter.m in Sources */,
 				A8EFCF0D1D7FFC9E0015735C /* MASViewAttribute.m in Sources */,
 				A8EFCEE81D7FFC9E0015735C /* GPUImageZoomBlurFilter.m in Sources */,
+				A8EFCF1D1D7FFF2F0015735C /* BDDynamicGridViewController.m in Sources */,
 				A8EFCEDC1D7FFC9D0015735C /* GPUImageTransformFilter.m in Sources */,
 				A8EFCEB11D7FFC9D0015735C /* GPUImageNonMaximumSuppressionFilter.m in Sources */,
 				A88F62841D7A09FF0019D9F2 /* TFHppleElement.m in Sources */,
