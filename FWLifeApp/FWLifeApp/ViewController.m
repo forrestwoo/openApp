@@ -125,7 +125,7 @@
     [cell.imageView setIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
     cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
-//    NSLog(@"url string is %@", [self.imageUrls objectAtIndex:indexPath.row]);
+
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[self.imageUrls objectAtIndex:indexPath.row]]
                       placeholderImage:[UIImage imageNamed:@"ll.png"] options:SDWebImageRefreshCached];
     CGSize newSize = [self CellSizeToFit:cell.imageView.image.size];
