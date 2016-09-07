@@ -17,11 +17,24 @@
     for (int i = 1; i < [arr count]; i++) {
         NSRange range = [[arr objectAtIndex:i] rangeOfString:endString];
         NSString *tempString = [[arr objectAtIndex:i] substringWithRange:NSMakeRange(0, range.location+range.length)];
-        NSString *urlString = [tempString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-        NSLog(@"0.0.0.0.0.0.0%@",urlString);
+
         [tempArr addObject:tempString];
     }
     
     return [NSArray arrayWithArray:tempArr];
+}
+
+- (NSData *)jsonDataWithBeginString:(NSString *)begainString
+{
+    NSArray *arr = [self componentsSeparatedByString:begainString];
+    NSString *s = [arr objectAtIndex:1];
+    NSRange range = [s rangeOfString:@"]"];
+    NSString *jsonString = [s substringWithRange:NSMakeRange(0, range.location+range.length)];
+    NSString *jsonstr = [[NSString alloc] initWithFormat:begainString,jsonString];
+    NSLog(@"jsonString:%@",jsonString);
+
+
+    NSData * jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    return jsonData;
 }
 @end

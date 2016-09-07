@@ -16,7 +16,6 @@
     {
         CGRect frame = self.bounds;
         self.myImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5,  frame.size.width, frame.size.height)];
-        
         [self.contentView addSubview:self.myImageView];
     }
     
