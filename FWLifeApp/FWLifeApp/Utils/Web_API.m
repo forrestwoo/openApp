@@ -30,7 +30,7 @@ static NSString * const kWeatherBaseURL = @"";
 
 - (NSString *)getRootURL
 {
-    return @"http://so.gushiwen.org";
+    return kRootUrl;
 }
 
 - (void)htmlDataWithURLString:(NSString*)urlString completionHandler:(void (^)(NSData * __nullable data,NSError * __nullable error))completionHandler

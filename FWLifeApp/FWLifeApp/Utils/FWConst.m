@@ -7,5 +7,5 @@
 //
 
 #import "FWConst.h"
-//0,29,
-NSString *const kWebsite = @"http://image.baidu.com/search/index?tn=baiduimage&word=风景&pn=";
+//0,29,http://image.baidu.com/search/index?tn=baiduimage&word=风景&pn=
+NSString *const kRootUrl = @"http://image.baidu.com/search/index?tn=baiduimage&word=";

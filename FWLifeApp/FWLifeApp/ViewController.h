@@ -14,6 +14,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray *imageUrls;
+@property (nonatomic, strong) NSString *urlString;
+@property (nonatomic, strong) NSString *keyWord;
+
+- (instancetype)initWithURLString:(NSString *)urlString keyWord:(NSString *)keyWord;
 NS_ASSUME_NONNULL_END
 
 @end

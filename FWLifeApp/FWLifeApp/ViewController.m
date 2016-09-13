@@ -17,34 +17,48 @@
 #import "SDWebImageManager.h"
 #import "FWBeautyViewController.h"
 #import "FWDisplayBigImageViewController.h"
+#import "MBProgressHUD.h"
 
 #define kMargin 5
 @interface ViewController () <FWImageViewOfCellGestureDelegate>
 {
     CGFloat _adjustheight;
     int _pageNumber;
+    
 }
 
 @end
 
 @implementation ViewController
 
+- (instancetype)initWithURLString:(NSString *)urlString keyWord:(NSString *)keyWord
+{
+    if (self = [super init])
+    {
+        self.urlString = urlString;
+        self.keyWord = keyWord;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _adjustheight = 0.0;
     _pageNumber = 0;
-    NSString *urlString = [[kWebsite stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]] stringByAppendingString:[NSString stringWithFormat:@"%d",_pageNumber]];
-    NSLog(@"%@",urlString);
+
     self.title = @"图片";
     self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [self screenWidth], [self screenheight] - 0) style:UITableViewStylePlain];
     self.tableView.delegate  = self;
     self.tableView.dataSource = self;
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
-    
     [self.view addSubview:self.tableView];
-    [[Web_API sharedInstance] htmlDataWithURLString:urlString completionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
+    
+//    self.tabBarController.it
+    
+    [[Web_API sharedInstance] htmlDataWithURLString:self.urlString completionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
         NSString * str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         //        NSData *jsonData = [str jsonDataWithBeginString:@"\"data\":"];
         //        NSLog(@"%@",NSStringFromClass( [str class]));
@@ -91,8 +105,6 @@
 
 - (void)gestureImage:(UIImage *)image
 {
-//    FWBeautyViewController *beautyVC = [[FWBeautyViewController alloc] initWithImage:image];
-//    [self.navigationController pushViewController:beautyVC animated:YES];
     FWDisplayBigImageViewController *vc111 = [[FWDisplayBigImageViewController alloc] initWithImage:image];
 
     [self.navigationController pushViewController:vc111 animated:YES];
@@ -149,8 +161,9 @@
 {
     if(scrollView.contentOffset.y - scrollView.contentSize.height > - [self screenheight] + 20)
     {
+        
         _pageNumber++;
-        NSString *urlString = [[kWebsite stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]] stringByAppendingString:[NSString stringWithFormat:@"%d",_pageNumber * 30]];
+        NSString *urlString = [[[[Web_API sharedInstance] getRootURL] stringByAppendingFormat:@"%@&pn=%d",self.keyWord,_pageNumber * 30] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
         NSLog(@"new url is %@",urlString);
         [[Web_API sharedInstance] htmlDataWithURLString:urlString completionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
             NSString * str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];

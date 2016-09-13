@@ -11,7 +11,7 @@
 #import "FWBeautyViewController.h"
 #import "Masonry.h"
 
-@interface ViewController : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface FWViewController : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     UIButton *btnArrow;
     FWBeautyViewController *beautyVC;

@@ -15,17 +15,18 @@
 #define kLogoHeight 79
 
 
-#import "ViewController.h"
+#import "FWViewController.h"
 #import "FWButton.h"
 #import "UIImage+ImageScale.h"
 #import "Masonry.h"
+#import "FWSearchImageViewController.h"
 
-@interface ViewController ()
+@interface FWViewController ()
 @property (nonatomic, assign) CGRect leftArrowFrame;
 @property (nonatomic, assign) CGRect rightArrowFrame;
 @end
 
-@implementation ViewController
+@implementation FWViewController
 
 - (void)viewDidLoad
 {
@@ -39,7 +40,7 @@
     [self.view addSubview:backImage];
     
     self.scrolleView = [[UIScrollView alloc] init];
-     self.scrolleView.bounces = NO;
+    self.scrolleView.bounces = NO;
     self.scrolleView.translatesAutoresizingMaskIntoConstraints = NO;
     self.scrolleView.showsHorizontalScrollIndicator = NO;
     self.scrolleView.pagingEnabled = YES;
@@ -62,24 +63,24 @@
     [self.view addSubview:btnArrow];
     
     UIButton *btnSetting = [UIButton buttonWithType:UIButtonTypeCustom];
-
+    
     [btnSetting setImage:[UIImage imageNamed:@"btn_home_setting_a@2x.png"] forState:UIControlStateNormal];
     [self.view addSubview:btnSetting];
     btnSetting.translatesAutoresizingMaskIntoConstraints = NO;
     
     /**
      NSLayoutConstraint apply
-    [self.view addConstraints:@[
-                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-8],
-                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-6],
-                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:39],
-                                [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:btnSetting attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
-                                
-                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:image attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0],
-                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
-                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:WIDTH],
-                                [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:HEIGHT - 47 - 61]
-                                ]];
+     [self.view addConstraints:@[
+     [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-8],
+     [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-6],
+     [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:39],
+     [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:btnSetting attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
+     
+     [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:image attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0],
+     [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
+     [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:WIDTH],
+     [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:HEIGHT - 47 - 61]
+     ]];
      **/
     
     [btnSetting mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -102,10 +103,6 @@
     [self setupScrollView];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];
-}
 
 //
 - (void)hanlderAction:(NSTimer *)timer
@@ -159,6 +156,20 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
 }
@@ -182,7 +193,7 @@
                                       @"home_block_pink_a@2x.png", @"home_block_red_a@2x.png",
                                       nil];
     
-    NSArray *textArr = [NSArray arrayWithObjects:@"美化图片", @"人像美容", @"拼图", @"万能相机", @"素材中心", @"美颜相机", @"美拍", @"更多功能", nil];
+    NSArray *textArr = [NSArray arrayWithObjects:@"美化图片", @"人像美容", @"拼图", @"万能相机", @"图片搜索", @"美颜相机", @"美拍", @"更多功能", nil];
     
     FWButton *btnHome = nil;
     CGFloat padding = 0;
@@ -233,6 +244,10 @@
             }
              ];
         }
+    }
+    if ([[(UIButton *)sender titleLabel].text isEqualToString:@"图片搜索"]) {
+        FWSearchImageViewController *vc = [[FWSearchImageViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

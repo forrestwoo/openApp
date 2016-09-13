@@ -8,4 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * const kWebsite;
+extern NSString * const kRootUrl;

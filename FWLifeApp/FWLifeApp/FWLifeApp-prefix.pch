@@ -15,4 +15,5 @@
 #import "AppDelegate.h"
 #import "GPUImage.h"
 #import "FWCommonTools.h"
+#import "FWConst.h"
 #endif /* FWLifeApp_prefix_pch */
