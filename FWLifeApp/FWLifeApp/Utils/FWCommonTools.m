@@ -21,7 +21,7 @@
 + (UIImage *)getImageWithFilter:(GPUImageFilter *)filter image:(UIImage *)originalImage method:(NSString *)methodName value:(float)value
 {
     UIImage *image = originalImage;
-    [filter performSelector:NSSelectorFromString(methodName) withObject:[NSString stringWithFormat:@"%f",value]];
+//    [filter performSelector:NSSelectorFromString(methodName) withObject:[NSString stringWithFormat:@"%f",value]];
     [filter forceProcessingAtSize:originalImage.size];
     GPUImagePicture *stillImage = [[GPUImagePicture alloc] initWithImage:image];
     [stillImage addTarget:filter];

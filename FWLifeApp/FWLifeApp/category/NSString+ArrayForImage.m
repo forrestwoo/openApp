@@ -10,7 +10,7 @@
 
 @implementation NSString (ArrayForImage)
 
-- (NSArray *)imageUrlsWithBeginString:(NSString *)begainString endString:(NSString *)endString
+- (NSMutableArray *)imageUrlsWithBeginString:(NSString *)begainString endString:(NSString *)endString
 {
     NSArray *arr = [self componentsSeparatedByString:begainString];
     NSMutableArray *tempArr = [[NSMutableArray alloc] initWithCapacity:0];
@@ -21,7 +21,7 @@
         [tempArr addObject:tempString];
     }
     
-    return [NSArray arrayWithArray:tempArr];
+    return tempArr;
 }
 
 - (NSData *)jsonDataWithBeginString:(NSString *)begainString

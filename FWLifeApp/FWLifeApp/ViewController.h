@@ -13,7 +13,7 @@
 @property (nonnull, nonatomic, strong) UITableView *tableView;
 
 NS_ASSUME_NONNULL_BEGIN
-@property (nonatomic, strong) NSArray *imageUrls;
+@property (nonatomic, strong) NSMutableArray *imageUrls;
 NS_ASSUME_NONNULL_END
 
 @end

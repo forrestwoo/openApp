@@ -15,12 +15,14 @@
 #import "NSString+ArrayForImage.h"
 #import "FWImageCell.h"
 #import "SDWebImageManager.h"
-#import "FWFullImageViewController.h"
+#import "FWBeautyViewController.h"
+#import "FWDisplayBigImageViewController.h"
 
 #define kMargin 5
 @interface ViewController () <FWImageViewOfCellGestureDelegate>
 {
     CGFloat _adjustheight;
+    int _pageNumber;
 }
 
 @end
@@ -30,45 +32,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    UITextField *tx = [[UITextField alloc] initWithFrame:CGRectMake(0, 20, 200, 30)];
-//    tx.textColor = [UIColor blackColor];
-//    [self.view addSubview:tx];
     _adjustheight = 0.0;
-    
-    NSString *urlString = [kWebsite stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-self.title = @"图片";
+    _pageNumber = 0;
+    NSString *urlString = [[kWebsite stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]] stringByAppendingString:[NSString stringWithFormat:@"%d",_pageNumber]];
+    NSLog(@"%@",urlString);
+    self.title = @"图片";
     self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [self screenWidth], [self screenheight] - 0) style:UITableViewStylePlain];
     self.tableView.delegate  = self;
     self.tableView.dataSource = self;
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
     
-
     [self.view addSubview:self.tableView];
     [[Web_API sharedInstance] htmlDataWithURLString:urlString completionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
         NSString * str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//        NSData *jsonData = [str jsonDataWithBeginString:@"\"data\":"];
-//        NSLog(@"%@",NSStringFromClass( [str class]));
-        
-        self.imageUrls = [str imageUrlsWithBeginString:@"\"objURL\":\"" endString:@".jpg"];
-      
-     
-        __weak UITableView *weakTable = self.tableView;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakTable reloadData];
+        //        NSData *jsonData = [str jsonDataWithBeginString:@"\"data\":"];
+        //        NSLog(@"%@",NSStringFromClass( [str class]));
+        if (!error) {
+            self.imageUrls = [str imageUrlsWithBeginString:@"\"objURL\":\"" endString:@".jpg"];
             
-        });
+            __weak UITableView *weakTable = self.tableView;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+                
+            });
+        }
     }];
-    
-//    [[UIScreen mainScreen] bounds].size
-    
-/*
- i1 i2
- 
- 
- 
- 
- **/
 }
+
 
 - (CGFloat)screenWidth
 {
@@ -78,21 +70,6 @@ self.title = @"图片";
 - (CGFloat)screenheight
 {
     return [[UIScreen mainScreen] bounds].size.height;
-}
-
-- (void)setFrame4ImageViewWithImage1:(UIImage *)image1 image2:(UIImage *)image2
-{
-    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
-//    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
-    
-    CGFloat image1_width  = image1.size.width;
-    CGFloat image1_height = image1.size.height;
-    CGFloat image2_width  = image2.size.width;
-    CGFloat image2_height = image2.size.height;
-    CGFloat adjust_height = (screenWidth - 3 * kMargin) / (image1_width / image1_height + image2_width / image2_height);
-    CGFloat image1_adjustWith = (image1_width * adjust_height) / image1_height;
-    CGFloat image2_adjustWith = (image2_width * adjust_height) / image2_height;
-    
 }
 
 #pragma mark - Table View
@@ -114,9 +91,11 @@ self.title = @"图片";
 
 - (void)gestureImage:(UIImage *)image
 {
-//    UIImage *im = image;
-    FWFullImageViewController *vc = [[FWFullImageViewController alloc] initWithImage:image];
-    [self.navigationController pushViewController:vc animated:NO];
+//    FWBeautyViewController *beautyVC = [[FWBeautyViewController alloc] initWithImage:image];
+//    [self.navigationController pushViewController:beautyVC animated:YES];
+    FWDisplayBigImageViewController *vc111 = [[FWDisplayBigImageViewController alloc] initWithImage:image];
+
+    [self.navigationController pushViewController:vc111 animated:YES];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -135,32 +114,64 @@ self.title = @"图片";
     
     [cell.secondImageView setShowActivityIndicatorView:YES];
     [cell.secondImageView setIndicatorStyle:UIActivityIndicatorViewStyleGray];
-
-    cell.FirstImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [cell.FirstImageView sd_setImageWithURL:[NSURL URLWithString:[self.imageUrls objectAtIndex:indexPath.row *2]]
-                      placeholderImage:[UIImage imageNamed:@"ll.png"] options:SDWebImageRefreshCached];
     
-    if (indexPath.row + 1 < [self.imageUrls count]) {
+    cell.FirstImageView.contentMode = UIViewContentModeScaleAspectFill;
+    if (indexPath.row *2 < [self.imageUrls count]) {
+        [cell.FirstImageView sd_setImageWithURL:[NSURL URLWithString:[self.imageUrls objectAtIndex:indexPath.row *2]]
+                               placeholderImage:[UIImage imageNamed:@"ll.png"] options:SDWebImageRefreshCached completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                   if (!image) {
+                                       //                                   [self.imageUrls removeObjectAtIndex:indexPath.row *2];
+                                       //
+                                       //                                   [tableView reloadData];
+                                       
+                                       cell.FirstImageView.userInteractionEnabled = NO;
+                                       //
+                                   }
+                               }];
+    }
+    if (indexPath.row *2 + 1 < [self.imageUrls count]) {
         [cell.secondImageView sd_setImageWithURL:[NSURL URLWithString:[self.imageUrls objectAtIndex:(indexPath.row * 2 + 1)]]
-                                placeholderImage:[UIImage imageNamed:@"ll.png"] options:SDWebImageRefreshCached];
+                                placeholderImage:[UIImage imageNamed:@"ll.png"] options:SDWebImageRefreshCached completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                    if (!image) {
+                                        //                                        [self.imageUrls removeObjectAtIndex:indexPath.row *2 + 1];
+                                        //                                        [tableView reloadData];
+                                        cell.secondImageView.userInteractionEnabled = NO;
+                                        
+                                    }
+                                }];
     }
     
     return cell;
 }
 
-
-
-- (CGSize)CellSizeToFit:(CGSize)size
+//上拉加载
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    CGFloat width = [self screenWidth];
-    CGFloat imageWidth = size.width;
-    CGFloat adjustHeight = (width - 10) * size.height / imageWidth;
-    _adjustheight = adjustHeight;
-    return CGSizeMake(width - 10, adjustHeight);
+    if(scrollView.contentOffset.y - scrollView.contentSize.height > - [self screenheight] + 20)
+    {
+        _pageNumber++;
+        NSString *urlString = [[kWebsite stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]] stringByAppendingString:[NSString stringWithFormat:@"%d",_pageNumber * 30]];
+        NSLog(@"new url is %@",urlString);
+        [[Web_API sharedInstance] htmlDataWithURLString:urlString completionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
+            NSString * str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            //        NSData *jsonData = [str jsonDataWithBeginString:@"\"data\":"];
+            //        NSLog(@"%@",NSStringFromClass( [str class]));
+            if (!error) {
+                NSMutableArray *ma= [str imageUrlsWithBeginString:@"\"objURL\":\"" endString:@".jpg"];
+                [self.imageUrls addObjectsFromArray:ma];
+                __weak UITableView *weakTable = self.tableView;
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakTable reloadData];
+                    
+                });
+            }
+        }];
+    }
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
 }
 
 @end

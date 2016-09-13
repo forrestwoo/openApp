@@ -45,7 +45,6 @@ static NSString * const kWeatherBaseURL = @"";
         }
     }];
     [dataTask resume];
-
 }
 
 @end
