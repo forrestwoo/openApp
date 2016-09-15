@@ -15,8 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 //搜索以begainString开头，endString结尾的中间字符串。
 - (NSMutableArray *)imageUrlsWithBeginString:(NSString *)begainString endString:(NSString *)endString;
 
-//返回HTML中包含的json数据
-- (NSData *) jsonDataWithBeginString:(NSString *)begainString;
+
 
 NS_ASSUME_NONNULL_END
 

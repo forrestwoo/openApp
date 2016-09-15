@@ -24,7 +24,7 @@
 {
     CGFloat _adjustheight;
     int _pageNumber;
-    
+    MBProgressHUD *_HUD;
 }
 
 @end
@@ -47,43 +47,40 @@
     
     _adjustheight = 0.0;
     _pageNumber = 0;
-
+    
     self.title = @"图片";
     self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [self screenWidth], [self screenheight] - 0) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [FWCommonTools widthOfDeviceScreen], [FWCommonTools heightOfDeviceScreen] - 0) style:UITableViewStylePlain];
     self.tableView.delegate  = self;
     self.tableView.dataSource = self;
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
     [self.view addSubview:self.tableView];
     
-//    self.tabBarController.it
+    _HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:_HUD];
+    _HUD.dimBackground = YES;
     
-    [[Web_API sharedInstance] htmlDataWithURLString:self.urlString completionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
-        NSString * str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        //        NSData *jsonData = [str jsonDataWithBeginString:@"\"data\":"];
-        //        NSLog(@"%@",NSStringFromClass( [str class]));
-        if (!error) {
-            self.imageUrls = [str imageUrlsWithBeginString:@"\"objURL\":\"" endString:@".jpg"];
-            
-            __weak UITableView *weakTable = self.tableView;
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
+    _HUD.labelText = @"正在搜索";
+    [_HUD showAnimated:YES whileExecutingBlock:^{
+        [[Web_API sharedInstance] htmlDataWithURLString:self.urlString completionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
+            NSString * str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            //        NSData *jsonData = [str jsonDataWithBeginString:@"\"data\":"];
+            //        NSLog(@"%@",NSStringFromClass( [str class]));
+            if (!error) {
+                self.imageUrls = [str imageUrlsWithBeginString:@"\"objURL\":\"" endString:@".jpg"];
                 
-            });
-        }
+                __weak UITableView *weakTable = self.tableView;
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakTable reloadData];
+                    
+                });
+            }
+        }];
+    } completionBlock:^{
+        [_HUD removeFromSuperview];
     }];
-}
-
-
-- (CGFloat)screenWidth
-{
-    return [[UIScreen mainScreen] bounds].size.width;
-}
-
-- (CGFloat)screenheight
-{
-    return [[UIScreen mainScreen] bounds].size.height;
+    
 }
 
 #pragma mark - Table View
@@ -106,7 +103,7 @@
 - (void)gestureImage:(UIImage *)image
 {
     FWDisplayBigImageViewController *vc111 = [[FWDisplayBigImageViewController alloc] initWithImage:image];
-
+    
     [self.navigationController pushViewController:vc111 animated:YES];
 }
 
@@ -159,7 +156,7 @@
 //上拉加载
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    if(scrollView.contentOffset.y - scrollView.contentSize.height > - [self screenheight] + 20)
+    if(scrollView.contentOffset.y - scrollView.contentSize.height > - [FWCommonTools heightOfDeviceScreen] + 20)
     {
         
         _pageNumber++;

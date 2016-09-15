@@ -68,21 +68,6 @@
     [self.view addSubview:btnSetting];
     btnSetting.translatesAutoresizingMaskIntoConstraints = NO;
     
-    /**
-     NSLayoutConstraint apply
-     [self.view addConstraints:@[
-     [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-8],
-     [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-6],
-     [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:39],
-     [NSLayoutConstraint constraintWithItem:btnSetting attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:btnSetting attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
-     
-     [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:image attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0],
-     [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
-     [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:WIDTH],
-     [NSLayoutConstraint constraintWithItem:self.scrolleView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:HEIGHT - 47 - 61]
-     ]];
-     **/
-    
     [btnSetting mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view.mas_bottom).with.offset(-8);
         make.right.equalTo(self.view.mas_right).with.offset(-6);
@@ -246,6 +231,7 @@
         }
     }
     if ([[(UIButton *)sender titleLabel].text isEqualToString:@"图片搜索"]) {
+        
         FWSearchImageViewController *vc = [[FWSearchImageViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }

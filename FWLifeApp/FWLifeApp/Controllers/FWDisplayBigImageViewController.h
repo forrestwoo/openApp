@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FWDisplayBigImageViewController : UIViewController
+@interface FWDisplayBigImageViewController : UIViewController <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIImage *image;
 

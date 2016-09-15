@@ -56,6 +56,7 @@
 		A85ADE1B1D68E63700F32BBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85ADE191D68E63700F32BBE /* Main.storyboard */; };
 		A85ADE1D1D68E63700F32BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A85ADE1C1D68E63700F32BBE /* Assets.xcassets */; };
 		A85ADE201D68E63700F32BBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85ADE1E1D68E63700F32BBE /* LaunchScreen.storyboard */; };
+		A87C95CD1D8903C2009BD3B2 /* FWBackgroundFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A87C95CC1D8903C2009BD3B2 /* FWBackgroundFilter.m */; };
 		A88213511D70C448002CC5AF /* appIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A88213491D70C448002CC5AF /* appIcon@2x.png */; };
 		A88213521D70C448002CC5AF /* appIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A882134A1D70C448002CC5AF /* appIcon@3x.png */; };
 		A88213531D70C448002CC5AF /* get_thumbnailCAJVHWL1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A882134B1D70C448002CC5AF /* get_thumbnailCAJVHWL1.jpg */; };
@@ -863,6 +864,8 @@
 		A85ADE1C1D68E63700F32BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A85ADE1F1D68E63700F32BBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A85ADE211D68E63700F32BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A87C95CB1D8903C2009BD3B2 /* FWBackgroundFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWBackgroundFilter.h; sourceTree = "<group>"; };
+		A87C95CC1D8903C2009BD3B2 /* FWBackgroundFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWBackgroundFilter.m; sourceTree = "<group>"; };
 		A88213491D70C448002CC5AF /* appIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appIcon@2x.png"; sourceTree = "<group>"; };
 		A882134A1D70C448002CC5AF /* appIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appIcon@3x.png"; sourceTree = "<group>"; };
 		A882134B1D70C448002CC5AF /* get_thumbnailCAJVHWL1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = get_thumbnailCAJVHWL1.jpg; sourceTree = "<group>"; };
@@ -1880,6 +1883,7 @@
 		A855A3531D804D070008B118 /* Custom Filters */ = {
 			isa = PBXGroup;
 			children = (
+				A87C95CA1D890387009BD3B2 /* new filters */,
 				A8C7D4E51D80A03100045908 /* FWNashvilleFilter.h */,
 				A8C7D4E61D80A03100045908 /* FWNashvilleFilter.m */,
 				A855A3541D804D070008B118 /* FW1977Filter.h */,
@@ -1976,6 +1980,15 @@
 				A85ADE111D68E63700F32BBE /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A87C95CA1D890387009BD3B2 /* new filters */ = {
+			isa = PBXGroup;
+			children = (
+				A87C95CB1D8903C2009BD3B2 /* FWBackgroundFilter.h */,
+				A87C95CC1D8903C2009BD3B2 /* FWBackgroundFilter.m */,
+			);
+			name = "new filters";
 			sourceTree = "<group>";
 		};
 		A88213471D70C42E002CC5AF /* Utils */ = {
@@ -3848,6 +3861,7 @@
 				A8C7D0F21D809D5200045908 /* FWSlider.m in Sources */,
 				A8EFCE6D1D7FFC9D0015735C /* GPUImageColorBurnBlendFilter.m in Sources */,
 				A8EFCF0A1D7FFC9E0015735C /* MASConstraint.m in Sources */,
+				A87C95CD1D8903C2009BD3B2 /* FWBackgroundFilter.m in Sources */,
 				A8EFCEFA1D7FFC9E0015735C /* GPUImagePixellateFilter.m in Sources */,
 				A8EFCE6C1D7FFC9D0015735C /* GPUImageColorBlendFilter.m in Sources */,
 				A8EFCE5D1D7FFC9D0015735C /* GPUImage3x3TextureSamplingFilter.m in Sources */,

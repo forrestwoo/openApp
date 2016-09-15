@@ -30,4 +30,15 @@
 
     return [filter imageFromCurrentFramebuffer];
 }
+
++(CGFloat)widthOfDeviceScreen
+{
+    return [[UIScreen mainScreen] bounds].size.width;
+}
+
++(CGFloat)heightOfDeviceScreen
+{
+    return [[UIScreen mainScreen] bounds].size.height;
+}
+
 @end

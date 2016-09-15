@@ -29,7 +29,8 @@
         self.secondImageView.frame = CGRectMake(10 + ([[UIScreen mainScreen] bounds].size.width  - 15) / 2, 5,  ([[UIScreen mainScreen] bounds].size.width  - 15) / 2, 150);
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        self.FirstImageView.userInteractionEnabled = self.secondImageView.userInteractionEnabled = YES;
+        self.FirstImageView.userInteractionEnabled =  YES;
+        self.secondImageView.userInteractionEnabled = YES;
         
         UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
         UITapGestureRecognizer *tapGes1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
