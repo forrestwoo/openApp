@@ -50,10 +50,10 @@
     
     self.title = @"图片";
     self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [FWCommonTools widthOfDeviceScreen], [FWCommonTools heightOfDeviceScreen] - 0) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStylePlain];
     self.tableView.delegate  = self;
     self.tableView.dataSource = self;
-    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
+
     [self.view addSubview:self.tableView];
     
     _HUD = [[MBProgressHUD alloc] initWithView:self.view];
@@ -156,7 +156,7 @@
 //上拉加载
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    if(scrollView.contentOffset.y - scrollView.contentSize.height > - [FWCommonTools heightOfDeviceScreen] + 20)
+    if(scrollView.contentOffset.y - scrollView.contentSize.height > - HEIGHT + 20)
     {
         
         _pageNumber++;
