@@ -26,6 +26,7 @@
 #import "FWToasterFilter.h"
 #import "FWBrannanFilter.h"
 #import "FWHefeFilter.h"
+#import "FWLOMOFilter1.h"
 
 
 @implementation FWApplyFilter
@@ -347,6 +348,18 @@
     return [filter imageFromCurrentFramebuffer];
 }
 
++ (UIImage *)applyLomo1Filter:(UIImage *)image
+{
+    FWLOMOFilter1 *filter = [[FWLOMOFilter1 alloc] init];
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    return [filter imageFromCurrentFramebuffer];
+}
+
 + (UIImage *)applyInkwellFilter:(UIImage *)image
 {
     FWInkwellFilter *filter = [[FWInkwellFilter alloc] init];
@@ -615,6 +628,7 @@
     return [filter imageFromCurrentFramebuffer];
 }
 
+//素描效果
 + (UIImage *)applySketchFilter:(UIImage *)image
 {
     GPUImageSketchFilter *filter = [[GPUImageSketchFilter alloc] init];

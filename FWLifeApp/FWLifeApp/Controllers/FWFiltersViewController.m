@@ -158,7 +158,7 @@
         UIImage *img = [UIImage scaleImage:self.image targetHeight:70];
         
         [item setFinishedSelectedImage:img withFinishedUnselectedImage:img];
-        item.title = [NSString stringWithFormat:@"%i",i];
+        item.title = [titles objectAtIndex:i];
         [items addObject:item];
     }
     
@@ -168,7 +168,7 @@
 //简单边框视图
 - (void)setupLOMOFilter
 {
-    [self setupFilterWithNormalImages:nil HighlightImages:nil titles:[NSArray arrayWithObjects:@"原图", @"经典LOMO", @"流年", @"HDR", @"碧波", @"上野", @"优格", @"彩虹瀑", @"云端", @"淡雅", @"粉红佳人", @"复古", @"候鸟", @"黑白", @"一九〇〇", @"古铜色", @"哥特风", @"移轴", @"TEST1", @"TEST2", @"TEST3", nil]];
+    [self setupFilterWithNormalImages:nil HighlightImages:nil titles:[NSArray arrayWithObjects:@"原图", @"LOMO", @"流年", @"HDR", @"碧波", @"上野", @"优格", @"彩虹瀑", @"云端", @"淡雅", @"粉红佳人", @"复古", @"候鸟", @"黑白", @"一九〇〇", @"古铜色", @"哥特风", @"移轴", @"TEST1", @"TEST2", @"TEST3", nil]];
 }
 
 //海报边框视图
@@ -223,11 +223,11 @@
                 break;
                 
             case 1:
-                self.currentImage= [FWApplyFilter applySketchFilter:self.image];
+                self.currentImage = [FWApplyFilter applyLomofiFilter:self.image];
                 break;
                 
             case 2:
-                self.currentImage = [FWApplyFilter applySoftEleganceFilter:self.image];
+                self.currentImage = [FWApplyFilter applyLomo1Filter:self.image];
                 break;
                 
             case 3:

@@ -25,8 +25,7 @@
     // Do any additional setup after loading the view.
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10, 74, 266, 30)];
     _searchBar.delegate = self;
-    
-
+_searchBar.placeholder = @"输入您要搜索的图片！";
     [self.view addSubview:_searchBar];
 }
 

@@ -26,6 +26,4 @@
  */
 + (UIImage *)getImageWithFilter:(GPUImageFilter *)filter image:(UIImage *)originalImage method:(NSString *)methodName value:(float)value;
 
-+ (CGFloat)widthOfDeviceScreen;
-+ (CGFloat)heightOfDeviceScreen;
 @end

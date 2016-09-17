@@ -20,6 +20,7 @@
 #import "UIImage+ImageScale.h"
 #import "Masonry.h"
 #import "FWSearchImageViewController.h"
+#import "FWCameraFilterViewController.h"
 
 @interface FWViewController ()
 @property (nonatomic, assign) CGRect leftArrowFrame;
@@ -230,10 +231,17 @@
              ];
         }
     }
-    if ([[(UIButton *)sender titleLabel].text isEqualToString:@"图片搜索"]) {
+   else if ([[(UIButton *)sender titleLabel].text isEqualToString:@"图片搜索"]) {
         
         FWSearchImageViewController *vc = [[FWSearchImageViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+    }
+   else if ([[(UIButton *)sender titleLabel].text isEqualToString:@"万能相机"]) {
+        
+        FWCameraFilterViewController *vc = [[FWCameraFilterViewController alloc] init];
+       [self presentViewController:vc animated:YES completion:^{
+
+       }];
     }
 }
 

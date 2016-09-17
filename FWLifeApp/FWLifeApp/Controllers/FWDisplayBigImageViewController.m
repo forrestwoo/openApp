@@ -62,7 +62,7 @@
 
 - (void)initToolBar
 {
-    _toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [FWCommonTools heightOfDeviceScreen] - 44, [FWCommonTools widthOfDeviceScreen], 44)];
+    _toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, HEIGHT - 44, WIDTH, 44)];
     UIBarButtonItem *bbiEdit = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStyleDone target:self action:@selector(editImage:)];
     UIBarButtonItem *bbiShare = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStyleDone target:self action:@selector(shareImage:)];
     UIBarButtonItem *bbiDownload = [[UIBarButtonItem alloc] initWithTitle:@"下载" style:UIBarButtonItemStyleDone target:self action:@selector(downloadImage:)];
@@ -152,9 +152,9 @@
     {
         [self.navigationController setNavigationBarHidden:NO animated:YES];
         [UIView animateWithDuration:10.0 animations:^{
-            _toolBar.frame = CGRectMake(0, [FWCommonTools heightOfDeviceScreen], [FWCommonTools widthOfDeviceScreen], 44);
+            _toolBar.frame = CGRectMake(0, HEIGHT, WIDTH, 44);
         } completion:^(BOOL finished) {
-            _toolBar.frame = CGRectMake(0, [FWCommonTools heightOfDeviceScreen] - 44, [FWCommonTools widthOfDeviceScreen], 44);
+            _toolBar.frame = CGRectMake(0, HEIGHT - 44, WIDTH, 44);
         }];
         
     }
@@ -163,9 +163,9 @@
     {
         [self.navigationController setNavigationBarHidden:YES animated:YES];
         [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
-            _toolBar.frame = CGRectMake(0, [FWCommonTools heightOfDeviceScreen] - 44, [FWCommonTools widthOfDeviceScreen], 44);
+            _toolBar.frame = CGRectMake(0, HEIGHT - 44, WIDTH, 44);
         } completion:^(BOOL finished) {
-            _toolBar.frame = CGRectMake(0, [FWCommonTools heightOfDeviceScreen], [FWCommonTools widthOfDeviceScreen], 44);
+            _toolBar.frame = CGRectMake(0, HEIGHT, WIDTH, 44);
         }];
         
     }

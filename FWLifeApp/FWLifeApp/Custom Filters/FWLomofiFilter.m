@@ -31,7 +31,8 @@ NSString *const kFWLomofiShaderString = SHADER_STRING
                       texture2D(inputImageTexture2, red).r,
                       texture2D(inputImageTexture2, green).g,
                       texture2D(inputImageTexture2, blue).b);
-     
+
+     //暗角
      vec2 tc = (2.0 * textureCoordinate) - 1.0;
      float d = dot(tc, tc);
      vec2 lookup = vec2(d, texel.r);
@@ -70,7 +71,7 @@ NSString *const kFWLomofiShaderString = SHADER_STRING
     
     FWFilter6 *filter = [[FWFilter6 alloc] init];
     [self addFilter:filter];
-    
+
     UIImage *image = [UIImage imageNamed:@"lomoMap"];
     imageSource1 = [[GPUImagePicture alloc] initWithImage:image];
     [imageSource1 addTarget:filter atTextureLocation:1];

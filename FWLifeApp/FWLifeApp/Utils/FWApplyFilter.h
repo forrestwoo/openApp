@@ -68,6 +68,8 @@
 
 + (UIImage *)applyLomofiFilter:(UIImage *)image;
 
++ (UIImage *)applyLomo1Filter:(UIImage *)image;
+
 + (UIImage *)applyInkwellFilter:(UIImage *)image;
 
 + (UIImage *)applySierraFilter:(UIImage *)image;
