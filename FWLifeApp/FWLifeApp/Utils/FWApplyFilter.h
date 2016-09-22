@@ -40,7 +40,12 @@
 //智能优化
 + (UIImage *)autoBeautyFilter:(UIImage *)image;
 
+//风景
++ (UIImage *)applyViewFilter:(UIImage *)image;
+
 //复杂滤镜
+
++ (UIImage *)applyStaticFilter:(UIImage *)image;
 
 + (UIImage *)applyAmatorkaFilter:(UIImage *)image;
 
@@ -69,6 +74,7 @@
 + (UIImage *)applyLomofiFilter:(UIImage *)image;
 
 + (UIImage *)applyLomo1Filter:(UIImage *)image;
+
 
 + (UIImage *)applyInkwellFilter:(UIImage *)image;
 

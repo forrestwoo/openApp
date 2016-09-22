@@ -44,7 +44,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     _adjustheight = 0.0;
     _pageNumber = 0;
     
@@ -73,12 +73,13 @@
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [weakTable reloadData];
+//                    [_HUD removeFromSuperview];
                     
                 });
             }
         }];
     } completionBlock:^{
-        [_HUD removeFromSuperview];
+        
     }];
     
 }

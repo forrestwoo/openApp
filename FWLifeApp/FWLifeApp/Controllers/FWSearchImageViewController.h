@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FWSearchImageViewController : UIViewController <UISearchBarDelegate>
+@interface FWSearchImageViewController : UIViewController <UISearchBarDelegate,UITableViewDelegate, UITableViewDataSource>
 
 NS_ASSUME_NONNULL_BEGIN
-@property (nonatomic, strong) NSMutableArray *imageUrls;
+@property (nonatomic, strong) UITableView *tableView;
 NS_ASSUME_NONNULL_END
 
 @end

@@ -6,8 +6,15 @@
 //  Copyright © 2016年 ForrstWoo. All rights reserved.
 //
 
-#import "FWLomofiFilter.h"
+#import "GPUImageFilterGroup.h"
 
-@interface FWLOMOFilter1 : FWLomofiFilter
+@interface FWFilterLOMO : GPUImageTwoInputFilter
 
+@end
+
+@interface FWLOMOFilter1 : GPUImageFilterGroup
+{
+    GPUImagePicture *imageSource1;
+    GPUImagePicture *imageSource2;
+}
 @end

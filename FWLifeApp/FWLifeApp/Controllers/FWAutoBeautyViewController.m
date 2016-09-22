@@ -87,39 +87,35 @@
 {
     switch (index) {
         case 0:
-            self.imageView.image = self.image;
+            self.currentImage = self.image;
             break;
             
         case 1:
             self.currentImage = [FWApplyFilter autoBeautyFilter:self.image];
-            self.imageView.image = self.currentImage;
             break;
             
         case 2:
-//            self.currentImage = [FWCommonFilter applyToLookupFilter:self.image];
-            self.imageView.image = self.currentImage;
+            self.currentImage = [FWApplyFilter applyHudsonFilter:self.image];
             break;
             
         case 3:
-            self.currentImage = [FWApplyFilter applyAmatorkaFilter:self.image];
-            self.imageView.image = self.currentImage;
+            self.currentImage = [FWApplyFilter applyStaticFilter:self.image];
             break;
             
         case 4:
-            self.currentImage = [FWApplyFilter applyMissetikateFilter:self.image];
-            self.imageView.image = self.currentImage;
+            self.currentImage = [FWApplyFilter applyViewFilter:self.image];
             break;
             
         case 5:
-            self.currentImage = [FWApplyFilter applySoftEleganceFilter:self.image];
-            self.imageView.image = self.currentImage;
+            self.currentImage = [FWApplyFilter applyLomo1Filter:self.image];
             break;
             
         case 6:
             self.currentImage = [FWApplyFilter applyNashvilleFilter:self.image];
-            self.imageView.image = self.currentImage;
             break;
     }
+    self.imageView.image = self.currentImage;
+
 }
 
 //隐藏状态栏

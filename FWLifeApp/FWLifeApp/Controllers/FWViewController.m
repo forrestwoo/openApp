@@ -225,7 +225,6 @@
             imagePicker.delegate = self;
             imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
             [self presentViewController:imagePicker animated:YES completion:^{
-                [[UIApplication sharedApplication] setStatusBarHidden:YES];
                 
             }
              ];
@@ -272,4 +271,8 @@
     }];
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 @end

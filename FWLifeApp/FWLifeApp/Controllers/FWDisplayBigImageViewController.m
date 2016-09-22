@@ -52,6 +52,11 @@
     tapGes.numberOfTapsRequired = 1;
     [_imageView addGestureRecognizer:tapGes];
     
+    UITapGestureRecognizer* t = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                        action:@selector(doubleClicked:)];
+    t.numberOfTapsRequired = 2;
+    [_imageView addGestureRecognizer:t];
+    
     [self initToolBar];
 }
 
@@ -86,9 +91,7 @@
 
 - (void)downloadImage:(id)sender
 {
-  
     UIImageWriteToSavedPhotosAlbum(self.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
-    
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
@@ -171,6 +174,31 @@
     }
 }
 
+- (void)doubleClicked:(UIGestureRecognizer *)gesture
+{
+    UIView* v = gesture.view;
+    
+    UIScrollView* sv = (UIScrollView*)v.superview;
+    if (sv.zoomScale < 1) {
+        [sv setZoomScale:1 animated:YES];
+        CGPoint pt = CGPointMake((v.bounds.size.width - sv.bounds.size.width)/2.0,0);
+        [sv setContentOffset:pt animated:NO];
+    }
+    else if (sv.zoomScale < sv.maximumZoomScale){
+        [sv setZoomScale:sv.maximumZoomScale animated:YES];
+        CGRect frm=sv.frame;
+        frm.size.height+=_toolBar.frame.size.height;
+        sv.frame=frm;
+        _toolBar.hidden=TRUE;
+    }
+    else
+    {   [sv setZoomScale:sv.minimumZoomScale animated:YES];
+        _toolBar.hidden=FALSE;
+        CGRect frm=sv.frame;
+        frm.size.height-=_toolBar.frame.size.height;
+        sv.frame=frm;
+    }
 
+}
 
 @end
