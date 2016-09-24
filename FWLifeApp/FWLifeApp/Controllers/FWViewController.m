@@ -21,6 +21,8 @@
 #import "Masonry.h"
 #import "FWSearchImageViewController.h"
 #import "FWCameraFilterViewController.h"
+#import <Photos/Photos.h>
+#import "FWPhotoAlbumTableViewController.h"
 
 @interface FWViewController ()
 @property (nonatomic, assign) CGRect leftArrowFrame;
@@ -35,6 +37,9 @@
     
     
     self.navigationController.delegate = self;
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] init];
+    backButtonItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = backButtonItem;
     
     UIImageView *backImage = [[UIImageView alloc] initWithFrame:self.view.bounds];
     backImage.image = [UIImage imageNamed:@"bg_home@2x.jpg"];
@@ -87,6 +92,13 @@
     self.pageControl.numberOfPages = 2;
     [self.view addSubview:self.pageControl];
     [self setupScrollView];
+    [self testPL];
+    
+}
+
+- (void)testPL
+{
+    
 }
 
 
@@ -218,17 +230,21 @@
 - (void)btnClicked:(id)sender
 {
     if ([[(UIButton *)sender titleLabel].text isEqualToString:@"美化图片"]) {
-        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
-        {
-            imagePicker = [[UIImagePickerController alloc] init];
-            
-            imagePicker.delegate = self;
-            imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-            [self presentViewController:imagePicker animated:YES completion:^{
-                
-            }
-             ];
-        }
+//        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+//        {
+//            imagePicker = [[UIImagePickerController alloc] init];
+//            
+//            imagePicker.delegate = self;
+//            imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//            [self presentViewController:imagePicker animated:YES completion:^{
+//                
+//            }
+//             ];
+//        }
+        
+        
+        FWPhotoAlbumTableViewController *vc = [[FWPhotoAlbumTableViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
    else if ([[(UIButton *)sender titleLabel].text isEqualToString:@"图片搜索"]) {
         

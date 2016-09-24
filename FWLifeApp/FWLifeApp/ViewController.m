@@ -56,7 +56,7 @@
 
     [self.view addSubview:self.tableView];
     
-    _HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    _HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.view addSubview:_HUD];
     _HUD.dimBackground = YES;
     
@@ -73,7 +73,7 @@
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [weakTable reloadData];
-//                    [_HUD removeFromSuperview];
+                    [_HUD removeFromSuperview];
                     
                 });
             }

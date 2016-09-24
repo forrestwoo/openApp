@@ -41,12 +41,12 @@
     _HUD.labelText = @"正在搜索";
     [_HUD show:YES];
     [self.navigationController.view addSubview:_HUD];
-
-
+    
+    
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,0, WIDTH, HEIGHT) style:UITableViewStylePlain];
     self.tableView.delegate  = self;
     self.tableView.dataSource = self;
- 
+    
     NSLog(@"%f",self.tableView.tableHeaderView.frame.size.height);
     [self.view addSubview:self.tableView];
     [[Web_API sharedInstance] htmlDataWithURLString:@"http://vi.sualize.us/" completionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
@@ -67,7 +67,7 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakTable reloadData];
-                                    [_HUD removeFromSuperview];
+                [_HUD removeFromSuperview];
                 
             });
             
@@ -184,15 +184,5 @@
         [_searchBar resignFirstResponder];
     }
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

@@ -72,7 +72,14 @@
 		A88F62881D7A0B360019D9F2 /* FWConst.m in Sources */ = {isa = PBXBuildFile; fileRef = A88F62871D7A0B360019D9F2 /* FWConst.m */; };
 		A88F628F1D7A0CDE0019D9F2 /* FWDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A88F628C1D7A0CDE0019D9F2 /* FWDataManager.m */; };
 		A88F62901D7A0CDE0019D9F2 /* Web_API.m in Sources */ = {isa = PBXBuildFile; fileRef = A88F628E1D7A0CDE0019D9F2 /* Web_API.m */; };
+		A8A0F01C1D96576300A6DEE4 /* FWPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0F01B1D96576300A6DEE4 /* FWPhotoManager.m */; };
+		A8A0F0231D9658A200A6DEE4 /* FWPhotoAlbums.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0F0221D9658A200A6DEE4 /* FWPhotoAlbums.m */; };
+		A8A0F0251D96717C00A6DEE4 /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A0F0241D96717C00A6DEE4 /* Camera.png */; };
 		A8A46FE61D8C8CED00AEB457 /* FWCameraFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A46FE51D8C8CED00AEB457 /* FWCameraFilterViewController.m */; };
+		A8A8C6131D94E4DD0074E64F /* FWPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A8C6121D94E4DD0074E64F /* FWPhotoView.m */; };
+		A8A8C6161D94EB7E0074E64F /* FWPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A8C6151D94EB7E0074E64F /* FWPhotoCell.m */; };
+		A8A8C6191D94F42A0074E64F /* FWPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A8C6181D94F42A0074E64F /* FWPhotoCollectionViewController.m */; };
+		A8A8C61C1D94F4650074E64F /* FWPhotoAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A8C61B1D94F4650074E64F /* FWPhotoAlbumTableViewController.m */; };
 		A8BC24211D7B51E900CB27AC /* NSString+ArrayForImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BC24201D7B51E900CB27AC /* NSString+ArrayForImage.m */; };
 		A8BDEE3D1D811EFE0014935D /* FWImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BDEE3C1D811EFE0014935D /* FWImageCell.m */; };
 		A8C23AFE1D8BAD330008A131 /* FWLOMOFilter1.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C23AFD1D8BAD330008A131 /* FWLOMOFilter1.m */; };
@@ -96,7 +103,6 @@
 		A8C7D0F11D809D5200045908 /* FWScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C7D0E31D809D5200045908 /* FWScrollBar.m */; };
 		A8C7D0F21D809D5200045908 /* FWSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C7D0E51D809D5200045908 /* FWSlider.m */; };
 		A8C7D0F31D809D5200045908 /* FWTriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C7D0E71D809D5200045908 /* FWTriangleView.m */; };
-		A8C7D0F41D809D5200045908 /* UIButton+TextAndImageHorizontalDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C7D0E91D809D5200045908 /* UIButton+TextAndImageHorizontalDisplay.m */; };
 		A8C7D2E61D809D8700045908 /* icon_blur_center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C7D0F71D809D8700045908 /* icon_blur_center@2x.png */; };
 		A8C7D2E71D809D8700045908 /* icon_blur_center@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C7D0F81D809D8700045908 /* icon_blur_center@3x.png */; };
 		A8C7D2E81D809D8700045908 /* icon_blur_heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C7D0F91D809D8700045908 /* icon_blur_heart@2x.png */; };
@@ -901,8 +907,21 @@
 		A88F628C1D7A0CDE0019D9F2 /* FWDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWDataManager.m; sourceTree = "<group>"; };
 		A88F628D1D7A0CDE0019D9F2 /* Web_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Web_API.h; sourceTree = "<group>"; };
 		A88F628E1D7A0CDE0019D9F2 /* Web_API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Web_API.m; sourceTree = "<group>"; };
+		A8A0F01A1D96576300A6DEE4 /* FWPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWPhotoManager.h; sourceTree = "<group>"; };
+		A8A0F01B1D96576300A6DEE4 /* FWPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWPhotoManager.m; sourceTree = "<group>"; };
+		A8A0F0211D9658A200A6DEE4 /* FWPhotoAlbums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWPhotoAlbums.h; sourceTree = "<group>"; };
+		A8A0F0221D9658A200A6DEE4 /* FWPhotoAlbums.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWPhotoAlbums.m; sourceTree = "<group>"; };
+		A8A0F0241D96717C00A6DEE4 /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Camera.png; path = "FWLifeApp/images/美化图片/Camera.png"; sourceTree = SOURCE_ROOT; };
 		A8A46FE41D8C8CED00AEB457 /* FWCameraFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWCameraFilterViewController.h; sourceTree = "<group>"; };
 		A8A46FE51D8C8CED00AEB457 /* FWCameraFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWCameraFilterViewController.m; sourceTree = "<group>"; };
+		A8A8C6111D94E4DD0074E64F /* FWPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWPhotoView.h; sourceTree = "<group>"; };
+		A8A8C6121D94E4DD0074E64F /* FWPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWPhotoView.m; sourceTree = "<group>"; };
+		A8A8C6141D94EB7E0074E64F /* FWPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWPhotoCell.h; sourceTree = "<group>"; };
+		A8A8C6151D94EB7E0074E64F /* FWPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWPhotoCell.m; sourceTree = "<group>"; };
+		A8A8C6171D94F42A0074E64F /* FWPhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWPhotoCollectionViewController.h; path = FWLifeApp/Controllers/FWPhotoCollectionViewController.h; sourceTree = SOURCE_ROOT; };
+		A8A8C6181D94F42A0074E64F /* FWPhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWPhotoCollectionViewController.m; path = FWLifeApp/Controllers/FWPhotoCollectionViewController.m; sourceTree = SOURCE_ROOT; };
+		A8A8C61A1D94F4650074E64F /* FWPhotoAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FWPhotoAlbumTableViewController.h; path = FWLifeApp/Controllers/FWPhotoAlbumTableViewController.h; sourceTree = SOURCE_ROOT; };
+		A8A8C61B1D94F4650074E64F /* FWPhotoAlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FWPhotoAlbumTableViewController.m; path = FWLifeApp/Controllers/FWPhotoAlbumTableViewController.m; sourceTree = SOURCE_ROOT; };
 		A8BC241F1D7B51E900CB27AC /* NSString+ArrayForImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ArrayForImage.h"; sourceTree = "<group>"; };
 		A8BC24201D7B51E900CB27AC /* NSString+ArrayForImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ArrayForImage.m"; sourceTree = "<group>"; };
 		A8BDEE3B1D811EFE0014935D /* FWImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWImageCell.h; sourceTree = "<group>"; };
@@ -950,8 +969,6 @@
 		A8C7D0E51D809D5200045908 /* FWSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSlider.m; sourceTree = "<group>"; };
 		A8C7D0E61D809D5200045908 /* FWTriangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTriangleView.h; sourceTree = "<group>"; };
 		A8C7D0E71D809D5200045908 /* FWTriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTriangleView.m; sourceTree = "<group>"; };
-		A8C7D0E81D809D5200045908 /* UIButton+TextAndImageHorizontalDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+TextAndImageHorizontalDisplay.h"; sourceTree = "<group>"; };
-		A8C7D0E91D809D5200045908 /* UIButton+TextAndImageHorizontalDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TextAndImageHorizontalDisplay.m"; sourceTree = "<group>"; };
 		A8C7D0F71D809D8700045908 /* icon_blur_center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_blur_center@2x.png"; sourceTree = "<group>"; };
 		A8C7D0F81D809D8700045908 /* icon_blur_center@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_blur_center@3x.png"; sourceTree = "<group>"; };
 		A8C7D0F91D809D8700045908 /* icon_blur_heart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_blur_heart@2x.png"; sourceTree = "<group>"; };
@@ -1977,6 +1994,7 @@
 		A85ADE0F1D68E63700F32BBE /* FWLifeApp */ = {
 			isa = PBXGroup;
 			children = (
+				A8A0F0201D9658A200A6DEE4 /* Model */,
 				A8C7D0D31D809D5200045908 /* Views */,
 				A8C7D0BD1D809D3600045908 /* Controllers */,
 				A855A3531D804D070008B118 /* Custom Filters */,
@@ -2040,6 +2058,8 @@
 				A88F628E1D7A0CDE0019D9F2 /* Web_API.m */,
 				A88F62861D7A0B360019D9F2 /* FWConst.h */,
 				A88F62871D7A0B360019D9F2 /* FWConst.m */,
+				A8A0F01A1D96576300A6DEE4 /* FWPhotoManager.h */,
+				A8A0F01B1D96576300A6DEE4 /* FWPhotoManager.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -2067,6 +2087,15 @@
 				A88F62821D7A09FF0019D9F2 /* XPathQuery.m */,
 			);
 			path = TFHpple;
+			sourceTree = "<group>";
+		};
+		A8A0F0201D9658A200A6DEE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A8A0F0211D9658A200A6DEE4 /* FWPhotoAlbums.h */,
+				A8A0F0221D9658A200A6DEE4 /* FWPhotoAlbums.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A8A46FE31D8C8CC400AEB457 /* Camera */ = {
@@ -2141,6 +2170,14 @@
 		A8C7D0D31D809D5200045908 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A8A8C6111D94E4DD0074E64F /* FWPhotoView.h */,
+				A8A8C6121D94E4DD0074E64F /* FWPhotoView.m */,
+				A8A8C6141D94EB7E0074E64F /* FWPhotoCell.h */,
+				A8A8C6151D94EB7E0074E64F /* FWPhotoCell.m */,
+				A8A8C6171D94F42A0074E64F /* FWPhotoCollectionViewController.h */,
+				A8A8C6181D94F42A0074E64F /* FWPhotoCollectionViewController.m */,
+				A8A8C61A1D94F4650074E64F /* FWPhotoAlbumTableViewController.h */,
+				A8A8C61B1D94F4650074E64F /* FWPhotoAlbumTableViewController.m */,
 				A8BDEE3B1D811EFE0014935D /* FWImageCell.h */,
 				A8BDEE3C1D811EFE0014935D /* FWImageCell.m */,
 				A8C7D0D41D809D5200045908 /* FWButton.h */,
@@ -2163,8 +2200,6 @@
 				A8C7D0E51D809D5200045908 /* FWSlider.m */,
 				A8C7D0E61D809D5200045908 /* FWTriangleView.h */,
 				A8C7D0E71D809D5200045908 /* FWTriangleView.m */,
-				A8C7D0E81D809D5200045908 /* UIButton+TextAndImageHorizontalDisplay.h */,
-				A8C7D0E91D809D5200045908 /* UIButton+TextAndImageHorizontalDisplay.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2757,6 +2792,7 @@
 		A8D0EFDF1D8D6E4D0004AD00 /* camera */ = {
 			isa = PBXGroup;
 			children = (
+				A8A0F0241D96717C00A6DEE4 /* Camera.png */,
 				A8D0EFE01D8D6E4D0004AD00 /* flash-auto.png */,
 				A8D0EFE11D8D6E4D0004AD00 /* flash-auto@2x.png */,
 				A8D0EFE21D8D6E4D0004AD00 /* flash-off.png */,
@@ -3706,6 +3742,7 @@
 				A88213531D70C448002CC5AF /* get_thumbnailCAJVHWL1.jpg in Resources */,
 				A8C7D4D61D809DC100045908 /* effect.png in Resources */,
 				A8C7D44B1D809D8700045908 /* btn_home_setting_a@2x.png in Resources */,
+				A8A0F0251D96717C00A6DEE4 /* Camera.png in Resources */,
 				A8C7D4781D809D8700045908 /* home_block_blue_a@2x.png in Resources */,
 				A8EFCF031D7FFC9E0015735C /* Info.plist in Resources */,
 				A8C7D3F01D809D8700045908 /* text_font_thumbnail1@3x.png in Resources */,
@@ -3785,7 +3822,6 @@
 				A8EFCED81D7FFC9D0015735C /* GPUImageThresholdSketchFilter.m in Sources */,
 				A8EFCEAE1D7FFC9D0015735C /* GPUImageMotionBlurFilter.m in Sources */,
 				A8EFCEDA1D7FFC9D0015735C /* GPUImageToneCurveFilter.m in Sources */,
-				A8C7D0F41D809D5200045908 /* UIButton+TextAndImageHorizontalDisplay.m in Sources */,
 				A8EFCE851D7FFC9D0015735C /* GPUImageFASTCornerDetectionFilter.m in Sources */,
 				A855A3831D804D070008B118 /* FWLordKelvinFilter.m in Sources */,
 				A8EFCE911D7FFC9D0015735C /* GPUImageHazeFilter.m in Sources */,
@@ -3817,6 +3853,7 @@
 				A8EFCEAB1D7FFC9D0015735C /* GPUImageMissEtikateFilter.m in Sources */,
 				A8EFCEBE1D7FFC9D0015735C /* GPUImageRGBClosingFilter.m in Sources */,
 				A8C7D0D01D809D3600045908 /* FWColorListViewController.m in Sources */,
+				A8A0F01C1D96576300A6DEE4 /* FWPhotoManager.m in Sources */,
 				A8EFCE771D7FFC9D0015735C /* GPUImageCrosshairGenerator.m in Sources */,
 				A8EFCE8B1D7FFC9D0015735C /* GPUImageGaussianSelectiveBlurFilter.m in Sources */,
 				A8C7D0EA1D809D5200045908 /* FWButton.m in Sources */,
@@ -3870,8 +3907,10 @@
 				A855A37F1D804D070008B118 /* FWHefeFilter.m in Sources */,
 				A855A3851D804D070008B118 /* FWRiseFilter.m in Sources */,
 				A8EFCEAD1D7FFC9D0015735C /* GPUImageMosaicFilter.m in Sources */,
+				A8A8C61C1D94F4650074E64F /* FWPhotoAlbumTableViewController.m in Sources */,
 				A8EFCEA21D7FFC9D0015735C /* GPUImageLinearBurnBlendFilter.m in Sources */,
 				A807C3211D7968BF00328236 /* SDWebImageDownloader.m in Sources */,
+				A8A0F0231D9658A200A6DEE4 /* FWPhotoAlbums.m in Sources */,
 				A855A38B1D804D070008B118 /* FWWaldenFilter.m in Sources */,
 				A855A3821D804D070008B118 /* FWLomofiFilter.m in Sources */,
 				A8EFCE731D7FFC9D0015735C /* GPUImageColourFASTFeatureDetector.m in Sources */,
@@ -3922,6 +3961,7 @@
 				A8EFCE991D7FFC9D0015735C /* GPUImageHueFilter.m in Sources */,
 				A8EFCE841D7FFC9D0015735C /* GPUImageFalseColorFilter.m in Sources */,
 				A8EFCEAC1D7FFC9D0015735C /* GPUImageMonochromeFilter.m in Sources */,
+				A8A8C6131D94E4DD0074E64F /* FWPhotoView.m in Sources */,
 				A8EFCEBA1D7FFC9D0015735C /* GPUImagePolarPixellateFilter.m in Sources */,
 				A8EFCEEB1D7FFC9E0015735C /* GPUImageBuffer.m in Sources */,
 				A8EFCEA71D7FFC9D0015735C /* GPUImageLuminanceThresholdFilter.m in Sources */,
@@ -3953,6 +3993,7 @@
 				A8EFCE6D1D7FFC9D0015735C /* GPUImageColorBurnBlendFilter.m in Sources */,
 				A8EFCF0A1D7FFC9E0015735C /* MASConstraint.m in Sources */,
 				A87C95CD1D8903C2009BD3B2 /* FWBackgroundFilter.m in Sources */,
+				A8A8C6191D94F42A0074E64F /* FWPhotoCollectionViewController.m in Sources */,
 				A8EFCEFA1D7FFC9E0015735C /* GPUImagePixellateFilter.m in Sources */,
 				A8EFCE6C1D7FFC9D0015735C /* GPUImageColorBlendFilter.m in Sources */,
 				A8EFCE5D1D7FFC9D0015735C /* GPUImage3x3TextureSamplingFilter.m in Sources */,
@@ -3995,6 +4036,7 @@
 				A88F62831D7A09FF0019D9F2 /* TFHpple.m in Sources */,
 				A8EFCEBC1D7FFC9D0015735C /* GPUImagePosterizeFilter.m in Sources */,
 				A8D887931D8889FC00EBD538 /* FWSearchImageViewController.m in Sources */,
+				A8A8C6161D94EB7E0074E64F /* FWPhotoCell.m in Sources */,
 				A807C32A1D7968BF00328236 /* UIImageView+WebCache.m in Sources */,
 				A8EFCE5F1D7FFC9D0015735C /* GPUImageAddBlendFilter.m in Sources */,
 				A8EFCF0C1D7FFC9E0015735C /* MASLayoutConstraint.m in Sources */,
