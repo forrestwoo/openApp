@@ -7,25 +7,65 @@
 //
 
 #import "FWPhotoCollectionViewController.h"
+#import "FWPhotoCell.h"
+#import "FWPhotoManager.h"
+#import "FWPhotosLayout.h"
+#import "FWDisplayBigImageViewController.h"
 
-@interface FWPhotoCollectionViewController ()
-
+@interface FWPhotoCollectionViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
+{
+    NSArray<PHAsset *> *_dataSouce;
+}
+@property (nonatomic, strong) PHAssetCollection *assetCollection;
 @end
 
 @implementation FWPhotoCollectionViewController
 
 static NSString * const reuseIdentifier = @"Cell";
 
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout model:(FWPhotoAlbums *)model
+{
+    if (self = [super initWithCollectionViewLayout:layout]) {
+        self.model = model;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
-    
+//    self.navigationController.navigationBarHidden = YES;
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
+    CGRect frame = self.collectionView.frame;
+    frame.origin.y+=44;
+    self.collectionView.frame = frame;
+    self.view.backgroundColor = [UIColor whiteColor];
+
+    [self initSource];
+}
+
+//- (void)setModel:(FWPhotoAlbums *)model
+//{
+//    self.model = model;
+//    
+//    [self initSource];
+//}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+- (void)initSource
+{
+    [self.collectionView registerClass:[FWPhotoCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    self.title = self.model.albumName;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     // Do any additional setup after loading the view.
+    self.assetCollection = self.model.assetCollection;
+    _dataSouce = [[FWPhotoManager sharedManager] getAssetsInAssetCollection:self.assetCollection ascending:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,66 +73,49 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+    return [_dataSouce count];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    FWPhotosLayout *lay = (FWPhotosLayout *)collectionViewLayout;
+    return CGSizeMake([lay cellWidth],[lay cellWidth]);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    FWPhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    PHAsset *asset = _dataSouce[indexPath.row];
+    __block UIImage *bImage = nil;
+    CGSize size = cell.frame.size;
+    size.width *= 3;
+    size.height *= 3;
+    [[FWPhotoManager sharedManager] requestImageForAsset:asset size:size resizeMode:PHImageRequestOptionsResizeModeFast completion:^(UIImage *image, NSDictionary *info) {
+        bImage = image;
+    }];
     
-    // Configure the cell
+    [cell setImage:bImage];
     
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    PHAsset *asset = _dataSouce[indexPath.row];
+
+    [[FWPhotoManager sharedManager] requestImageForAsset:asset size:PHImageManagerMaximumSize resizeMode:PHImageRequestOptionsResizeModeFast completion:^(UIImage *image, NSDictionary *info) {
+        FWDisplayBigImageViewController *vc = [[FWDisplayBigImageViewController alloc] initWithImage:image];
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
+   
+}
 #pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end

@@ -9,6 +9,8 @@
 #import "FWPhotoAlbumTableViewController.h"
 #import "FWPhotoManager.h"
 #import "UIButton+TextAndImageHorizontalDisplay.h"
+#import "FWPhotoCollectionViewController.h"
+#import "FWPhotosLayout.h"
 
 @interface FWPhotoAlbumTableViewController ()
 {
@@ -21,8 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"选择照片";
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"相册";
     
     mArr= [[[FWPhotoManager sharedManager] getPhotoAlbums] mutableCopy];
     
@@ -45,8 +47,6 @@
     
 }
 
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -59,7 +59,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 88;
+    return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -70,16 +70,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
     FWPhotoAlbums *album = mArr[indexPath.row];
     cell.textLabel.text =album.albumName;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d张",album.albumImageCount];
     cell.detailTextLabel.textColor = [UIColor grayColor];
-    [[FWPhotoManager sharedManager] requestImageForAsset:album.firstImageAsset size:CGSizeMake(50 * 3, 50 * 3) resizeMode:PHImageRequestOptionsResizeModeExact completion:^(UIImage *image, NSDictionary *info) {
-        cell.imageView.image = image;
+    __block UIImage *img = nil;
+    [[FWPhotoManager sharedManager] requestImageForAsset:album.firstImageAsset size:CGSizeMake(60 * 3, 60 * 3) resizeMode:PHImageRequestOptionsResizeModeExact completion:^(UIImage *image, NSDictionary *info) {
+        img = image;
     }];
-   
-    cell.imageView.frame = CGRectMake(10, 9, 50, 50);
+    cell.imageView.image = img;
     cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
     cell.imageView.clipsToBounds = YES;
     return cell;
@@ -89,52 +88,15 @@
 {
     return YES;
 }
-
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FWPhotoAlbums *model = [mArr objectAtIndex:indexPath.row];
+    FWPhotosLayout *layout = [[FWPhotosLayout alloc] init];
+    layout.minimumInteritemSpacing = 1.5;
+    layout.minimumLineSpacing = 5.0;
+    FWPhotoCollectionViewController *vc = [[FWPhotoCollectionViewController alloc] initWithCollectionViewLayout:layout model:model];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

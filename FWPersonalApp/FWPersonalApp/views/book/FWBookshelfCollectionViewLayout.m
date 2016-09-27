@@ -109,7 +109,7 @@ NSString * const FWBookshelfCollectionViewLayoutDecorationViewKind = @"FWBookshe
 
 - (CGSize)collectionViewContentSize
 {
-    CGSize contentSize = CGSizeMake(self.collectionView.bounds.size.width, self.countOfRow * kDecorationViewHeight + 20);
+    CGSize contentSize = CGSizeMake(self.collectionView.bounds.size.width, self.countOfRow * kDecorationViewHeight);
     
     return contentSize;
 }

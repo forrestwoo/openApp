@@ -12,7 +12,5 @@
 @interface FWPhotoCell : UICollectionViewCell
 
 @property (nonatomic, strong) UIImage *image;
-@property (nonatomic, strong) PHAsset *asset;
-@property (nonatomic, strong) PHImageManager *imageManager;
 
 @end

@@ -71,7 +71,7 @@
     PHFetchResult *smartAlbum = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
     [smartAlbum enumerateObjectsUsingBlock:^(PHAssetCollection *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (obj.assetCollectionSubtype != 202 && obj.assetCollectionSubtype < 212) {
-            NSArray <PHAsset *> *assets = [self getAssetsInAssetCollection:obj ascending:YES];
+            NSArray <PHAsset *> *assets = [self getAssetsInAssetCollection:obj ascending:NO];
             if ([assets count]) {
                 FWPhotoAlbums *pa = [[FWPhotoAlbums alloc] init];
                 pa.albumName = [self TitleOfAlbumForChinse:obj.localizedTitle];
@@ -85,7 +85,7 @@
     
     PHFetchResult *userAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeSmartAlbumUserLibrary options:nil];
     [userAlbums enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull collection, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSArray<PHAsset *> *assets = [self getAssetsInAssetCollection:collection ascending:NO];
+        NSArray<PHAsset *> *assets = [self getAssetsInAssetCollection:collection ascending:YES];
         if (assets.count > 0) {
             FWPhotoAlbums *pa = [[FWPhotoAlbums alloc] init];
             pa.albumName = collection.localizedTitle;

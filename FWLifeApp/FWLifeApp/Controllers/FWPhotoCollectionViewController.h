@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Photos/Photos.h>
+#import "FWPhotoAlbums.h"
 
 @interface FWPhotoCollectionViewController : UICollectionViewController
+
+@property (nonatomic, strong) FWPhotoAlbums *model;
+
+- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout model:(FWPhotoAlbums *)model;
 
 @end
