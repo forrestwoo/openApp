@@ -185,7 +185,8 @@ void GPUImageCreateResizedSampleBuffer(CVPixelBufferRef cameraFrame, CGSize fina
 //    reportAvailableMemoryForGPUImage(@"Before Capture");
 
     [self capturePhotoProcessedUpToFilter:finalFilterInChain withImageOnGPUHandler:^(NSError *error) {
-        NSData *dataForJPEGFile = nil;
+        NSData *dataForJPEGFile =
+        nil;
 
         if(!error){
             @autoreleasepool {

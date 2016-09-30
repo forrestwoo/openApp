@@ -137,7 +137,7 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
         
         if (supportsFullYUVRange)
         {
-            [videoOutput setVideoSettings:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_420YpCbCr8BiPlanarFullRange] forKey:(id)kCVPixelBufferPixelFormatTypeKey]];
+            [videoOutput setVideoSettings:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_420YpCbCr8BiPlanarFullRange] forKey:(id)kCVPixelBufferPixelFormatTypeKey]];//kCVPixelBufferWidthKey,kCVPixelBufferHeightKey
             isFullYUVRange = YES;
         }
         else

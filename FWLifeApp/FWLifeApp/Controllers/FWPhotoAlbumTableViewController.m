@@ -72,7 +72,7 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     FWPhotoAlbums *album = mArr[indexPath.row];
     cell.textLabel.text =album.albumName;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d张",album.albumImageCount];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld张",album.albumImageCount];
     cell.detailTextLabel.textColor = [UIColor grayColor];
     __block UIImage *img = nil;
     [[FWPhotoManager sharedManager] requestImageForAsset:album.firstImageAsset size:CGSizeMake(60 * 3, 60 * 3) resizeMode:PHImageRequestOptionsResizeModeExact completion:^(UIImage *image, NSDictionary *info) {

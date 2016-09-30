@@ -114,6 +114,6 @@
  GPUImageMotionBlurFilter
  GPUImageZoomBlurFilter
  */
-
-
+//GPUImageLocalBinaryPatternFilter.h
++ (UIImage *)applyLocalBinaryPatternFilter:(UIImage *)image;
 @end

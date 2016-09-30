@@ -135,11 +135,12 @@
     PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
     option.resizeMode = resizeMode;
     option.networkAccessAllowed = YES;
-    
+//    option.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
     requestID = [[PHCachingImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeAspectFill options:option resultHandler:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
         BOOL downloadFinined = ![[info objectForKey:PHImageCancelledKey] boolValue] && ![info objectForKey:PHImageErrorKey];
         if (downloadFinined && completion) {
             completion(image, info);
+            NSLog(@"width = %f,height = %f",image.size.width,image.size.height);
         }
     }];
 }

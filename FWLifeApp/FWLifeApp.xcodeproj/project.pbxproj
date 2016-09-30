@@ -529,7 +529,6 @@
 		A8C7D4C91D809D8700045908 /* setting_openAuthoried_AccessAlbum_ios7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C7D2E31D809D8700045908 /* setting_openAuthoried_AccessAlbum_ios7@2x.png */; };
 		A8C7D4CA1D809D8700045908 /* setting_openAuthoried_AccessAlbum_ios7@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C7D2E41D809D8700045908 /* setting_openAuthoried_AccessAlbum_ios7@3x.png */; };
 		A8C7D4CB1D809D8700045908 /* setting_openAuthoried_AccessAlbum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C7D2E51D809D8700045908 /* setting_openAuthoried_AccessAlbum@2x.png */; };
-		A8C7D4D61D809DC100045908 /* effect.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C7D4CC1D809DC100045908 /* effect.png */; };
 		A8C7D4D71D809DC100045908 /* effectViewInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8C7D4CD1D809DC100045908 /* effectViewInfo.plist */; };
 		A8C7D4D81D809DC100045908 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C7D4CE1D809DC100045908 /* lookup_amatorka.png */; };
 		A8C7D4D91D809DC100045908 /* lookup_miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C7D4CF1D809DC100045908 /* lookup_miss_etikate.png */; };
@@ -549,12 +548,12 @@
 		A8D0EFF11D8D6E4D0004AD00 /* flash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D0EFE51D8D6E4D0004AD00 /* flash@2x.png */; };
 		A8D0EFF21D8D6E4D0004AD00 /* focus-crosshair.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D0EFE61D8D6E4D0004AD00 /* focus-crosshair.png */; };
 		A8D0EFF31D8D6E4D0004AD00 /* focus-crosshair@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D0EFE71D8D6E4D0004AD00 /* focus-crosshair@2x.png */; };
-		A8D0EFF41D8D6E4D0004AD00 /* front-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D0EFE81D8D6E4D0004AD00 /* front-camera.png */; };
-		A8D0EFF51D8D6E4D0004AD00 /* front-camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D0EFE91D8D6E4D0004AD00 /* front-camera@2x.png */; };
 		A8D0EFF61D8D6E4D0004AD00 /* take-snap.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D0EFEA1D8D6E4D0004AD00 /* take-snap.png */; };
 		A8D0EFF71D8D6E4D0004AD00 /* take-snap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D0EFEB1D8D6E4D0004AD00 /* take-snap@2x.png */; };
 		A8D887901D88869000EBD538 /* FWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D8878F1D88869000EBD538 /* FWViewController.m */; };
 		A8D887931D8889FC00EBD538 /* FWSearchImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D887921D8889FC00EBD538 /* FWSearchImageViewController.m */; };
+		A8DF6B401D9E44A100E2AE04 /* camera-setting.png in Resources */ = {isa = PBXBuildFile; fileRef = A8DF6B3E1D9E44A100E2AE04 /* camera-setting.png */; };
+		A8DF6B411D9E44A100E2AE04 /* front-camera-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = A8DF6B3F1D9E44A100E2AE04 /* front-camera-normal.png */; };
 		A8EB45D71D8733F400FA91C9 /* FWDisplayBigImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EB45D61D8733F400FA91C9 /* FWDisplayBigImageViewController.m */; };
 		A8EFCE5C1D7FFC9D0015735C /* GPUImage3x3ConvolutionFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFCCE11D7FFC9D0015735C /* GPUImage3x3ConvolutionFilter.m */; };
 		A8EFCE5D1D7FFC9D0015735C /* GPUImage3x3TextureSamplingFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFCCE31D7FFC9D0015735C /* GPUImage3x3TextureSamplingFilter.m */; };
@@ -1345,7 +1344,6 @@
 		A8C7D2E31D809D8700045908 /* setting_openAuthoried_AccessAlbum_ios7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_openAuthoried_AccessAlbum_ios7@2x.png"; sourceTree = "<group>"; };
 		A8C7D2E41D809D8700045908 /* setting_openAuthoried_AccessAlbum_ios7@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_openAuthoried_AccessAlbum_ios7@3x.png"; sourceTree = "<group>"; };
 		A8C7D2E51D809D8700045908 /* setting_openAuthoried_AccessAlbum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_openAuthoried_AccessAlbum@2x.png"; sourceTree = "<group>"; };
-		A8C7D4CC1D809DC100045908 /* effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = effect.png; path = FWLifeApp/effect.png; sourceTree = SOURCE_ROOT; };
 		A8C7D4CD1D809DC100045908 /* effectViewInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = effectViewInfo.plist; path = FWLifeApp/effectViewInfo.plist; sourceTree = SOURCE_ROOT; };
 		A8C7D4CE1D809DC100045908 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lookup_amatorka.png; path = FWLifeApp/lookup_amatorka.png; sourceTree = SOURCE_ROOT; };
 		A8C7D4CF1D809DC100045908 /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lookup_miss_etikate.png; path = FWLifeApp/lookup_miss_etikate.png; sourceTree = SOURCE_ROOT; };
@@ -1367,14 +1365,14 @@
 		A8D0EFE51D8D6E4D0004AD00 /* flash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash@2x.png"; sourceTree = "<group>"; };
 		A8D0EFE61D8D6E4D0004AD00 /* focus-crosshair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus-crosshair.png"; sourceTree = "<group>"; };
 		A8D0EFE71D8D6E4D0004AD00 /* focus-crosshair@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus-crosshair@2x.png"; sourceTree = "<group>"; };
-		A8D0EFE81D8D6E4D0004AD00 /* front-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "front-camera.png"; sourceTree = "<group>"; };
-		A8D0EFE91D8D6E4D0004AD00 /* front-camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "front-camera@2x.png"; sourceTree = "<group>"; };
 		A8D0EFEA1D8D6E4D0004AD00 /* take-snap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "take-snap.png"; sourceTree = "<group>"; };
 		A8D0EFEB1D8D6E4D0004AD00 /* take-snap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "take-snap@2x.png"; sourceTree = "<group>"; };
 		A8D8878E1D88869000EBD538 /* FWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWViewController.h; sourceTree = "<group>"; };
 		A8D8878F1D88869000EBD538 /* FWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWViewController.m; sourceTree = "<group>"; };
 		A8D887911D8889FC00EBD538 /* FWSearchImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWSearchImageViewController.h; sourceTree = "<group>"; };
 		A8D887921D8889FC00EBD538 /* FWSearchImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSearchImageViewController.m; sourceTree = "<group>"; };
+		A8DF6B3E1D9E44A100E2AE04 /* camera-setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-setting.png"; sourceTree = "<group>"; };
+		A8DF6B3F1D9E44A100E2AE04 /* front-camera-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "front-camera-normal.png"; sourceTree = "<group>"; };
 		A8EB45D51D8733F400FA91C9 /* FWDisplayBigImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWDisplayBigImageViewController.h; sourceTree = "<group>"; };
 		A8EB45D61D8733F400FA91C9 /* FWDisplayBigImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWDisplayBigImageViewController.m; sourceTree = "<group>"; };
 		A8EFCCE01D7FFC9D0015735C /* GPUImage3x3ConvolutionFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImage3x3ConvolutionFilter.h; sourceTree = "<group>"; };
@@ -1968,7 +1966,6 @@
 			children = (
 				A8D0EFDF1D8D6E4D0004AD00 /* camera */,
 				A8D0EFDD1D8D6DA40004AD00 /* Main */,
-				A8C7D4CC1D809DC100045908 /* effect.png */,
 				A8C7D0F51D809D8700045908 /* 美化图片 */,
 				A8C7D2671D809D8700045908 /* FILTERSIMAGE */,
 			);
@@ -2006,7 +2003,7 @@
 			name = Camera;
 			sourceTree = "<group>";
 		};
-		A8AD61601D9916E50095F682 /* image pick */ = {
+		A8AD61601D9916E50095F682 /* photo album */ = {
 			isa = PBXGroup;
 			children = (
 				A8A8C6171D94F42A0074E64F /* FWPhotoCollectionViewController.h */,
@@ -2014,7 +2011,7 @@
 				A8A8C61A1D94F4650074E64F /* FWPhotoAlbumTableViewController.h */,
 				A8A8C61B1D94F4650074E64F /* FWPhotoAlbumTableViewController.m */,
 			);
-			name = "image pick";
+			name = "photo album";
 			sourceTree = "<group>";
 		};
 		A8AD61611D9916FE0095F682 /* search image */ = {
@@ -2075,7 +2072,7 @@
 			isa = PBXGroup;
 			children = (
 				A8AD61611D9916FE0095F682 /* search image */,
-				A8AD61601D9916E50095F682 /* image pick */,
+				A8AD61601D9916E50095F682 /* photo album */,
 				A8A46FE31D8C8CC400AEB457 /* Camera */,
 				A8D8878E1D88869000EBD538 /* FWViewController.h */,
 				A8D8878F1D88869000EBD538 /* FWViewController.m */,
@@ -2649,6 +2646,8 @@
 		A8D0EFDF1D8D6E4D0004AD00 /* camera */ = {
 			isa = PBXGroup;
 			children = (
+				A8DF6B3E1D9E44A100E2AE04 /* camera-setting.png */,
+				A8DF6B3F1D9E44A100E2AE04 /* front-camera-normal.png */,
 				A8A0F0241D96717C00A6DEE4 /* Camera.png */,
 				A8D0EFE01D8D6E4D0004AD00 /* flash-auto.png */,
 				A8D0EFE11D8D6E4D0004AD00 /* flash-auto@2x.png */,
@@ -2658,8 +2657,6 @@
 				A8D0EFE51D8D6E4D0004AD00 /* flash@2x.png */,
 				A8D0EFE61D8D6E4D0004AD00 /* focus-crosshair.png */,
 				A8D0EFE71D8D6E4D0004AD00 /* focus-crosshair@2x.png */,
-				A8D0EFE81D8D6E4D0004AD00 /* front-camera.png */,
-				A8D0EFE91D8D6E4D0004AD00 /* front-camera@2x.png */,
 				A8D0EFEA1D8D6E4D0004AD00 /* take-snap.png */,
 				A8D0EFEB1D8D6E4D0004AD00 /* take-snap@2x.png */,
 			);
@@ -3303,7 +3300,6 @@
 				A8C7D45E1D809D8700045908 /* hefeMetal.png in Resources */,
 				A8C7D3EB1D809D8700045908 /* text_controlpoint@2x.png in Resources */,
 				A8C7D3961D809D8700045908 /* icon_function_text_b@2x.png in Resources */,
-				A8D0EFF41D8D6E4D0004AD00 /* front-camera.png in Resources */,
 				A8C7D2E91D809D8700045908 /* icon_blur_heart@3x.png in Resources */,
 				A8C7D4D71D809DC100045908 /* effectViewInfo.plist in Resources */,
 				A8C7D38E1D809D8700045908 /* icon_function_mosaic_b@2x.png in Resources */,
@@ -3325,6 +3321,7 @@
 				A8C7D4221D809D8700045908 /* icon_autobeauty2_a@3x.png in Resources */,
 				A8C7D4691D809D8700045908 /* sierraVignette.png in Resources */,
 				A88213541D70C448002CC5AF /* lauchImage1242*2208.png in Resources */,
+				A8DF6B411D9E44A100E2AE04 /* front-camera-normal.png in Resources */,
 				A8C7D3AE1D809D8700045908 /* magic_brush_09@3x.png in Resources */,
 				A8C7D4101D809D8700045908 /* icon_fillinlight_b@3x.png in Resources */,
 				A8C7D44C1D809D8700045908 /* btn_home_setting_a@3x.png in Resources */,
@@ -3390,6 +3387,7 @@
 				A8C7D4A61D809D8700045908 /* icon_home_camera@3x.png in Resources */,
 				A8C7D3A01D809D8700045908 /* magic_brush_02@3x.png in Resources */,
 				A8C7D3971D809D8700045908 /* icon_function_text_b@3x.png in Resources */,
+				A8DF6B401D9E44A100E2AE04 /* camera-setting.png in Resources */,
 				A8C7D4151D809D8700045908 /* icon_saturation_a@2x.png in Resources */,
 				A8C7D4761D809D8700045908 /* waldenMap.png in Resources */,
 				A8C7D3661D809D8700045908 /* icon_edit_rotate_b@2x.png in Resources */,
@@ -3460,7 +3458,6 @@
 				A8C7D32E1D809D8700045908 /* btn_cancel_a@2x.png in Resources */,
 				A8C7D4BA1D809D8700045908 /* icon_share_cosmesis@3x.png in Resources */,
 				A8C7D2EB1D809D8700045908 /* icon_blur_heptagon@3x.png in Resources */,
-				A8D0EFF51D8D6E4D0004AD00 /* front-camera@2x.png in Resources */,
 				A8C7D4481D809D8700045908 /* bg_home@2x.jpg in Resources */,
 				A8C7D42A1D809D8700045908 /* icon_autobeauty4_a@3x.png in Resources */,
 				A8C7D4021D809D8700045908 /* icon_brightness_a@3x.png in Resources */,
@@ -3550,7 +3547,6 @@
 				A8C7D3A41D809D8700045908 /* magic_brush_04@3x.png in Resources */,
 				A88213581D70C448002CC5AF /* ll.png in Resources */,
 				A88213531D70C448002CC5AF /* get_thumbnailCAJVHWL1.jpg in Resources */,
-				A8C7D4D61D809DC100045908 /* effect.png in Resources */,
 				A8C7D44B1D809D8700045908 /* btn_home_setting_a@2x.png in Resources */,
 				A8A0F0251D96717C00A6DEE4 /* Camera.png in Resources */,
 				A8C7D4781D809D8700045908 /* home_block_blue_a@2x.png in Resources */,

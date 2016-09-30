@@ -678,4 +678,17 @@
     
     return [filter imageFromCurrentFramebuffer];
 }
+
++ (UIImage *)applyLocalBinaryPatternFilter:(UIImage *)image
+{
+    GPUImageLocalBinaryPatternFilter *filter = [[GPUImageLocalBinaryPatternFilter alloc] init];
+    
+    [filter forceProcessingAtSize:image.size];
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+    [pic addTarget:filter];
+    [pic processImage];
+    [filter useNextFrameForImageCapture];
+    
+    return [filter imageFromCurrentFramebuffer];
+}
 @end

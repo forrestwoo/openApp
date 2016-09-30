@@ -271,7 +271,7 @@
                 break;
                 
             case 13:
-                self.currentImage = [FWApplyFilter applyLomofiFilter:self.image];
+                self.currentImage = [FWApplyFilter applyLocalBinaryPatternFilter:self.image];
                 break;
                 
             case 14:

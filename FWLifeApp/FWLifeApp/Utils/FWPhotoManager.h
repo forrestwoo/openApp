@@ -23,7 +23,5 @@
 
 - (void)requestImageForAsset:(PHAsset *)asset scale:(CGFloat)scale resizeMode:(PHImageRequestOptionsResizeMode)resizeMode completion:(void (^)(UIImage *image))completion;
 
-- (void)getPhotosBytesWithArray:(NSArray *)photos completion:(void (^)(NSString *photosBytes))completion;
-
 - (BOOL)judgeAssetisInLocalAblum:(PHAsset *)asset ;
 @end
