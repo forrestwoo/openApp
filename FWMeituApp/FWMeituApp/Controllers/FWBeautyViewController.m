@@ -39,7 +39,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor  = [UIColor blackColor];
-    
+    //asd
     self.title = @"美化图片";
     
     modeView = [FWButton buttonWithType:UIButtonTypeCustom];

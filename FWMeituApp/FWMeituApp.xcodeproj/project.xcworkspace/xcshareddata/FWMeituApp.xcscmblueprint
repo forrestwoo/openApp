@@ -10,7 +10,7 @@
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6698AB02-B43D-4AA7-BB58-7A744129A71B",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "41041627FEC85BC478EB2346109B6A016A0671D6" : "Meitu",
-    "2DAB60BC60E889040CBD826629BFD04644F43EA7" : "appDev\/"
+    "2DAB60BC60E889040CBD826629BFD04644F43EA7" : "openApp\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "FWMeituApp",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
