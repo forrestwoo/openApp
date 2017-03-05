@@ -8,7 +8,26 @@
 
 #import "AppDelegate.h"
 
+#import "GCDAsyncSocket.h"
+#import "XMPPFramework.h"
+
+#import "DDLog.h"
+#import "DDTTYLogger.h"
+
+#import <CFNetwork/CFNetwork.h>
+// Log levels: off, error, warn, info, verbose
+#if DEBUG
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+#else
+static const int ddLogLevel = LOG_LEVEL_INFO;
+#endif
 @interface AppDelegate ()
+
+- (void)setupStream;
+- (void)teardownStream;
+
+- (void)goOnline;
+- (void)goOffline;
 
 @end
 
