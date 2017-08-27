@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, ’8.0’
+xcodeproj 'FWRestoAPP.xcodeproj'
+target :FWRestoAPP do
+pod 'MBProgressHUD', '~> 1.0.0'
+pod ‘AFNetworking’, ‘~>3.0’
+use_frameworks!
+pod ‘XMPPFramework’, ‘~>3.7.0’
+pod ‘SDWebImage’, ‘~>4.0’
+pod 'GDataXML-HTML', '~> 1.3.0'
+
+end

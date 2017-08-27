@@ -3116,6 +3116,7 @@
 					A85ADE0C1D68E63700F32BBE = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = GMQZZ9LJB4;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -3987,6 +3988,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = GMQZZ9LJB4;
 				GCC_PREFIX_HEADER = "FWLifeApp/FWLifeApp-prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = FWLifeApp/Info.plist;
@@ -3994,6 +3997,8 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = FW.FWLifeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -4002,6 +4007,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = GMQZZ9LJB4;
 				GCC_PREFIX_HEADER = "FWLifeApp/FWLifeApp-prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = FWLifeApp/Info.plist;
@@ -4009,6 +4016,7 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = FW.FWLifeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
