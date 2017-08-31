@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Masonry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-FWRestoAPP.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,12 +57,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>064E77B0808EF7C9CCF0430865207EA8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2998636FD227D5DD6E19B7C8317BF6C3</key>
+		<key>3BC6699B3A637B3149BEF8C45CE15E7E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,6 +72,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>599901246545D443BDADDB0AF578FF0A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9060B3760B76E2E88528C37BE9768F39</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>AC0D2D2B4EE7C873431AB3502859CA60</key>
 		<dict>
 			<key>primary</key>
@@ -82,17 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>D52144DE9D7255DE912490FF5A806573</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D72BDF62692B8BEB8904D327380ACE1E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>F4B8C70379FF442A4FEB6759B3B7F9B8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F8215F4F82E7657F909AC6E44ED35593</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -8,5 +8,5 @@ use_frameworks!
 pod ‘XMPPFramework’, ‘~>3.7.0’
 pod ‘SDWebImage’, ‘~>4.0’
 pod 'GDataXML-HTML', '~> 1.3.0'
-
+pod 'Masonry'
 end
