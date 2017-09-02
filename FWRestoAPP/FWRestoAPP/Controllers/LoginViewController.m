@@ -8,18 +8,25 @@
 
 #import "LoginViewController.h"
 
-NSString *const kXMPPmyJID = @"kXMPPmyJID";
-NSString *const kXMPPmyPassword = @"kXMPPmyPassword";
+#import <XMPPFramework/XMPPFramework.h>
 
-@interface LoginViewController ()
+#import "XMPPManager.h"
+
+@interface LoginViewController ()<XMPPManagerDelegate>
+{
+    XMPPManager *xmpp;
+}
 
 @end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_default_view_mt-736.jpg"]];
+    
+    xmpp =[XMPPManager sharedManager];
+    xmpp.delegate = self;
     
     self.txUsername = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 200, 30)];
     self.txUsername.placeholder = @"用户名";
@@ -41,9 +48,9 @@ NSString *const kXMPPmyPassword = @"kXMPPmyPassword";
     self.btnLogin.backgroundColor = [UIColor blueColor];
     [self.view addSubview:self.btnLogin];
     
-    self.lbInfo = [[UILabel alloc] initWithFrame:CGRectMake(100, 290, 200, 20)];
+    self.lbInfo = [[UILabel alloc] initWithFrame:CGRectMake(100, 290, 260, 20)];
     self.lbInfo.backgroundColor = [UIColor clearColor];
-
+    
     [self.view addSubview:self.lbInfo];
     
     self.btnForgetPassword = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -59,6 +66,12 @@ NSString *const kXMPPmyPassword = @"kXMPPmyPassword";
     self.btnSignUp.frame = CGRectMake(235, 220, 80, 30);
     self.btnSignUp.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.btnSignUp];
+    
+    NSString *un = [[NSUserDefaults standardUserDefaults] objectForKey:kXMPPmyJID];
+    NSString *ps = [[NSUserDefaults standardUserDefaults] objectForKey:kXMPPmyPassword];
+    if (un.length != 0 || ps.length != 0) {
+        [xmpp xmppLoginWithUserName:un password:ps];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -80,6 +93,7 @@ NSString *const kXMPPmyPassword = @"kXMPPmyPassword";
 {
     if (self.txUsername.text.length != 0 && self.txPassword.text.length != 0) {
         
+        [xmpp xmppLoginWithUserName:self.txUsername.text password:self.txPassword.text];
     }else{
         self.lbInfo.text = @"用户名或密码不能为空";
         double delayInSecond = 2;
@@ -90,6 +104,13 @@ NSString *const kXMPPmyPassword = @"kXMPPmyPassword";
     }
 }
 
+- (void)ErrorString:(NSString *)errorString
+{
+    self.txPassword.text = @"";
+    self.txUsername.text = @"";
+    self.lbInfo.text = errorString;
+}
+
 - (void)forget:(id)sender
 {
     
@@ -97,7 +118,17 @@ NSString *const kXMPPmyPassword = @"kXMPPmyPassword";
 
 - (void)signUp:(id)sender
 {
-    
+    if (self.txUsername.text.length != 0 && self.txPassword.text.length != 0) {
+        
+        [xmpp xmppRegisterWithUserName:self.txUsername.text password:self.txPassword.text];
+    }else{
+        self.lbInfo.text = @"用户名或密码不能为空";
+        double delayInSecond = 2;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSecond * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^{
+            self.lbInfo.text = nil;
+        });
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A800D4231F582F8800A3B4D8 /* xmppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A800D4221F582F8800A3B4D8 /* xmppUtils.m */; };
 		A823757A1F52DB29007E9C4E /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = A82375751F52DB29007E9C4E /* TFHpple.m */; };
 		A823757B1F52DB29007E9C4E /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = A82375771F52DB29007E9C4E /* TFHppleElement.m */; };
 		A823757C1F52DB29007E9C4E /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = A82375791F52DB29007E9C4E /* XPathQuery.m */; };
+		A828082E1F595C4C00854D37 /* XMPPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A828082D1F595C4C00854D37 /* XMPPManager.m */; };
+		A82808321F598E6200854D37 /* bg_default_view_mt-736.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A82808311F598E6200854D37 /* bg_default_view_mt-736.jpg */; };
 		A8760CBD1EAD227C00F8B550 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8760CBC1EAD227C00F8B550 /* main.m */; };
 		A8760CC01EAD227C00F8B550 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8760CBF1EAD227C00F8B550 /* AppDelegate.m */; };
 		A8760CC31EAD227C00F8B550 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8760CC21EAD227C00F8B550 /* ViewController.m */; };
@@ -46,14 +47,16 @@
 /* Begin PBXFileReference section */
 		10CC0C3FEA7D294470308DA7 /* Pods_FWRestoAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FWRestoAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C1AC7455993AD3A6977549 /* Pods-FWRestoAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FWRestoAPP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FWRestoAPP/Pods-FWRestoAPP.debug.xcconfig"; sourceTree = "<group>"; };
-		A800D4211F582F8800A3B4D8 /* xmppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmppUtils.h; sourceTree = "<group>"; };
-		A800D4221F582F8800A3B4D8 /* xmppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xmppUtils.m; sourceTree = "<group>"; };
 		A82375741F52DB29007E9C4E /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHpple.h; path = Vender/TFHpple/TFHpple.h; sourceTree = "<group>"; };
 		A82375751F52DB29007E9C4E /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHpple.m; path = Vender/TFHpple/TFHpple.m; sourceTree = "<group>"; };
 		A82375761F52DB29007E9C4E /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHppleElement.h; path = Vender/TFHpple/TFHppleElement.h; sourceTree = "<group>"; };
 		A82375771F52DB29007E9C4E /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHppleElement.m; path = Vender/TFHpple/TFHppleElement.m; sourceTree = "<group>"; };
 		A82375781F52DB29007E9C4E /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XPathQuery.h; path = Vender/TFHpple/XPathQuery.h; sourceTree = "<group>"; };
 		A82375791F52DB29007E9C4E /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XPathQuery.m; path = Vender/TFHpple/XPathQuery.m; sourceTree = "<group>"; };
+		A828082C1F595C4C00854D37 /* XMPPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPManager.h; sourceTree = "<group>"; };
+		A828082D1F595C4C00854D37 /* XMPPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPManager.m; sourceTree = "<group>"; };
+		A82808301F59759500854D37 /* CONSTANTS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CONSTANTS.h; sourceTree = "<group>"; };
+		A82808311F598E6200854D37 /* bg_default_view_mt-736.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bg_default_view_mt-736.jpg"; path = "Images/bg_default_view_mt-736.jpg"; sourceTree = "<group>"; };
 		A8760CB81EAD227C00F8B550 /* FWRestoAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWRestoAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8760CBC1EAD227C00F8B550 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8760CBE1EAD227C00F8B550 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -168,8 +171,9 @@
 		A84E50691EB1D5BA00D5E07B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				A800D4211F582F8800A3B4D8 /* xmppUtils.h */,
-				A800D4221F582F8800A3B4D8 /* xmppUtils.m */,
+				A828082C1F595C4C00854D37 /* XMPPManager.h */,
+				A828082D1F595C4C00854D37 /* XMPPManager.m */,
+				A82808301F59759500854D37 /* CONSTANTS.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -249,6 +253,7 @@
 		A8ABF08E1F5320EF0002401E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A82808311F598E6200854D37 /* bg_default_view_mt-736.jpg */,
 				A8ABF08F1F5321080002401E /* bg@2x.png */,
 			);
 			name = Images;
@@ -374,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8760CCE1EAD227C00F8B550 /* LaunchScreen.storyboard in Resources */,
+				A82808321F598E6200854D37 /* bg_default_view_mt-736.jpg in Resources */,
 				A8760CCB1EAD227C00F8B550 /* Assets.xcassets in Resources */,
 				A8760CC61EAD227C00F8B550 /* Main.storyboard in Resources */,
 				A8ABF0901F5321080002401E /* bg@2x.png in Resources */,
@@ -450,11 +456,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8ABF08B1F5315DC0002401E /* LoginViewController.m in Sources */,
-				A800D4231F582F8800A3B4D8 /* xmppUtils.m in Sources */,
 				A823757B1F52DB29007E9C4E /* TFHppleElement.m in Sources */,
 				A823757C1F52DB29007E9C4E /* XPathQuery.m in Sources */,
 				A823757A1F52DB29007E9C4E /* TFHpple.m in Sources */,
 				A8760CC31EAD227C00F8B550 /* ViewController.m in Sources */,
+				A828082E1F595C4C00854D37 /* XMPPManager.m in Sources */,
 				A8760CC01EAD227C00F8B550 /* AppDelegate.m in Sources */,
 				A8760CC91EAD227C00F8B550 /* FWRestoAPP.xcdatamodeld in Sources */,
 				A8760CBD1EAD227C00F8B550 /* main.m in Sources */,

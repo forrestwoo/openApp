@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString * const kXMPPmyJID;
-extern NSString *const kXMPPmyPassword;
 
-@interface LoginViewController : UIViewController
+
+@interface LoginViewController : UIViewController 
 
 @property (nonatomic, strong)  UIImageView *ivAvatar;
 @property (nonatomic, strong)  UITextField *txUsername;
